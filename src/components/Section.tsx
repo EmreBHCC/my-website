@@ -14,7 +14,7 @@ interface Props {
 
 export function Section({ id, index, label, title, children }: Props) {
   const reduced = useReducedMotion();
-  const [ref, seen] = useInViewOnce<HTMLDivElement>('0px 0px -4% 0px');
+  const [ref, seen] = useInViewOnce<HTMLDivElement>(4);
   const num = String(index).padStart(2, '0');
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="scroll-mt-14 py-14 md:py-24">

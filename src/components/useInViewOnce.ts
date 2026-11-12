@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Öğe bir kez görünür olunca true. Gözlemci yoksa ya da kurulamazsa true (içerik asla gizli kalmaz).
- * Öğe zaten görüntü alanının üstünde kaldıysa (bağlantıyla atlama) da true.
+ * Öğe bir kez görünür olunca (ya da görüntü alanının üstüne geçilince) true.
+ * Hızlı atlamada (bağlantıyla en alta gitmek) gözlemci aradaki öğeler için tetiklenmez;
+ * bu yüzden kaydırma kontrolü de var: öğenin üstü alt sınırın üstündeyse görünür sayılır.
+ * Gözlemci yoksa ya da kurulamazsa true: içerik asla gizli kalmaz.
  */
 export function useInViewOnce<T extends Element>(
-  rootMargin = '0px 0px -8% 0px'
+  bottomMarginPct = 8
 ): [React.RefObject<T>, boolean] {
   const ref = useRef<T>(null);
   const [seen, setSeen] = useState(false);
@@ -13,31 +15,48 @@ export function useInViewOnce<T extends Element>(
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (typeof IntersectionObserver === 'undefined') {
+
+    let done = false;
+    let io: IntersectionObserver | undefined;
+    const finish = () => {
+      if (done) return;
+      done = true;
       setSeen(true);
+      io?.disconnect();
+      window.removeEventListener('scroll', check);
+      window.removeEventListener('resize', check);
+    };
+    const check = () => {
+      if (el.getBoundingClientRect().top < window.innerHeight * (1 - bottomMarginPct / 100)) finish();
+    };
+
+    if (typeof IntersectionObserver === 'undefined') {
+      finish();
       return;
     }
-    let io: IntersectionObserver;
     try {
       io = new IntersectionObserver(
         (entries) => {
-          for (const e of entries) {
-            if (e.isIntersecting || e.boundingClientRect.top < 0) {
-              setSeen(true);
-              io.disconnect();
-              return;
-            }
-          }
+          if (entries.some((e) => e.isIntersecting || e.boundingClientRect.top < 0)) finish();
         },
-        { rootMargin }
+        { rootMargin: `0px 0px -${bottomMarginPct}% 0px` }
       );
       io.observe(el);
     } catch {
-      setSeen(true);
+      finish();
       return;
     }
-    return () => io.disconnect();
-  }, [rootMargin]);
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    check();
+
+    return () => {
+      done = true;
+      io?.disconnect();
+      window.removeEventListener('scroll', check);
+      window.removeEventListener('resize', check);
+    };
+  }, [bottomMarginPct]);
 
   return [ref as React.RefObject<T>, seen];
 }

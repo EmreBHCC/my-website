@@ -21,7 +21,16 @@ function useActiveSection(): SectionId | null {
       const el = document.getElementById(id);
       if (el) io.observe(el);
     }
-    return () => io.disconnect();
+    // Hero'ya dönünce etkin bölüm kalmasın.
+    const onScroll = () => {
+      const first = document.getElementById(SECTION_IDS[0]);
+      if (first && window.scrollY < first.offsetTop - window.innerHeight * 0.4) setActive(null);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      io.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
   return active;
 }

@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Doğrulama ekran görüntüleri
+docs/screenshots/

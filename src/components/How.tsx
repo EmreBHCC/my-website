@@ -9,7 +9,7 @@ import { EASE } from './ease';
 export function How() {
   const { t } = useLang();
   const reduced = useReducedMotion();
-  const [ref, seen] = useInViewOnce<HTMLOListElement>('0px 0px -15% 0px');
+  const [ref, seen] = useInViewOnce<HTMLOListElement>(15);
   const h = t.how;
   const last = h.steps.length - 1;
 

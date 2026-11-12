@@ -205,7 +205,7 @@ export const en: SiteContent = {
     items: [
       {
         id: 'oyun-yolculugu',
-        name: 'Game Journey + sample Hex-Zar web game',
+        name: 'Game Journey',
         track: 'ai',
         status: 'Runs locally, not published',
         period: 'Nov 2026',

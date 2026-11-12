@@ -206,7 +206,7 @@ export const tr: SiteContent = {
     items: [
       {
         id: 'oyun-yolculugu',
-        name: 'Oyun Yolculuğu + örnek Hex-Zar web oyunu',
+        name: 'Oyun Yolculuğu',
         track: 'ai',
         status: 'Yerelde çalışıyor, yayında değil',
         period: 'Kas 2026',

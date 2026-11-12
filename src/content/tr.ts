@@ -78,7 +78,7 @@ export const tr: SiteContent = {
       },
       {
         title: 'Kendin kullan, hatayı yakala',
-        body: 'Testin görmediğini kullanırken görürüm: turnuva PDF\'lerinde yanlış çekilmiş maç tarihlerini, yeni başlayan biri için fazla karmaşık bir paneli, Unity sahnesinde tutarsız görünen pencereleri.',
+        body: 'Testin görmediğini kullanırken görürüm: turnuva PDF\'lerinde yanlış çekilmiş maç tarihlerini, yeni başlayan biri için fazla karmaşık bir panoyu, Unity sahnesinde tutarsız görünen pencereleri.',
       },
       {
         title: 'Yayınla',
@@ -131,7 +131,7 @@ export const tr: SiteContent = {
         mine: [
           'Fikri ve kitleyi koydum: "…hiç bilmeyen biri de buradan bakıp ha böyle oyun yapacakmışım diyebilsin" (5 Kas 2026).',
           'Rehberin neyi öğreteceğine karar verdim: hangi kodun yazılacağını değil, neyin neden ve nerede yapıldığını.',
-          'Paneli kullanıp geri çevirdim: yeni başlayan biri için fazla karmaşıktı (7 Kas 2026). Pano yeniden kuruldu.',
+          'Panoyu kullanıp geri çevirdim: yeni başlayan biri için fazla karmaşıktı (7 Kas 2026). Pano yeniden kuruldu.',
           'Örnek oyun olarak Hex-Zar\'ın küçük web sürümünü seçtim.',
         ],
         ai: [
@@ -407,7 +407,7 @@ export const tr: SiteContent = {
           {
             name: 'Kullanılabilirlik eleştirisi',
             level: 'hands',
-            evidence: 'Oyun Yolculuğu panelini yeni başlayan için fazla karmaşık bulup yeniden kurdurdum (7 Kas 2026).',
+            evidence: 'Oyun Yolculuğu panosunu yeni başlayan için fazla karmaşık bulup yeniden kurdurdum (7 Kas 2026).',
           },
           {
             name: 'Kapsam daraltma, eksen koyma',

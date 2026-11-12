@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useInViewOnce } from './useInViewOnce';
 import { EASE } from './ease';
+import { NoBreak } from './NoBreak';
 
 interface Props {
   id: string;
@@ -31,14 +32,14 @@ export function Section({ id, index, label, title, children }: Props) {
         <div className="grid gap-x-10 gap-y-3 pt-5 lg:grid-cols-[12rem_minmax(0,1fr)] lg:pt-8">
           <p aria-hidden="true" className="mono-tab text-sm text-muted lg:sticky lg:top-20 lg:self-start">
             <span className="text-accent">{num}</span>
-            <span className="ml-3">{label}</span>
+            <span className="ml-3 hidden lg:inline">{label}</span>
           </p>
           <div className="min-w-0">
             <h2
               id={`${id}-title`}
               className="text-[clamp(1.9rem,1.4rem+2vw,3rem)] leading-[1.1]"
             >
-              {title}
+              <NoBreak>{title}</NoBreak>
             </h2>
             <div className="mt-6 md:mt-8">{children}</div>
           </div>

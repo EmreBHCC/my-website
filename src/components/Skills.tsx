@@ -1,6 +1,7 @@
 import type { Level } from '../content/types';
 import { useLang } from '../i18n/lang-context';
 import { Section } from './Section';
+import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
 
 const LEVELS: Level[] = ['hands', 'directed', 'touched'];
@@ -42,7 +43,7 @@ export function Skills() {
       <div className="mt-12 space-y-12">
         {s.groups.map((grp) => (
           <Reveal key={grp.title}>
-            <h3 className="text-2xl">{grp.title}</h3>
+            <h3 className="text-2xl"><NoBreak>{grp.title}</NoBreak></h3>
             <ul className="mt-4 border-b border-line">
               {grp.items.map((it) => (
                 <li key={it.name} className={row}>

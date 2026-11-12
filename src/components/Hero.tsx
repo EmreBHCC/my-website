@@ -1,8 +1,12 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLang } from '../i18n/lang-context';
 import { shared } from '../content';
+import type { Track } from '../content/types';
 import { ArrowUpRightIcon } from './Icons';
 import { EASE } from './ease';
+
+const TRACKS: Track[] = ['ai', 'product', 'game'];
+const fill: Record<Track, string> = { ai: 'bg-accent', product: 'bg-muted', game: 'bg-muted' };
 
 const btn =
   'inline-flex items-center gap-2 border border-ink px-5 py-3 text-[0.95rem] font-medium transition-colors';
@@ -56,6 +60,18 @@ export function Hero() {
             <span className="sr-only">{t.ui.opensInNewTab}</span>
           </a>
         </div>
+
+        <ul className="mono-tab mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 text-sm">
+          {TRACKS.map((k) => (
+            <li
+              key={k}
+              className={`inline-flex items-center gap-2 ${k === 'ai' ? 'font-medium text-accent' : 'text-muted'}`}
+            >
+              <span aria-hidden="true" className={`inline-block shrink-0 ${k === 'ai' ? 'h-2.5 w-2.5' : 'h-1.5 w-1.5'} ${fill[k]}`} />
+              {t.tracks[k].label}
+            </li>
+          ))}
+        </ul>
       </motion.div>
     </div>
   );

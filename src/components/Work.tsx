@@ -1,6 +1,7 @@
 import type { Track, WorkItem } from '../content/types';
 import { useLang } from '../i18n/lang-context';
 import { Section } from './Section';
+import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
 import { ArrowUpRightIcon } from './Icons';
 
@@ -61,7 +62,7 @@ export function WorkRow({ item }: { item: WorkItem }) {
           <h3
             className={`mt-3 leading-[1.1] ${big ? 'text-[clamp(2rem,1.4rem+2.6vw,3.25rem)]' : 'text-[clamp(1.5rem,1.2rem+1.2vw,2rem)]'}`}
           >
-            {item.name}
+            <NoBreak>{item.name}</NoBreak>
           </h3>
         </header>
 

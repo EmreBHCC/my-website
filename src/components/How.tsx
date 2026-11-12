@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLang } from '../i18n/lang-context';
 import { Section } from './Section';
+import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
 import { CheckIcon } from './Icons';
 import { useInViewOnce } from './useInViewOnce';
@@ -46,7 +47,7 @@ export function How() {
                 </span>
                 <span className="mono-tab text-sm text-muted">{String(i + 1).padStart(2, '0')}</span>
               </div>
-              <h3 className="mt-3 text-2xl leading-tight">{s.title}</h3>
+              <h3 className="mt-3 text-2xl leading-tight"><NoBreak>{s.title}</NoBreak></h3>
               <p className="mt-2 text-[0.98rem] text-muted">{s.body}</p>
             </li>
           );

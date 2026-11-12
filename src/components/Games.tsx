@@ -1,5 +1,6 @@
 import { useLang } from '../i18n/lang-context';
 import { Section } from './Section';
+import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
 
 export function Games() {
@@ -17,7 +18,7 @@ export function Games() {
           <Reveal key={item.id}>
             <article className="border-t border-ink pt-8">
               <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
-                <h3 className="text-[clamp(1.75rem,1.3rem+2vw,2.5rem)] leading-[1.1]">{item.name}</h3>
+                <h3 className="text-[clamp(1.75rem,1.3rem+2vw,2.5rem)] leading-[1.1]"><NoBreak>{item.name}</NoBreak></h3>
                 <span className="mono-tab text-sm text-muted">{item.status}</span>
               </div>
               <p className="mt-4 max-w-[64ch]">{item.summary}</p>

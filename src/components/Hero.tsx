@@ -61,7 +61,7 @@ export function Hero() {
           </a>
         </div>
 
-        <ul className="mono-tab mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 text-sm">
+        <ul aria-label={t.ui.tracksLabel} className="mono-tab mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 text-sm">
           {TRACKS.map((k) => (
             <li
               key={k}

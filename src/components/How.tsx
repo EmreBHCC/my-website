@@ -3,7 +3,6 @@ import { useLang } from '../i18n/lang-context';
 import { Section } from './Section';
 import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
-import { CheckIcon } from './Icons';
 import { useInViewOnce } from './useInViewOnce';
 import { EASE } from './ease';
 
@@ -12,7 +11,6 @@ export function How() {
   const reduced = useReducedMotion();
   const [ref, seen] = useInViewOnce<HTMLOListElement>(15);
   const h = t.how;
-  const last = h.steps.length - 1;
 
   return (
     <Section id="how" index={1} label={t.nav.how} title={h.title}>
@@ -20,35 +18,35 @@ export function How() {
         <p className="max-w-[62ch] text-muted">{h.intro}</p>
       </Reveal>
 
-      {/* Hareket 3: adımlar sırayla işaretlenir, kapı işareti en son yanar. Metin hep görünür. */}
-      <ol ref={ref} className="mt-10 grid gap-x-6 gap-y-8 sm:grid-cols-2 xl:grid-cols-4">
+      {/* Hareket 3: adımlar sırayla işaretlenir. Açık (kapanmamış) adım dolmaz. Metin hep görünür. */}
+      <ol ref={ref} className="mt-10 max-w-3xl">
         {h.steps.map((s, i) => {
-          const gate = i === last;
+          const open = !!s.open;
+          const isLast = i === h.steps.length - 1;
           return (
-            <li key={s.title} className="border-t border-ink pt-4">
-              <div className="flex items-center gap-3">
-                <span
-                  className={`relative inline-flex h-6 w-6 items-center justify-center border ${gate ? 'border-accent' : 'border-ink'}`}
-                >
+            <li key={s.title} className="relative flex gap-5 pb-9 last:pb-0 md:gap-7">
+              {!isLast && <span aria-hidden="true" className="absolute bottom-0 left-[13px] top-8 w-px bg-ink" />}
+              <span
+                aria-hidden="true"
+                className={`relative z-10 mono-tab inline-flex h-7 w-7 shrink-0 items-center justify-center border text-sm ${open ? 'border-dashed border-ink bg-paper text-ink' : 'border-ink'}`}
+              >
+                {!open && (
                   <motion.span
                     data-mark
-                    aria-hidden="true"
-                    className={`absolute inset-0 flex items-center justify-center ${gate ? 'bg-accent text-paper' : 'bg-ink text-on-ink'}`}
+                    className="absolute inset-0 flex items-center justify-center bg-ink text-on-ink"
                     initial={false}
                     animate={{ opacity: seen ? 1 : 0 }}
-                    transition={{
-                      duration: reduced ? 0.15 : 0.3,
-                      ease: EASE,
-                      delay: reduced ? 0 : 0.15 + i * 0.35 + (gate ? 0.25 : 0),
-                    }}
+                    transition={{ duration: reduced ? 0.15 : 0.3, ease: EASE, delay: reduced ? 0 : 0.15 + i * 0.35 }}
                   >
-                    <CheckIcon />
+                    {i + 1}
                   </motion.span>
-                </span>
-                <span className="mono-tab text-sm text-muted">{String(i + 1).padStart(2, '0')}</span>
+                )}
+                {i + 1}
+              </span>
+              <div className="min-w-0 pt-px">
+                <h3 className="text-2xl leading-tight"><NoBreak>{s.title}</NoBreak></h3>
+                <p className="mt-2 max-w-[56ch] text-[0.98rem] text-muted">{s.body}</p>
               </div>
-              <h3 className="mt-3 text-2xl leading-tight"><NoBreak>{s.title}</NoBreak></h3>
-              <p className="mt-2 text-[0.98rem] text-muted">{s.body}</p>
             </li>
           );
         })}

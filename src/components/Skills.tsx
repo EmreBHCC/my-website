@@ -1,4 +1,4 @@
-import type { Level } from '../content/types';
+import type { Level, SkillItem } from '../content/types';
 import { useLang } from '../i18n/lang-context';
 import { Section } from './Section';
 import { NoBreak } from './NoBreak';
@@ -17,10 +17,14 @@ function LevelGlyph({ level }: { level: Level }) {
   );
 }
 
+const byLevel = (items: SkillItem[]) =>
+  [...items].sort((a, b) => LEVELS.indexOf(a.level) - LEVELS.indexOf(b.level));
+
 export function Skills() {
   const { t } = useLang();
   const s = t.skills;
   const row = 'grid gap-x-6 gap-y-1 border-t border-line py-3 sm:grid-cols-[11rem_11rem_minmax(0,1fr)] sm:items-baseline';
+  const rowQuiet = 'grid gap-x-6 gap-y-0.5 border-t border-line py-1.5 sm:grid-cols-[11rem_11rem_minmax(0,1fr)] sm:items-baseline';
   return (
     <Section id="skills" index={4} label={t.nav.skills} title={s.title}>
       <Reveal>
@@ -45,16 +49,19 @@ export function Skills() {
           <Reveal key={grp.title}>
             <h3 className="text-2xl"><NoBreak>{grp.title}</NoBreak></h3>
             <ul className="mt-4 border-b border-line">
-              {grp.items.map((it) => (
-                <li key={it.name} className={row}>
-                  <span className="font-medium">{it.name}</span>
-                  <span className="flex items-center gap-2 text-sm">
+              {byLevel(grp.items).map((it) => {
+                const quiet = it.level === 'touched';
+                return (
+                <li key={it.name} className={quiet ? rowQuiet : row}>
+                  <span className={quiet ? 'text-[0.95rem] text-muted' : it.level === 'hands' ? 'font-semibold' : 'font-medium'}>{it.name}</span>
+                  <span className={`flex items-center gap-2 text-sm ${quiet ? 'text-muted' : ''}`}>
                     <LevelGlyph level={it.level} />
                     {s.levels[it.level].label}
                   </span>
-                  <span className="mono-tab text-[0.88rem] text-muted">{it.evidence}</span>
+                  <span className={`mono-tab text-muted ${quiet ? 'text-[0.82rem]' : 'text-[0.88rem]'}`}>{it.evidence}</span>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </Reveal>
         ))}

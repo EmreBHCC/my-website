@@ -95,8 +95,8 @@ export function WorkRow({ item }: { item: WorkItem }) {
           </ul>
         </div>
 
-        <p className="mt-6 text-[0.95rem]">
-          {item.link ? (
+        {item.link && (
+          <p className="mt-6 text-[0.95rem]">
             <a
               href={item.link.href}
               target="_blank"
@@ -107,10 +107,8 @@ export function WorkRow({ item }: { item: WorkItem }) {
               <ArrowUpRightIcon className="shrink-0 self-center" />
               <span className="sr-only">{t.ui.opensInNewTab}</span>
             </a>
-          ) : (
-            <span className="mono-tab text-sm text-muted">{t.ui.noPublicLink}</span>
-          )}
-        </p>
+          </p>
+        )}
       </article>
     </Reveal>
   );
@@ -124,7 +122,7 @@ export function Work() {
       <Reveal>
         <p className="max-w-[62ch] text-muted">{w.intro}</p>
         <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-2">
-          {TRACKS.map((k) => (
+          {TRACKS.filter((k) => w.items.some((i) => i.track === k)).map((k) => (
             <li key={k} className="text-sm">
               <TrackTag track={k} label={t.tracks[k].label} />
               <span className="ml-2 text-muted">{t.tracks[k].note}</span>

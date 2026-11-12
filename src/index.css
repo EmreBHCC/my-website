@@ -19,29 +19,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Palet: eski sitenin mavi-indigo'su, sakinleştirilmiş. Zemin beyaz / koyu lacivert (simsiyah değil). */
 :root,
 :root[data-theme='light'] {
-  --paper: #f5f2eb;
-  --surface: #ece7dc;
-  --ink: #1b1a17;
-  --muted: #5c574e;
-  --line: #d5cec0;
-  --accent: #b4380f;
-  --teal: #1f5f6b;
-  --mustard: #7a5a00;
-  --on-ink: #f5f2eb;
+  --paper: #fbfcfe;
+  --surface: #eef2f8;
+  --ink: #0f172a;
+  --muted: #4b5566;
+  --line: #d3dae6;
+  --accent: #1d4ed8;
+  --second: #4f46e5;
+  --third: #7e22ce;
+  --on-ink: #fbfcfe;
 }
 
 :root[data-theme='dark'] {
-  --paper: #151412;
-  --surface: #1e1c19;
-  --ink: #ece7dd;
-  --muted: #a39c8f;
-  --line: #34312c;
-  --accent: #f08a5d;
-  --teal: #7cc0cc;
-  --mustard: #d9b44a;
-  --on-ink: #151412;
+  --paper: #0d1526;
+  --surface: #162035;
+  --ink: #e4e9f2;
+  --muted: #9aa6ba;
+  --line: #273349;
+  --accent: #7aa7ff;
+  --second: #a5b4fc;
+  --third: #c4b5fd;
+  --on-ink: #0d1526;
 }
 
 @layer base {

@@ -7,7 +7,7 @@ export function Games() {
   const { lang, t } = useLang();
   const g = t.games;
   return (
-    <Section id="games" index={3} label={t.nav.games} title={g.title}>
+    <Section id="games" index={4} label={t.nav.games} title={g.title}>
       <Reveal>
         <p className="max-w-[62ch] text-muted">{g.intro}</p>
         <p className="mono-tab mt-6 inline-block border-l-2 border-accent pl-4 text-[0.95rem]">{g.disclaimer}</p>

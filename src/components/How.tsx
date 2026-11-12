@@ -1,21 +1,22 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLang } from '../i18n/lang-context';
-import { Section } from './Section';
 import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
 import { useInViewOnce } from './useInViewOnce';
 import { EASE } from './ease';
 
-export function How() {
+/** "2025 sonrası" bölümünün ilk yarısı: nasıl çalışıyorum. Section sarmalayıcısı Recent.tsx'te. */
+export function HowBody() {
   const { t } = useLang();
   const reduced = useReducedMotion();
   const [ref, seen] = useInViewOnce<HTMLOListElement>(15);
   const h = t.how;
 
   return (
-    <Section id="how" index={1} label={t.nav.how} title={h.title}>
+    <div>
       <Reveal>
-        <p className="max-w-[62ch] text-muted">{h.intro}</p>
+        <h3 className="text-[clamp(1.6rem,1.2rem+1.6vw,2.4rem)] leading-[1.1]">{h.title}</h3>
+        <p className="mt-4 max-w-[62ch] text-muted">{h.intro}</p>
       </Reveal>
 
       {/* Hareket 3: adımlar sırayla işaretlenir. Açık (kapanmamış) adım dolmaz. Metin hep görünür. */}
@@ -44,7 +45,7 @@ export function How() {
                 {i + 1}
               </span>
               <div className="min-w-0 pt-px">
-                <h3 className="text-2xl leading-tight"><NoBreak>{s.title}</NoBreak></h3>
+                <h4 className="font-serif text-2xl leading-tight"><NoBreak>{s.title}</NoBreak></h4>
                 <p className="mt-2 max-w-[56ch] text-[0.98rem] text-muted">{s.body}</p>
               </div>
             </li>
@@ -71,6 +72,6 @@ export function How() {
           {h.note}
         </p>
       </Reveal>
-    </Section>
+    </div>
   );
 }

@@ -1,18 +1,20 @@
 import type { SiteContent } from './types';
 
-// Same claims as tr.ts; every claim is sourced in docs/icerik-kaynaklari.md.
+// Same claims as tr.ts. About, Projects, Skills and Experience come from the old site (Emre's own
+// words); the "Since 2025" section and game design come from the 2026 session records.
 // Game-design quotes: `quote` is a translation, `quoteOriginal` is Emre's Turkish prompt, verbatim.
 
 export const en: SiteContent = {
   meta: {
-    title: 'Emre Bahçeci · I define the work, build it with AI',
+    title: 'Emre Bahçeci · Computer engineering student',
     description:
-      'Final-year computer engineering student. Work I built with AI and verified with tests; each project lists my part and the AI\'s part separately.',
+      'Computer engineering student with a strong interest in AI, computer vision and mobile development. Projects, experience, and the work I have built with AI since 2025.',
   },
 
   nav: {
-    how: 'How I work',
-    work: 'Selected work',
+    about: 'About',
+    projects: 'Projects',
+    recent: 'Since 2025',
     games: 'Game design',
     skills: 'Skills',
     experience: 'Experience',
@@ -34,6 +36,8 @@ export const en: SiteContent = {
     decision: 'Decision',
     originalQuote: 'Original (Turkish)',
     opensInNewTab: '(opens in a new tab)',
+    technologies: 'Technologies',
+    highlights: 'Key features',
     tracksLabel: 'Areas of work',
   },
 
@@ -53,16 +57,98 @@ export const en: SiteContent = {
   },
 
   hero: {
-    eyebrow: 'Kayseri, Türkiye · Final-year computer engineering student · Junior roles and internships, remote or on-site',
+    eyebrow: 'Kayseri, Türkiye · Final-year computer engineering student',
     name: 'Emre Bahçeci',
-    headline: ['I define the work,', 'build it with AI,', 'and verify it with tests.'],
+    headline: ['Hi, I\'m Emre.', 'I build with AI, computer vision', 'and mobile apps.'],
     lede:
-      'I mostly don\'t write the code myself. I decide what gets built and for whom, tie "done" to tests a machine can run, and in the work I use myself I catch what the tests miss. Every project below lists my part and the AI\'s part side by side.',
+      'As a computer engineering student I have a strong interest in artificial intelligence, computer vision and mobile app development. I enjoy turning real-world problems into working software and working with productive teams.',
     cta: {
       github: 'GitHub',
-      cv: 'CV',
+      cv: 'Download CV',
       contact: 'Contact',
     },
+    bridge: {
+      text: 'Since late 2025 I have been building with AI agents; in that work my part and the AI\'s part are listed separately.',
+      linkLabel: 'Go to the Since 2025 section',
+    },
+  },
+
+  about: {
+    title: 'About',
+    paragraphs: [
+      'I\'m a computer engineering student interested in artificial intelligence, computer vision and mobile app development. I enjoy turning real-world problems into functional, well-designed software, building things with teams, and creating communities centered on sharing knowledge.',
+      'With a focus on continuous growth, I aim to build solutions that are not only impressive but sustainable. I work to explore new technologies, carry what I learn into projects, and inspire the people around me along the way.',
+    ],
+    facts: [
+      {
+        label: 'Education',
+        value: 'Bilecik Şeyh Edebali University',
+        detail: 'Computer Engineering · 2021 - ongoing',
+      },
+      { label: 'Location', value: 'Kayseri, Türkiye' },
+      {
+        label: 'Availability',
+        value: 'Open to opportunities',
+        detail: 'Software development, AI / machine learning and mobile apps; remote or on-site.',
+      },
+    ],
+  },
+
+  projects: {
+    title: 'Projects',
+    intro: 'Selected projects I have built in AI and mobile app development.',
+    items: [
+      {
+        id: 'dersai',
+        name: 'DersAI',
+        period: 'Feb 2025 - Jun 2025',
+        description:
+          'A smart mobile app that digitizes students\' course materials to make studying more efficient. It extracts and organizes text using OCR and AI.',
+        technologies: ['Flutter', 'Dart', 'Firebase', 'OCR', 'AI API', 'Firestore'],
+        highlights: [
+          'Cross-platform Flutter development',
+          'Firebase Authentication and Firestore integration',
+          'Text extraction with OCR and AI-assisted editing',
+          'Voice-input note taking',
+          'Smart content classification',
+        ],
+      },
+      {
+        id: 'image-style-transfer',
+        name: 'Image Style Transfer',
+        period: 'Apr 2024 - Jul 2024',
+        description:
+          'An AI-based image processing app that uses neural style transfer to apply the artistic style of reference images to gallery photos or a live camera feed.',
+        technologies: ['PyTorch', 'CNN', 'VGG', 'OpenCV', 'PIL', 'NumPy', 'Matplotlib'],
+        highlights: [
+          'Pre-trained VGG-based CNN architecture',
+          'Live camera support and static image processing',
+          'Multiple style inputs and scalable resolution',
+          'Model definition and optimization in PyTorch',
+        ],
+      },
+      {
+        id: 'visionary-mockup',
+        name: 'VisionaryMockUP',
+        period: 'Nov 2023 - Feb 2024',
+        description:
+          'A real-time computer vision system that detects t-shirts in a live video stream with YOLO and automatically overlays pre-designed graphics on them.',
+        technologies: ['YOLO', 'OpenCV', 'Python', 'Roboflow', 'Computer Vision'],
+        highlights: [
+          'Collected and labeled a custom t-shirt dataset with Roboflow',
+          'Real-time object detection with a YOLOv8 model',
+          'Geometric transforms and perspective correction with OpenCV',
+          'Dynamic graphic overlay pipeline',
+        ],
+      },
+    ],
+    moreOnGithub: 'More projects on GitHub',
+  },
+
+  recent: {
+    title: 'Since 2025: working with AI',
+    intro:
+      'Since late 2025 I mostly don\'t write the code myself. I decide what gets built and for whom, tie "done" to tests a machine can run, and in the work I use myself I catch what the tests miss. Every project in this section lists my part and the AI\'s part side by side.',
   },
 
   how: {
@@ -109,7 +195,7 @@ export const en: SiteContent = {
         date: '30-31 Oct 2026',
       },
     ],
-    note: 'The AI wrote the code for the work on this site. That\'s why I don\'t say "I developed it"; I say "I defined it, directed it and verified it with tests". The code I wrote without an AI agent dates from 2025 and earlier; back then I used Cursor as my editor. It\'s marked separately under Skills.',
+    note: 'The AI wrote the code for the work in this section. That\'s why I don\'t say "I developed it"; I say "I defined it, directed it and verified it with tests". The Projects section above and my code from before 2025 are my own hands.',
   },
 
   work: {
@@ -335,9 +421,37 @@ export const en: SiteContent = {
   },
 
   skills: {
-    title: 'Skills',
+    title: 'Technical skills',
     intro:
-      'Each row has a level and one line of evidence. Items that only appeared on my old CV with nothing else to back them up are left out.',
+      'I keep strengthening my experience across programming languages, frameworks and technologies with new projects.',
+    categories: [
+      {
+        title: 'Programming languages',
+        items: ['C/C++/C#', 'Java', 'Python', 'JavaScript', 'Dart', 'SQL', 'HTML/CSS', 'mikroC'],
+      },
+      {
+        title: 'Frameworks & technologies',
+        items: ['Flutter', 'React', 'Bootstrap', 'TensorFlow', 'OpenCV', 'PyTorch', 'Firebase', 'Unity', 'Unreal Engine (basics)'],
+      },
+      {
+        title: 'AI & ML',
+        items: ['Computer Vision', 'YOLO', 'Neural Style Transfer', 'CNN architectures', 'Object Detection', 'Image Processing'],
+      },
+      {
+        title: 'Database & backend',
+        items: ['Firebase Firestore', 'SQL database design', 'RESTful APIs', 'Cloud Storage'],
+      },
+      {
+        title: 'Development tools',
+        items: ['Git/GitHub', 'VS Code', 'Claude Code', 'Android Studio', 'Proteus', 'Roboflow'],
+      },
+      {
+        title: 'Other skills',
+        items: ['OOP', 'Teamwork', 'Problem solving', 'Project management', 'Mentoring'],
+      },
+    ],
+    aiTitle: 'Working with AI (since 2025)',
+    aiIntro: 'Skills I gained working with AI agents. Each row has a level and one line of evidence.',
     levels: {
       hands: {
         label: 'Hands-on',
@@ -354,7 +468,7 @@ export const en: SiteContent = {
     },
     groups: [
       {
-        title: 'Working with AI',
+        title: 'Directing AI',
         items: [
           {
             name: 'Reviewing AI output, catching errors',
@@ -404,22 +518,12 @@ export const en: SiteContent = {
         ],
       },
       {
-        title: 'Software and systems',
+        title: 'Stacks built with AI',
         items: [
-          {
-            name: 'Git and GitHub (branches, merges, tags)',
-            level: 'directed',
-            evidence: 'I make the calls on branching, merging and release tags; the AI usually runs the commands.',
-          },
           {
             name: 'Web, desktop and mobile (PWA, Node, FastAPI, Windows installer, Kotlin)',
             level: 'directed',
             evidence: 'Tepsi PWA, Game Journey (Node), data_annotate (FastAPI), the ytmp3pldl installer, easy-phone, an Android launcher for older people (Aug-Nov 2026).',
-          },
-          {
-            name: 'Scene layout in the Unity editor (basics)',
-            level: 'hands',
-            evidence: 'Laid out the room and windows for Laminel-Farm in the editor myself (12 Oct 2026).',
           },
           {
             name: 'C# (Unity)',
@@ -427,39 +531,19 @@ export const en: SiteContent = {
             evidence: 'Laminel-Farm and Hex-Zar: 57 and 53 commits (Oct-Nov 2026).',
           },
           {
-            name: 'Hardware, OS installation, tech support',
+            name: 'Scene layout in the Unity editor',
             level: 'hands',
-            evidence: 'University IT department: imaging, formatting, RAM/SSD/power supply swaps (Apr-Jun 2025).',
+            evidence: 'Laid out the room and windows for Laminel-Farm in the editor myself (12 Oct 2026).',
           },
           {
-            name: 'React, Flutter / Dart, Java (basics)',
-            level: 'touched',
-            evidence: 'During my internship I built the company\'s one-page site in React in two days and published it (Jul 2025); DersAI (Flutter, 2025) and a Java bootcamp (2022) are in public repos.',
-          },
-        ],
-      },
-      {
-        title: 'Machine learning and vision',
-        items: [
-          {
-            name: 'Object detection with YOLO (data, labeling, training, evaluation)',
-            level: 'hands',
-            evidence: 'During my internship I noticed the model missed sealed queen cells and relabeled the dataset into two classes (Jul-Aug 2025).',
+            name: 'Vision-language model fine-tuning (Florence-2, Pix2Struct, Qwen2-VL)',
+            level: 'directed',
+            evidence: 'Circuit Reader\'s data generator, measurement and training code; I\'m learning the concepts on this project, no results yet (Oct-Nov 2026).',
           },
           {
             name: 'Dataset selection and quality judgment',
             level: 'hands',
             evidence: 'Found and picked four of Circuit Reader\'s six external datasets myself (21 Oct 2026).',
-          },
-          {
-            name: 'Vision-language model fine-tuning in Python (Florence-2, Pix2Struct, Qwen2-VL)',
-            level: 'directed',
-            evidence: 'Circuit Reader\'s data generator, measurement and training code; I\'m learning the concepts on this project, no results yet (Oct-Nov 2026).',
-          },
-          {
-            name: 'scikit-learn, TensorFlow / Keras',
-            level: 'touched',
-            evidence: '2024-25 notebooks: regression, decision trees, style transfer with VGG19; public repos.',
           },
         ],
       },
@@ -468,35 +552,44 @@ export const en: SiteContent = {
       title: 'Languages',
       items: [
         { name: 'Turkish', note: 'Native.' },
-        {
-          name: 'English',
-          note: 'I read and write it; my speaking is improving. 2025 self-assessment: reading, writing and listening B1, speaking A2.',
-        },
+        { name: 'English', note: 'B1 level (reading, writing, listening).' },
       ],
     },
   },
 
   experience: {
-    title: 'Experience and community',
+    title: 'Experience & activities',
+    intro: 'My work experience and my roles in community work.',
+    workTitle: 'Work experience',
     items: [
       {
         role: 'Intern',
         org: '4B Arıcılık Teknolojileri A.Ş. (beekeeping technology)',
-        period: 'Jul-Aug 2025',
+        period: 'Jul 2025 - Aug 2025',
+        location: 'Bilecik',
+        tag: 'Mandatory internship',
+        description: 'Gained industry experience in my first mandatory internship program.',
         points: [
           'Built a one-page company site in React and published it through GitHub.',
           'Designed the mobile app\'s login, sign-up, profile, notifications and home screens, and handed them to a teammate to wire up to the backend.',
           'Trained YOLOv8 models to detect varroa mites on bees and queen cells in the hive; when the model missed sealed queen cells, I relabeled the dataset into two classes.',
-          'Precision and recall were still weak at the end of the internship; I wrote up the results in Notion, errors included.',
+          'Gained teamwork and project management experience; observed industry standards and business processes up close.',
         ],
       },
       {
         role: 'Student IT staff',
         org: 'Bilecik Şeyh Edebali University, IT Department',
-        period: 'Apr-Jun 2025',
+        period: 'Apr 2025 - Jun 2025',
+        location: 'Bilecik',
+        tag: 'Short term',
+        description:
+          'Worked with the technical team to support and maintain critical IT infrastructure across the campus.',
         points: [
-          'Maintenance and repair of staff and lab computers: imaging, formatting, OS installation.',
-          'RAM, SSD and power supply swaps, network port activation, tech support for staff.',
+          'Took part in group repair and maintenance of staff and lab computers.',
+          'Diagnosed and fixed issues with system imaging, formatting and OS installation.',
+          'Activated the required network ports to integrate machines into the university\'s internal systems.',
+          'Carried out hardware swaps (RAM, SSD, power supplies) and peripheral setups.',
+          'Provided tech support to university staff and improved system performance.',
         ],
       },
     ],
@@ -505,24 +598,34 @@ export const en: SiteContent = {
       {
         role: 'BSc Computer Engineering',
         org: 'Bilecik Şeyh Edebali University',
-        period: 'Sep 2021 - ongoing',
-        points: ['Final year. Graduation project: Circuit Reader (see Selected work).'],
+        period: '2021 - ongoing',
+        location: 'Bilecik',
+        points: ['Final year. Graduation project: Circuit Reader (see Since 2025).'],
       },
     ],
-    communityTitle: 'Community',
+    communityTitle: 'Community & leadership',
     community: [
       {
         role: 'Founding member',
-        org: 'BBCLUB, computer engineering student community',
-        period: 'May 2025',
-        points: ['I was on the team that founded a student community built on peer learning.'],
+        org: 'BBCLUB',
+        period: 'May 2025 - ongoing',
+        location: 'Bilecik',
+        description:
+          'Founding member of a student-led initiative focused on empowering computer engineering students through peer learning.',
+        points: [
+          'Designed a sustainable mentoring structure that supports continuous learning among students.',
+          'Organized weekly sessions, coding workshops and collaborative projects.',
+          'Contributed to the technical and academic growth of 50+ members.',
+          'Led the creation of a growth-oriented, inclusive community culture.',
+        ],
+        link: { label: 'bbclub.space', href: 'https://bbclub.space' },
       },
     ],
   },
 
   contact: {
     title: 'Contact',
-    body: 'Write to me about junior software or AI application roles, internships or part-time work. I can work remotely or in Kayseri.',
+    body: 'Write to me about jobs, internships or part-time work in software development, AI / machine learning and mobile apps. I can work remotely or in Kayseri.',
     emailLabel: 'Email',
   },
 

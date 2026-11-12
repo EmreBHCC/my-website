@@ -1,12 +1,12 @@
 import type { SharedContent } from './types';
 
-// Kaynaklar: docs/icerik-kaynaklari.md § Paylaşılan sabitler.
+// Kaynak: eski site (E:/Github/my-website-eski, Hero.tsx ve Experience.tsx) Emre'nin kendi beyanı.
 export const shared: SharedContent = {
   email: 'emrebahceci38@gmail.com',
-  // gh repo list EmreBHCC ile doğrulandı (2026-11-12).
   githubUrl: 'https://github.com/EmreBHCC',
-  // Eski sitede ve CV'de var ama bu oturumda doğrulanamadı; Emre onaylayınca doldurulur.
-  linkedinUrl: null,
-  // Eski CV (18.09.25) kanıtsız kalemler içeriyor; güncel CV gelene kadar düğme gizli.
+  linkedinUrl: 'https://www.linkedin.com/in/emrebahceci/',
+  instagramUrl: 'https://instagram.com/emre_bahceci',
+  bbclubUrl: 'https://bbclub.space',
+  // Eski sitedeki /18.09.25IMG.pdf repoda izlenmiyordu; dosya gelince public/cv.pdf olarak konur.
   cvUrl: null,
 };

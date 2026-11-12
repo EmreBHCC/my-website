@@ -11,8 +11,8 @@ export default {
         muted: 'var(--muted)',
         line: 'var(--line)',
         accent: 'var(--accent)',
-        teal: 'var(--teal)',
-        mustard: 'var(--mustard)',
+        second: 'var(--second)',
+        third: 'var(--third)',
       },
       fontFamily: {
         serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif'],

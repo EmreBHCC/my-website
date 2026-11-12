@@ -22,7 +22,7 @@ export function Contact() {
     </a>
   );
   return (
-    <Section id="contact" index={6} label={t.nav.contact} title={c.title}>
+    <Section id="contact" index={7} label={t.nav.contact} title={c.title}>
       <Reveal>
         <p className="max-w-[62ch] text-muted">{c.body}</p>
         <p className="mono-tab mt-8 text-sm text-muted">{c.emailLabel}</p>
@@ -34,6 +34,7 @@ export function Contact() {
         <ul className="mt-8 space-y-2 text-[0.95rem]">
           <li>{ext(shared.githubUrl, bare(shared.githubUrl))}</li>
           {shared.linkedinUrl && <li>{ext(shared.linkedinUrl, bare(shared.linkedinUrl))}</li>}
+          {shared.instagramUrl && <li>{ext(shared.instagramUrl, bare(shared.instagramUrl))}</li>}
           {shared.cvUrl && <li>{ext(shared.cvUrl, t.hero.cta.cv)}</li>}
         </ul>
       </Reveal>

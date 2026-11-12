@@ -1,18 +1,21 @@
 import type { SiteContent } from './types';
 
-// Her iddianın kaynağı: docs/icerik-kaynaklari.md (iddia · vault dosyası/bölümü · tarih).
+// Kaynak düzeni (2026-11-12, Emre'nin kararı): Hakkımda, Projeler, Beceriler, Deneyim eski siteden
+// (E:/Github/my-website-eski) Emre'nin kendi beyanı; "2025 sonrası" bölümü ve oyun tasarımı
+// 2026 oturum kayıtlarından (vault: 🏰 300-Projects/my-website/docs/icerik-kaynaklari.md).
 // Alıntılar Emre'nin promptlarından birebir; kısaltılan yer "…" ile işaretli, yazım düzeltilmedi.
 
 export const tr: SiteContent = {
   meta: {
-    title: 'Emre Bahçeci · İşi tanımlıyorum, yapay zekâyla kuruyorum',
+    title: 'Emre Bahçeci · Bilgisayar mühendisliği öğrencisi',
     description:
-      'Bilgisayar mühendisliği son sınıf öğrencisi. Yapay zekâyla kurduğum, testle doğruladığım işler; her birinde benim payım ve yapay zekânın payı ayrı yazılı.',
+      'Yapay zekâ, bilgisayarla görme ve mobil uygulama geliştirmeye meraklı bilgisayar mühendisliği öğrencisi. Projeler, deneyim ve 2025 sonrası yapay zekâyla kurduğum işler.',
   },
 
   nav: {
-    how: 'Nasıl çalışıyorum',
-    work: 'Seçilmiş işler',
+    about: 'Hakkımda',
+    projects: 'Projeler',
+    recent: '2025 sonrası',
     games: 'Oyun tasarımı',
     skills: 'Beceriler',
     experience: 'Deneyim',
@@ -34,6 +37,8 @@ export const tr: SiteContent = {
     decision: 'Karar',
     originalQuote: 'Özgün alıntı',
     opensInNewTab: '(yeni sekmede açılır)',
+    technologies: 'Kullanılan teknolojiler',
+    highlights: 'Temel özellikler',
     tracksLabel: 'Çalışma alanları',
   },
 
@@ -53,16 +58,98 @@ export const tr: SiteContent = {
   },
 
   hero: {
-    eyebrow: 'Kayseri · Bilgisayar mühendisliği, son sınıf · Uzaktan ya da yerinde junior iş ve staj',
+    eyebrow: 'Kayseri · Bilgisayar mühendisliği öğrencisi, son sınıf',
     name: 'Emre Bahçeci',
-    headline: ['İşi tanımlıyorum,', 'yapay zekâyla kuruyorum,', 'testle doğruluyorum.'],
+    headline: ['Merhaba, ben Emre.', 'Yapay zekâ, bilgisayarla görme', 've mobil uygulama geliştiriyorum.'],
     lede:
-      'Kodu çoğunlukla ben yazmıyorum. Neyin, kimin için yapılacağını seçiyorum, “bitti”yi makinenin koşabildiği testlere bağlıyorum, kullandığım işlerde testin kaçırdığını yakalıyorum. Aşağıdaki her işte benim payım ve yapay zekânın payı yan yana yazıyor.',
+      'Bilgisayar mühendisliği öğrencisi olarak yapay zekâ, bilgisayarla görme ve mobil uygulama geliştirme alanlarında güçlü bir meraka sahibim. Gerçek dünya problemlerini işlevsel yazılım çözümlerine dönüştürmeyi ve üretken ekiplerle birlikte çalışmayı seviyorum.',
     cta: {
       github: 'GitHub',
-      cv: 'CV',
+      cv: 'CV indir',
       contact: 'İletişim',
     },
+    bridge: {
+      text: '2025 sonundan beri işleri yapay zekâ ajanlarıyla kuruyorum; o işlerde benim payım ve yapay zekânın payı ayrı yazılı.',
+      linkLabel: '2025 sonrası bölümüne git',
+    },
+  },
+
+  about: {
+    title: 'Hakkımda',
+    paragraphs: [
+      'Yapay zekâ, bilgisayarla görme ve mobil uygulama geliştirme konularına ilgi duyan bir bilgisayar mühendisliği öğrencisiyim. Gerçek dünya problemlerini işlevsel ve estetik yazılımlara dönüştürmekten, ekiplerle birlikte üretmekten ve bilgi paylaşımını merkeze alan topluluklar oluşturmaktan keyif alıyorum.',
+      'Sürekli gelişim odağıyla yalnızca etkileyici değil, aynı zamanda sürdürülebilir çözümler üretmeyi amaçlıyorum. Yeni teknolojileri keşfetmek, öğrendiklerimi projelere aktarmak ve bu süreçte çevremdekilere ilham vermek için çalışıyorum.',
+    ],
+    facts: [
+      {
+        label: 'Eğitim',
+        value: 'Bilecik Şeyh Edebali Üniversitesi',
+        detail: 'Bilgisayar Mühendisliği · 2021 - devam ediyor',
+      },
+      { label: 'Konum', value: 'Kayseri, Türkiye' },
+      {
+        label: 'Çalışma durumu',
+        value: 'İş fırsatlarına açığım',
+        detail: 'Yazılım geliştirme, yapay zekâ / makine öğrenmesi ve mobil uygulama; uzaktan ya da yerinde.',
+      },
+    ],
+  },
+
+  projects: {
+    title: 'Projeler',
+    intro: 'AI ve mobil uygulama geliştirme alanlarında hayata geçirdiğim öne çıkan projeler.',
+    items: [
+      {
+        id: 'dersai',
+        name: 'DersAI',
+        period: 'Şub 2025 - Haz 2025',
+        description:
+          'Öğrencilerin ders materyallerini dijitalleştirerek öğrenme verimliliğini artırmayı hedefleyen akıllı mobil uygulama. OCR ve yapay zekâ kullanarak metin çıkarımı ve düzenleme yapıyor.',
+        technologies: ['Flutter', 'Dart', 'Firebase', 'OCR', 'AI API', 'Firestore'],
+        highlights: [
+          'Çapraz platform Flutter geliştirme',
+          'Firebase Authentication ve Firestore entegrasyonu',
+          'OCR ile metin çıkarımı ve yapay zekâ destekli düzenleme',
+          'Ses girişi ile not alma özelliği',
+          'Akıllı içerik sınıflandırma sistemi',
+        ],
+      },
+      {
+        id: 'image-style-transfer',
+        name: 'Image Style Transfer',
+        period: 'Nis 2024 - Tem 2024',
+        description:
+          'Neural style transfer tekniği ile referans görsellerin artistik stilini statik galeri görsellerine veya canlı kamera görüntülerine aktaran AI tabanlı görüntü işleme uygulaması.',
+        technologies: ['PyTorch', 'CNN', 'VGG', 'OpenCV', 'PIL', 'NumPy', 'Matplotlib'],
+        highlights: [
+          'Önceden eğitilmiş VGG tabanlı CNN mimarisi kullanımı',
+          'Canlı kamera desteği ve statik görsel işleme',
+          'Çoklu stil girişi ve ölçeklenebilir çözünürlük desteği',
+          'PyTorch ile model tanımlama ve optimizasyon',
+        ],
+      },
+      {
+        id: 'visionary-mockup',
+        name: 'VisionaryMockUP',
+        period: 'Kas 2023 - Şub 2024',
+        description:
+          'YOLO kullanarak canlı video akışında t-shirt tespit eden ve önceden tasarlanmış grafikleri otomatik olarak üzerine yerleştiren gerçek zamanlı bilgisayarla görme sistemi.',
+        technologies: ['YOLO', 'OpenCV', 'Python', 'Roboflow', 'Computer Vision'],
+        highlights: [
+          'Roboflow ile özel t-shirt veri seti toplama ve etiketleme',
+          'YOLOv8 modeli ile gerçek zamanlı nesne tespiti',
+          'OpenCV ile geometrik dönüşüm ve perspektif düzeltme',
+          'Dinamik grafik bindirme altyapısı geliştirme',
+        ],
+      },
+    ],
+    moreOnGithub: 'GitHub\'da daha fazla proje',
+  },
+
+  recent: {
+    title: '2025 sonrası: yapay zekâyla çalışma',
+    intro:
+      '2025 sonundan beri kodu çoğunlukla ben yazmıyorum. Neyin, kimin için yapılacağını seçiyorum, “bitti”yi makinenin koşabildiği testlere bağlıyorum, kullandığım işlerde testin kaçırdığını yakalıyorum. Bu bölümdeki her işte benim payım ve yapay zekânın payı yan yana yazıyor.',
   },
 
   how: {
@@ -109,7 +196,7 @@ export const tr: SiteContent = {
         date: '30-31 Eki 2026',
       },
     ],
-    note: 'Bu sitedeki işlerin kodunu yapay zekâ yazdı. Bu yüzden “geliştirdim” demiyorum; “tanımladım, yönettim, testle doğruladım” diyorum. Yapay zekâ ajanı olmadan yazdığım kod 2025 ve öncesine ait; o dönem editörde Cursor kullanıyordum. Beceriler bölümünde ayrı işaretli.',
+    note: 'Bu bölümdeki işlerin kodunu yapay zekâ yazdı. Bu yüzden “geliştirdim” demiyorum; “tanımladım, yönettim, testle doğruladım” diyorum. Yukarıdaki Projeler bölümü ve 2025 öncesi kod benim elimden çıktı.',
   },
 
   work: {
@@ -331,9 +418,38 @@ export const tr: SiteContent = {
   },
 
   skills: {
-    title: 'Beceriler',
+    title: 'Teknik yetenekler',
     intro:
-      'Her satırda bir seviye ve tek satır kanıt var. Eski CV\'mde geçip başka kanıtı olmayan kalemleri almadım.',
+      'Farklı programlama dilleri, framework\'ler ve teknolojilerde edinilmiş deneyimimi sürekli yeni projelerle güçlendiriyorum.',
+    categories: [
+      {
+        title: 'Programlama dilleri',
+        items: ['C/C++/C#', 'Java', 'Python', 'JavaScript', 'Dart', 'SQL', 'HTML/CSS', 'mikroC'],
+      },
+      {
+        title: 'Framework & teknolojiler',
+        items: ['Flutter', 'React', 'Bootstrap', 'TensorFlow', 'OpenCV', 'PyTorch', 'Firebase', 'Unity', 'Unreal Engine (temel)'],
+      },
+      {
+        title: 'Yapay zekâ & ML',
+        items: ['Computer Vision', 'YOLO', 'Neural Style Transfer', 'CNN mimarileri', 'Object Detection', 'Image Processing'],
+      },
+      {
+        title: 'Veritabanı & backend',
+        items: ['Firebase Firestore', 'SQL veritabanı tasarımı', 'RESTful API', 'Cloud Storage'],
+      },
+      {
+        title: 'Geliştirme araçları',
+        items: ['Git/GitHub', 'VS Code', 'Claude Code', 'Android Studio', 'Proteus', 'Roboflow'],
+      },
+      {
+        title: 'Özel yetenekler',
+        items: ['OOP', 'Takım çalışması', 'Problem çözme', 'Proje yönetimi', 'Mentorluk'],
+      },
+    ],
+    aiTitle: 'Yapay zekâyla çalışma (2025 sonrası)',
+    aiIntro:
+      'Yapay zekâ ajanlarıyla çalışırken kazandığım beceriler. Her satırda bir seviye ve tek satır kanıt var.',
     levels: {
       hands: {
         label: 'Kendim yaparım',
@@ -350,7 +466,7 @@ export const tr: SiteContent = {
     },
     groups: [
       {
-        title: 'Yapay zekâyla çalışma',
+        title: 'Yapay zekâyı yönetme',
         items: [
           {
             name: 'Yapay zekâ çıktısını denetleme, hata yakalama',
@@ -400,22 +516,12 @@ export const tr: SiteContent = {
         ],
       },
       {
-        title: 'Yazılım ve sistem',
+        title: 'Yapay zekâyla kurulan yığınlar',
         items: [
-          {
-            name: 'Git ve GitHub (dal, birleştirme, etiket)',
-            level: 'directed',
-            evidence: 'Dal, birleştirme ve sürüm etiketi kararlarını ben veririm; komutları çoğunlukla yapay zekâ çalıştırır.',
-          },
           {
             name: 'Web, masaüstü ve mobil (PWA, Node, FastAPI, Windows kurulumu, Kotlin)',
             level: 'directed',
             evidence: 'Tepsi PWA, Oyun Yolculuğu (Node), data_annotate (FastAPI), ytmp3pldl kurulumu, yaşlılar için Android başlatıcı easy-phone (Ağu-Kas 2026).',
-          },
-          {
-            name: 'Unity editöründe sahne düzenleme (temel)',
-            level: 'hands',
-            evidence: 'Laminel-Farm\'da odayı ve pencereleri editörde kendim düzenledim (12 Eki 2026).',
           },
           {
             name: 'C# (Unity)',
@@ -423,76 +529,65 @@ export const tr: SiteContent = {
             evidence: 'Laminel-Farm ve Hex-Zar: 57 ve 53 commit (Eki-Kas 2026).',
           },
           {
-            name: 'Donanım, işletim sistemi kurulumu, teknik destek',
+            name: 'Unity editöründe sahne düzenleme',
             level: 'hands',
-            evidence: 'Üniversite bilgi işleminde imaj, format, RAM/SSD/güç kaynağı değişimi (Nis-Haz 2025).',
+            evidence: 'Laminel-Farm\'da odayı ve pencereleri editörde kendim düzenledim (12 Eki 2026).',
           },
           {
-            name: 'React, Flutter / Dart, Java (temel)',
-            level: 'touched',
-            evidence: 'Stajda iki günde tek sayfalık şirket sitesini React ile yapıp yayına aldım (Tem 2025); DersAI (Flutter, 2025) ve Java kampı (2022) herkese açık repolarda.',
-          },
-        ],
-      },
-      {
-        title: 'Makine öğrenmesi ve görüntü',
-        items: [
-          {
-            name: 'YOLO ile nesne tespiti (veri, etiket, eğitim, değerlendirme)',
-            level: 'hands',
-            evidence: 'Stajda modelin kapalı yüksükleri kaçırdığını fark edip veri setini iki sınıfa yeniden etiketledim (Tem-Ağu 2025).',
+            name: 'Görüntü-dil modeli ince ayarı (Florence-2, Pix2Struct, Qwen2-VL)',
+            level: 'directed',
+            evidence: 'Devre Okuyucu\'nun veri üreticisi, ölçümü ve eğitim kodu; kavramları bu projede öğreniyorum, sonuç henüz yok (Eki-Kas 2026).',
           },
           {
             name: 'Veri seti seçimi ve kalite yargısı',
             level: 'hands',
             evidence: 'Devre Okuyucu\'nun altı dış veri setinin dördünü ben buldum ve seçtim (21 Eki 2026).',
           },
-          {
-            name: 'Python ile görüntü-dil modeli ince ayarı (Florence-2, Pix2Struct, Qwen2-VL)',
-            level: 'directed',
-            evidence: 'Devre Okuyucu\'nun veri üreticisi, ölçümü ve eğitim kodu; kavramları bu projede öğreniyorum, sonuç henüz yok (Eki-Kas 2026).',
-          },
-          {
-            name: 'scikit-learn, TensorFlow / Keras',
-            level: 'touched',
-            evidence: '2024-25 defterleri: regresyon, karar ağacı, VGG19 ile stil aktarımı; herkese açık repolar.',
-          },
         ],
       },
     ],
     languages: {
-      title: 'Diller',
+      title: 'Dil yetkinlikleri',
       items: [
         { name: 'Türkçe', note: 'Ana dil.' },
-        {
-          name: 'İngilizce',
-          note: 'Okuyup yazarım; konuşmam gelişiyor. 2025 öz değerlendirmem: okuma, yazma ve dinleme B1, konuşma A2.',
-        },
+        { name: 'İngilizce', note: 'B1 seviye (okuma, yazma, dinleme).' },
       ],
     },
   },
 
   experience: {
-    title: 'Deneyim ve topluluk',
+    title: 'Deneyim & aktiviteler',
+    intro: 'İş deneyimlerim ve topluluk çalışmalarındaki rollerim.',
+    workTitle: 'İş deneyimi',
     items: [
       {
         role: 'Stajyer',
         org: '4B Arıcılık Teknolojileri A.Ş.',
-        period: 'Tem-Ağu 2025',
+        period: 'Tem 2025 - Ağu 2025',
+        location: 'Bilecik',
+        tag: 'Zorunlu staj',
+        description: 'Birinci zorunlu staj programında endüstriyel deneyim kazandım.',
         points: [
           'Şirket tanıtımı için tek sayfalık React sitesini yaptım ve GitHub üzerinden yayına aldım.',
           'Mobil uygulamanın giriş, kayıt, profil, bildirim ve ana sayfa ekranlarını tasarlayıp arka uca bağlaması için ekip arkadaşıma devrettim.',
           'YOLOv8 ile arılarda varroa ve kovanda ana arı yüksüğü tespiti modelleri eğittim; model kapalı yüksükleri kaçırınca veri setini iki sınıfa yeniden etiketledim.',
-          'Precision ve recall staj sonunda hâlâ zayıftı; sonuçları hatalarıyla birlikte Notion\'da raporladım.',
+          'Takım çalışması ve proje yönetimi deneyimi edindim; endüstriyel standartları ve iş süreçlerini yakından gözlemledim.',
         ],
       },
       {
-        role: 'Öğrenci personel',
-        org: 'Bilecik Şeyh Edebali Üniversitesi, Bilgi İşlem Daire Başkanlığı',
-        period: 'Nis-Haz 2025',
+        role: 'Öğrenci personeli',
+        org: 'Bilecik Şeyh Edebali Üniversitesi, BT Departmanı',
+        period: 'Nis 2025 - Haz 2025',
+        location: 'Bilecik',
+        tag: 'Kısa dönem',
+        description:
+          'Kampüs genelinde kritik bilişim altyapısını desteklemek ve sürdürülebilir hale getirmek için teknik ekiple birlikte çalıştım.',
         points: [
-          'Personel ve laboratuvar bilgisayarlarının bakım ve onarımı: imaj, format, işletim sistemi kurulumu.',
-          'RAM, SSD ve güç kaynağı değişimi, ağ portu aktivasyonu, personele teknik destek.',
+          'Personel ve laboratuvar bilgisayarlarının grup halinde onarım ve bakım çalışmalarında yer aldım.',
+          'Sistem imajlama, formatlama ve işletim sistemi kurulumlarına dair sorunları teşhis edip çözdüm.',
+          'Gerekli ağ portlarını aktive ederek üniversitenin dahili sistemlerine entegrasyon sağladım.',
+          'Donanım değişimleri (RAM, SSD, güç kaynakları) ve çevre birimi kurulumları gerçekleştirdim.',
+          'Üniversite personeline teknik destek vererek sistem performansını iyileştirdim.',
         ],
       },
     ],
@@ -501,24 +596,34 @@ export const tr: SiteContent = {
       {
         role: 'Bilgisayar Mühendisliği, lisans',
         org: 'Bilecik Şeyh Edebali Üniversitesi',
-        period: 'Eyl 2021 - sürüyor',
-        points: ['Son sınıf. Bitirme projesi: Devre Okuyucu (Seçilmiş işler bölümünde).'],
+        period: '2021 - devam ediyor',
+        location: 'Bilecik',
+        points: ['Son sınıf. Bitirme projesi: Devre Okuyucu (2025 sonrası bölümünde).'],
       },
     ],
-    communityTitle: 'Topluluk',
+    communityTitle: 'Topluluk & liderlik',
     community: [
       {
         role: 'Kurucu üye',
-        org: 'BBCLUB, bilgisayar mühendisliği öğrenci topluluğu',
-        period: 'May 2025',
-        points: ['Akran öğrenimine dayalı bir öğrenci topluluğunu kuran ekipteydim.'],
+        org: 'BBCLUB',
+        period: 'May 2025 - devam ediyor',
+        location: 'Bilecik',
+        description:
+          'Bilgisayar mühendisliği öğrencilerini akran öğrenimi yoluyla güçlendirmeye odaklanan öğrenci liderliğindeki bir girişimin kurucu üyesiyim.',
+        points: [
+          'Öğrenciler arasında sürekli öğrenmeyi destekleyen sürdürülebilir bir mentorluk yapısı tasarladım.',
+          'Haftalık oturumlar, kodlama atölyeleri ve iş birliğine dayalı projeler organize ettim.',
+          '50\'den fazla üyenin teknik ve akademik gelişimine katkı sağladım.',
+          'Büyüme odaklı ve kapsayıcı bir topluluk kültürü oluşturulmasına liderlik ettim.',
+        ],
+        link: { label: 'bbclub.space', href: 'https://bbclub.space' },
       },
     ],
   },
 
   contact: {
     title: 'İletişim',
-    body: 'Junior yazılım ya da yapay zekâ uygulama işi, staj veya yarı zamanlı iş için yazabilirsiniz. Uzaktan ya da Kayseri\'de çalışabilirim.',
+    body: 'Yazılım geliştirme, yapay zekâ / makine öğrenmesi ve mobil uygulama alanlarında iş, staj ya da yarı zamanlı fırsatlar için yazabilirsiniz. Uzaktan ya da Kayseri\'de çalışabilirim.',
     emailLabel: 'E-posta',
   },
 

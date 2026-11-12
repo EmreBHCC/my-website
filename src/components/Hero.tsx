@@ -1,12 +1,8 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLang } from '../i18n/lang-context';
 import { shared } from '../content';
-import type { Track } from '../content/types';
 import { ArrowUpRightIcon } from './Icons';
 import { EASE } from './ease';
-
-const TRACKS: Track[] = ['ai', 'product', 'game'];
-const fill: Record<Track, string> = { ai: 'bg-accent', product: 'bg-muted', game: 'bg-muted' };
 
 const btn =
   'inline-flex items-center gap-2 border border-ink px-5 py-3 text-[0.95rem] font-medium transition-colors';
@@ -44,8 +40,8 @@ export function Hero() {
         <p className="mt-8 max-w-[62ch] text-[1.1rem] text-muted md:text-[1.2rem]">{h.lede}</p>
 
         <div className="mt-10 flex flex-wrap gap-3">
-          <a href="#contact" className={btnPrimary}>
-            {h.cta.contact}
+          <a href="#projects" className={btnPrimary}>
+            {t.nav.projects}
           </a>
           {shared.cvUrl && (
             <a href={shared.cvUrl} target="_blank" rel="noopener noreferrer" className={btnSecondary}>
@@ -59,19 +55,17 @@ export function Hero() {
             <ArrowUpRightIcon />
             <span className="sr-only">{t.ui.opensInNewTab}</span>
           </a>
+          <a href="#contact" className={btnSecondary}>
+            {h.cta.contact}
+          </a>
         </div>
 
-        <ul aria-label={t.ui.tracksLabel} className="mono-tab mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 text-sm">
-          {TRACKS.map((k) => (
-            <li
-              key={k}
-              className={`inline-flex items-center gap-2 ${k === 'ai' ? 'font-medium text-accent' : 'text-muted'}`}
-            >
-              <span aria-hidden="true" className={`inline-block shrink-0 ${k === 'ai' ? 'h-2.5 w-2.5' : 'h-1.5 w-1.5'} ${fill[k]}`} />
-              {t.tracks[k].label}
-            </li>
-          ))}
-        </ul>
+        <p className="mt-10 max-w-[62ch] border-l-2 border-accent pl-4 text-[0.98rem] text-muted">
+          {h.bridge.text}{' '}
+          <a href="#recent" className="ulink font-medium text-ink">
+            {h.bridge.linkLabel}
+          </a>
+        </p>
       </motion.div>
     </div>
   );

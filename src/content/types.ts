@@ -1,17 +1,32 @@
 // İçerik sözleşmesi. İçerik dosyaları (tr.ts, en.ts, shared.ts) ve bileşenler bu tiplere uyar.
 // Bileşenler metin içermez; görünen her metin buradan gelir.
+//
+// Yapı (2026-11-12, Emre'nin kararı): eski sitenin içeriği taban, 2026 "yapay zekâyla çalışma"
+// işleri "2025 sonrası" bölümü olarak üstüne gelir.
 
 export type Lang = 'tr' | 'en';
 
-/** Üç şerit: AI ile teslim (ağırlık merkezi) · Ürün/ML · Oyun tasarımı */
+/** 2025 sonrası işlerin üç şeridi: AI ile teslim · Ürün/ML · Oyun tasarımı */
 export type Track = 'ai' | 'product' | 'game';
 
-/** Beceri seviyesi: elle bilirim · yöneterek yaptım · dokundum */
+/** Beceri seviyesi (yalnız 2025 sonrası satırlarda): elle bilirim · yöneterek yaptım · dokundum */
 export type Level = 'hands' | 'directed' | 'touched';
 
 export interface LinkItem {
   label: string;
   href: string;
+}
+
+/** Eski sitedeki proje kartı: açıklama + teknoloji + öne çıkanlar */
+export interface ProjectItem {
+  id: string;
+  name: string;
+  /** "Kas 2023 - Şub 2024" */
+  period: string;
+  description: string;
+  technologies: string[];
+  highlights: string[];
+  link?: LinkItem;
 }
 
 export interface WorkItem {
@@ -42,9 +57,7 @@ export interface GameItem {
   status: string;
   summary: string;
   decisions: {
-    /** Kararın düz anlatımı */
     decision: string;
-    /** Emre'nin prompt alıntısı, o dildeki hali (EN'de çeviri) */
     quote?: string;
     /** EN içerikte: Türkçe özgün alıntı */
     quoteOriginal?: string;
@@ -64,14 +77,21 @@ export interface ExperienceItem {
   role: string;
   org: string;
   period: string;
+  location?: string;
+  /** "Zorunlu staj", "Kısa dönem" gibi küçük etiket */
+  tag?: string;
+  description?: string;
   points: string[];
+  link?: LinkItem;
 }
 
 export interface SiteContent {
   meta: { title: string; description: string };
+  /** Anahtarlar bölüm kimlikleriyle aynı (sections.ts) */
   nav: {
-    how: string;
-    work: string;
+    about: string;
+    projects: string;
+    recent: string;
     games: string;
     skills: string;
     experience: string;
@@ -81,7 +101,6 @@ export interface SiteContent {
     skipToContent: string;
     menu: string;
     close: string;
-    /** Dil düğmesinin erişilebilir adı */
     switchLanguage: string;
     toLightTheme: string;
     toDarkTheme: string;
@@ -89,33 +108,47 @@ export interface SiteContent {
     mine: string;
     ai: string;
     evidence: string;
-    /** Bağlantısı olmayan vakada gösterilen kısa not */
     noPublicLink: string;
     decision: string;
     originalQuote: string;
     opensInNewTab: string;
-    /** Hero'daki üç şerit listesinin erişilebilir adı (içerik iki dilde de doldurur) */
+    technologies: string;
+    highlights: string;
     tracksLabel?: string;
   };
   tracks: Record<Track, { label: string; note: string }>;
   hero: {
-    /** Ad üstü küçük satır: konum, durum */
     eyebrow: string;
     name: string;
     /** Ana cümle, satır satır (2-4 satır) */
     headline: string[];
     lede: string;
     cta: { github: string; cv: string; contact: string };
+    /** 2025 sonrası bölümüne köprü: metin + bağlantı etiketi */
+    bridge: { text: string; linkLabel: string };
+  };
+  about: {
+    title: string;
+    paragraphs: string[];
+    /** Eğitim, konum, çalışma durumu gibi kısa olgular */
+    facts: { label: string; value: string; detail?: string }[];
+  };
+  projects: {
+    title: string;
+    intro: string;
+    items: ProjectItem[];
+    moreOnGithub: string;
+  };
+  /** 2025 sonrası: tek bölüm, içinde "nasıl çalışıyorum" + seçilmiş işler */
+  recent: {
+    title: string;
+    intro: string;
   };
   how: {
     title: string;
     intro: string;
-    /** Tam dört adım */
-    /** open: true = henüz kapanmamış, zayıf adım; işaret dolu değil boş çizilir */
     steps: { title: string; body: string; open?: boolean }[];
-    /** Kanıt rakamları: value mono büyük, label altında, date tarihi */
     proofs: { value: string; label: string; date: string }[];
-    /** "Yönettim, testle doğruladım" açıklığı */
     note: string;
   };
   work: {
@@ -126,20 +159,25 @@ export interface SiteContent {
   games: {
     title: string;
     intro: string;
-    /** "Kod yapay zekânın, kararlar benim" */
     disclaimer: string;
     items: GameItem[];
   };
   skills: {
     title: string;
     intro: string;
+    /** Eski sitedeki kategori listeleri */
+    categories: { title: string; items: string[] }[];
+    /** 2025 sonrası: seviye + kanıt satırları */
+    aiTitle: string;
+    aiIntro: string;
     levels: Record<Level, { label: string; description: string }>;
     groups: { title: string; items: SkillItem[] }[];
-    /** Konuşma dilleri satırı (İngilizce dürüst) */
     languages: { title: string; items: { name: string; note: string }[] };
   };
   experience: {
     title: string;
+    intro: string;
+    workTitle: string;
     items: ExperienceItem[];
     educationTitle: string;
     education: ExperienceItem[];
@@ -152,7 +190,6 @@ export interface SiteContent {
     emailLabel: string;
   };
   footer: {
-    /** Sitenin nasıl yapıldığına dair tek dürüst satır */
     colophon: string;
     backToTop: string;
   };
@@ -163,6 +200,8 @@ export interface SharedContent {
   email: string;
   githubUrl: string;
   linkedinUrl: string | null;
+  instagramUrl: string | null;
+  bbclubUrl: string;
   /** CV dosyası hazır değilse null; düğme o zaman gösterilmez */
   cvUrl: string | null;
 }

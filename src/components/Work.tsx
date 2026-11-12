@@ -1,6 +1,5 @@
 import type { Track, WorkItem } from '../content/types';
 import { useLang } from '../i18n/lang-context';
-import { Section } from './Section';
 import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
 import { ArrowUpRightIcon } from './Icons';
@@ -9,13 +8,13 @@ const TRACKS: Track[] = ['ai', 'product', 'game'];
 
 const trackText: Record<Track, string> = {
   ai: 'text-accent',
-  product: 'text-teal',
-  game: 'text-mustard',
+  product: 'text-second',
+  game: 'text-third',
 };
 const trackFill: Record<Track, string> = {
   ai: 'bg-accent',
-  product: 'bg-teal',
-  game: 'bg-mustard',
+  product: 'bg-second',
+  game: 'bg-third',
 };
 
 function TrackTag({ track, label }: { track: Track; label: string }) {
@@ -114,13 +113,15 @@ export function WorkRow({ item }: { item: WorkItem }) {
   );
 }
 
-export function Work() {
+/** "2025 sonrası" bölümünün ikinci yarısı; Section sarmalayıcısı Recent.tsx'te. */
+export function WorkBody() {
   const { t } = useLang();
   const w = t.work;
   return (
-    <Section id="work" index={2} label={t.nav.work} title={w.title}>
+    <div className="mt-16 border-t border-ink pt-8 md:mt-20">
       <Reveal>
-        <p className="max-w-[62ch] text-muted">{w.intro}</p>
+        <h3 className="text-[clamp(1.6rem,1.2rem+1.6vw,2.4rem)] leading-[1.1]">{w.title}</h3>
+        <p className="mt-4 max-w-[62ch] text-muted">{w.intro}</p>
         <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-2">
           {TRACKS.filter((k) => w.items.some((i) => i.track === k)).map((k) => (
             <li key={k} className="text-sm">
@@ -135,6 +136,6 @@ export function Work() {
           <WorkRow key={item.id} item={item} />
         ))}
       </div>
-    </Section>
+    </div>
   );
 }

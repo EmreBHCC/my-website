@@ -3,8 +3,9 @@ import { ThemeProvider } from './theme/ThemeProvider';
 import { useLang } from './i18n/lang-context';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { How } from './components/How';
-import { Work } from './components/Work';
+import { About } from './components/About';
+import { Projects } from './components/Projects';
+import { Recent } from './components/Recent';
 import { Games } from './components/Games';
 import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
@@ -24,8 +25,9 @@ function Page() {
       <Header />
       <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
-        <How />
-        <Work />
+        <About />
+        <Projects />
+        <Recent />
         <Games />
         <Skills />
         <Experience />

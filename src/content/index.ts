@@ -1,7 +1,8 @@
 import type { Lang, SiteContent } from './types';
-import { fixtureContent, fixtureShared } from '../dev/fixture';
+import { tr } from './tr';
+import { en } from './en';
 
 export type { Lang, SiteContent, SharedContent } from './types';
+export { shared } from './shared';
 
-export const content: Record<Lang, SiteContent> = fixtureContent;
-export const shared = fixtureShared;
+export const content: Record<Lang, SiteContent> = { tr, en };

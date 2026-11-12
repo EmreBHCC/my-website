@@ -94,6 +94,8 @@ export interface SiteContent {
     decision: string;
     originalQuote: string;
     opensInNewTab: string;
+    /** Hero'daki üç şerit listesinin erişilebilir adı (içerik iki dilde de doldurur) */
+    tracksLabel?: string;
   };
   tracks: Record<Track, { label: string; note: string }>;
   hero: {
@@ -109,7 +111,8 @@ export interface SiteContent {
     title: string;
     intro: string;
     /** Tam dört adım */
-    steps: { title: string; body: string }[];
+    /** open: true = henüz kapanmamış, zayıf adım; işaret dolu değil boş çizilir */
+    steps: { title: string; body: string; open?: boolean }[];
     /** Kanıt rakamları: value mono büyük, label altında, date tarihi */
     proofs: { value: string; label: string; date: string }[];
     /** "Yönettim, testle doğruladım" açıklığı */

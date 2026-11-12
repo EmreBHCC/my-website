@@ -1,63 +1,47 @@
-﻿import React, { useEffect, useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import ScrollToTopButton from './components/ScrollToTopButton';
+import { LangProvider } from './i18n/LangProvider';
+import { ThemeProvider } from './theme/ThemeProvider';
+import { useLang } from './i18n/lang-context';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { How } from './components/How';
+import { Work } from './components/Work';
+import { Games } from './components/Games';
+import { Skills } from './components/Skills';
+import { Experience } from './components/Experience';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 
-function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.classList.toggle('dark', storedTheme === 'dark');
-      return;
-    }
-
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
-
+function Page() {
+  const { t } = useLang();
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100">
-      <Header theme={theme} onToggleTheme={toggleTheme} />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
-      <ScrollToTopButton />
+    <div id="top">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-50 focus:border focus:border-ink focus:bg-paper focus:px-4 focus:py-2"
+      >
+        {t.ui.skipToContent}
+      </a>
+      <Header />
+      <main id="main" tabIndex={-1} className="outline-none">
+        <Hero />
+        <How />
+        <Work />
+        <Games />
+        <Skills />
+        <Experience />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <LangProvider>
+        <Page />
+      </LangProvider>
+    </ThemeProvider>
+  );
+}

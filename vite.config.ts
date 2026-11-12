@@ -1,10 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
+// base './': GitHub Pages alt yolunda (kullanici.github.io/depo/) da çalışsın.
 export default defineConfig({
+  base: './',
   plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
 });

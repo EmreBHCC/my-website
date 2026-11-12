@@ -1,9 +1,25 @@
-﻿/** @type {import(''tailwindcss'').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        paper: 'var(--paper)',
+        surface: 'var(--surface)',
+        ink: 'var(--ink)',
+        'on-ink': 'var(--on-ink)',
+        muted: 'var(--muted)',
+        line: 'var(--line)',
+        accent: 'var(--accent)',
+        teal: 'var(--teal)',
+        mustard: 'var(--mustard)',
+      },
+      fontFamily: {
+        serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif'],
+        sans: ['"IBM Plex Sans"', 'system-ui', 'Segoe UI', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'Consolas', 'monospace'],
+      },
+    },
   },
   plugins: [],
 };

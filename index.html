@@ -1,10 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emre Bahçeci - Professional Portfolio Website</title>
+    <meta name="description" content="" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Emre Bahçeci</title>
+    <script>
+      // İlk boyamadan önce tema ve dil: titreme olmasın. Depolama hata verirse sessizce varsayılan.
+      (function () {
+        var d = document.documentElement;
+        var theme = null;
+        var lang = null;
+        try {
+          theme = localStorage.getItem('theme');
+          lang = localStorage.getItem('lang');
+        } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        }
+        d.setAttribute('data-theme', theme);
+        d.style.colorScheme = theme;
+        d.lang = lang === 'en' ? 'en' : 'tr';
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

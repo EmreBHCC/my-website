@@ -34,6 +34,7 @@ export const tr: SiteContent = {
     decision: 'Karar',
     originalQuote: 'Özgün alıntı',
     opensInNewTab: '(yeni sekmede açılır)',
+    tracksLabel: 'Çalışma alanları',
   },
 
   tracks: {
@@ -47,7 +48,7 @@ export const tr: SiteContent = {
     },
     game: {
       label: 'Oyun tasarımı',
-      note: 'Mekanik ve sistem kararları benim, kod yapay zekânın.',
+      note: 'Mekanik ve sistem kararlarını verdiğim oyunlar.',
     },
   },
 
@@ -56,7 +57,7 @@ export const tr: SiteContent = {
     name: 'Emre Bahçeci',
     headline: ['İşi tanımlıyorum,', 'yapay zekâyla kuruyorum,', 'testle doğruluyorum.'],
     lede:
-      'Kodu çoğunlukla ben yazmıyorum. Neyin, kimin için yapılacağını seçiyorum, "bitti"yi makinenin koşabildiği testlere bağlıyorum, sonucu kendim kullanıp hatayı yakalıyorum. Aşağıdaki her işte benim payım ve yapay zekânın payı yan yana yazıyor.',
+      'Kodu çoğunlukla ben yazmıyorum. Neyin, kimin için yapılacağını seçiyorum, “bitti”yi makinenin koşabildiği testlere bağlıyorum, kullandığım işlerde testin kaçırdığını yakalıyorum. Aşağıdaki her işte benim payım ve yapay zekânın payı yan yana yazıyor.',
     cta: {
       github: 'GitHub',
       cv: 'CV',
@@ -66,15 +67,15 @@ export const tr: SiteContent = {
 
   how: {
     title: 'Nasıl çalışıyorum',
-    intro: 'Dört adım. İlk üçünü her işte yapıyorum; dördüncüsü en zayıf yerim.',
+    intro: 'İlk ikisi her kod işimde var. Üçüncüsünü yaptığım işler en sağlam çıkanlar. Dördüncüsü en zayıf yerim.',
     steps: [
       {
         title: 'İşi tanımla',
-        body: 'Kimin için, hangi sorun, neyin dışarıda kalacağı. Tarif uygulaması Tepsi, gördüğüm bir şeyin üstüne kuruldu: tarifler WhatsApp, kâğıt ve telefon notları arasında dağılıyor, verilen tarif sonra hatırlanmıyor.',
+        body: 'Kimin için, hangi sorun, neyin dışarıda kalacağı. Tepsi\'de üçü de kod yazılmadan belliydi: ev hanımları, dağılıp unutulan tarifler, satış yok.',
       },
       {
-        title: '"Bitti"yi kapıya bağla',
-        body: 'Kod işlerimde "bitti", makinenin koşabildiği kontrollerin geçmesidir: "17/17 kapı geçti" gibi. Kontrolleri çoğunlukla yapay zekâ yazar; şartı ben koyarım, onayı ben veririm. Tepsi\'de hedefler işten önce donduruldu, sonradan hiçbir eşik düşürülmedi.',
+        title: '“Bitti”yi kapıya bağla',
+        body: 'Kod işlerimde “bitti”, makinenin koşabildiği kontrollerin geçmesidir. Kapı geçmeden bitti sayılmaz şartını ben koyarım; kapıları çoğunlukla yapay zekâ önerir ve yazar, onayı ben veririm. Tepsi\'de hedefler işten önce donduruldu, sonradan hiçbir eşik düşürülmedi.',
       },
       {
         title: 'Kendin kullan, hatayı yakala',
@@ -82,13 +83,14 @@ export const tr: SiteContent = {
       },
       {
         title: 'Yayınla',
-        body: 'En zayıf adımım. Son iki buçuk ayda açtığım yaklaşık 20 projeden yalnız birinin yayımlanmış sürümü var (ytmp3pldl v1.0.0). Tepsi\'nin sunucuya kurulumu ve alan adı hâlâ bende bekliyor.',
+        body: 'Son iki buçuk ayda açtığım yaklaşık 20 projeden yalnız birinin yayımlanmış sürümü var: ytmp3pldl v1.0.0. Tepsi\'nin sunucu kurulumu ve alan adı hâlâ bende bekliyor.',
+        open: true,
       },
     ],
     proofs: [
       {
         value: '500+',
-        label: '15\'ten fazla repoda yönettiğim commit; kodu yapay zekâ yazdı',
+        label: '15\'ten fazla repoda yönettiğim commit',
         date: 'Ağu-Kas 2026',
       },
       {
@@ -106,19 +108,14 @@ export const tr: SiteContent = {
         label: 'ytmp3pldl: ilk istekten herkese açık v1.0.0 sürümüne',
         date: '30-31 Eki 2026',
       },
-      {
-        value: '1 / ~20',
-        label: 'yayımlanmış sürümü olan proje',
-        date: '11 Kas 2026',
-      },
     ],
-    note: 'Bu sitedeki işlerin kodunu yapay zekâ yazdı. Bu yüzden "geliştirdim" demiyorum; "tanımladım, yönettim, testle doğruladım" diyorum. Elle yazdığım kod 2025 ve öncesine ait; Beceriler bölümünde ayrı işaretli.',
+    note: 'Bu sitedeki işlerin kodunu yapay zekâ yazdı. Bu yüzden “geliştirdim” demiyorum; “tanımladım, yönettim, testle doğruladım” diyorum. Yapay zekâ ajanı olmadan yazdığım kod 2025 ve öncesine ait; o dönem editörde Cursor kullanıyordum. Beceriler bölümünde ayrı işaretli.',
   },
 
   work: {
     title: 'Seçilmiş işler',
     intro:
-      'Altı iş. Her birinde sorun, benim payım, yapay zekânın payı ve kanıt var; kanıttaki her rakamın tarihi yazılı. Bağlantı yalnız herkese açık olan işte.',
+      'Kanıttaki her rakamın tarihi yanında yazılı. Bağlantı yalnız herkese açık olan işte var; ötekiler yerelde ya da teslim edildiği kişide duruyor.',
     items: [
       {
         id: 'oyun-yolculugu',
@@ -129,14 +126,14 @@ export const tr: SiteContent = {
         problem:
           'Yapay zekâyla oyun yapmayı hiç bilmeyen birine adım adım öğreten bir rehber ve Claude Code ile çalışırken tarayıcıda canlı güncellenen bir pano. Rehberin işlediğini göstermek için küçük bir web oyunu, Hex-Zar web, rehberin adımlarıyla baştan yapıldı.',
         mine: [
-          'Fikri ve kitleyi koydum: "…hiç bilmeyen biri de buradan bakıp ha böyle oyun yapacakmışım diyebilsin" (5 Kas 2026).',
-          'Rehberin neyi öğreteceğine karar verdim: hangi kodun yazılacağını değil, neyin neden ve nerede yapıldığını.',
+          'Fikri ve kitleyi koydum: “…hiç bilmeyen biri de buradan bakıp ha böyle oyun yapacakmışım diyebilsin” (5 Kas 2026).',
+          'Rehberin öğreteceği şeyi seçtim: kodun kendisinden çok, neyin neden ve nerede yapıldığı.',
           'Panoyu kullanıp geri çevirdim: yeni başlayan biri için fazla karmaşıktı (7 Kas 2026). Pano yeniden kuruldu.',
           'Örnek oyun olarak Hex-Zar\'ın küçük web sürümünü seçtim.',
         ],
         ai: [
           'Rehber metni, pano, Claude Code kancaları ve testlerin tamamı.',
-          'Örnek yolculuktaki öğrenci promptları ve oyunun görsel stil kararı. Bunları ben değil, yapay zekâ oturumları verdi.',
+          'Örnek yolculuktaki öğrenci promptları ve oyunun görsel stil kararı da yapay zekâ oturumlarından geldi.',
         ],
         evidence: [
           '48 commit · 5-7 Kas 2026',
@@ -153,7 +150,7 @@ export const tr: SiteContent = {
         status: 'Yayında, v1.0.0',
         period: 'Eki 2026',
         problem:
-          'Tek bilgisayarda çalışan bir Python indirme betiğini, Python kurulu olmayan başka Windows bilgisayarlara kurulabilen ve kendini güncel tutan bir uygulamaya çevirmek. Buradaki vaka ürünün kendisi değil, paketleme ve güncelleme işi.',
+          'Tek bilgisayarda çalışan bir Python indirme betiğini, Python kurulu olmayan başka Windows bilgisayarlara kurulabilen ve kendini güncel tutan bir uygulamaya çevirmek. Vaka, ürünün kendisinden çok paketleme ve güncelleme işi.',
         mine: [
           'Betiği kurulumlu bir uygulamaya çevirme kararı.',
           'Uygulamanın yeni sürümünü GitHub\'dan kendisinin kontrol etmesi fikri.',
@@ -183,7 +180,7 @@ export const tr: SiteContent = {
           'Claude Code oturumlarım şişiyordu: turların yarısından fazlası 200 bin token bağlamın üstünde koşuyordu. Kullanımı ölçen, düzeltme öneren ve başka bir Claude kurulumuna taşınabilen bir denetim skill\'i gerekiyordu.',
         mine: [
           'İlk analizi ben istedim; her ölçümden sonra hangi düzeltmenin uygulanacağına ben karar verdim.',
-          'Adını, kısayolunu ve "başka bir Claude\'a verildiğinde de çalışsın" şartını koydum.',
+          'Adını, kısayolunu ve “başka bir Claude\'a verildiğinde de çalışsın” şartını koydum.',
         ],
         ai: [
           'Ölçüm betiği, rapor şablonları, durum çubuğu ve skill metni.',
@@ -194,30 +191,30 @@ export const tr: SiteContent = {
           '400 bin token üstü tur: %19 → %0 · 25 → 29 Eki 2026',
           '200 bin token üstü tur: %54 → %28 · 25 Eki → 6 Kas 2026',
           'Düzelmeyen: en pahalı 10 oturumun payı %56 → %77 · 6 Kas 2026',
-          'Paket 2 temiz Claude kurulumunda denendi · 25 Eki 2026',
+          'Paket, önceki bağlamı olmayan iki Sonnet alt ajanına uygulatıldı; çıkan 15 sorun kapatıldı · 25 Eki 2026',
         ],
       },
       {
         id: 'tepsi',
         name: 'Tepsi: tarif defteri',
         track: 'product',
-        status: 'Yerelde çalışıyor, yayında değil',
+        status: 'Yerelde çalışıyor; gerçek kullanıcı denemesinden önce bilerek kenara aldım',
         period: 'Eki-Kas 2026',
         problem:
-          'Ev hanımları tarifleri WhatsApp\'ta, kâğıtta, telefon notlarında ve defterlerde tutuyor; birbirine verdiği tarifi sonra hatırlamakta zorlanıyor. Satış için değil, onlar için çevrimdışı da çalışan bir tarif defteri.',
+          'Gördüğüm kadarıyla tarifler WhatsApp, kâğıt, telefon notu ve defter arasında dağılıyor. Ev hanımları için, tarifi tek yerde tutan ve çevrimdışı da çalışan bir defter.',
         mine: [
-          'Gözlem: "…birbirlerine tarif soruyor ve birbirlerine verdiklerini sonra hatırlamakta da zorluk çekiyorlar" (22 Eki 2026). Tasarımın omurgası bu.',
-          'Kapsam: "satmak için değil ev hanımları için düşündüm" (22 Eki 2026). Tarif kullanıcının kalır.',
-          'Çekirdek "bitti" tanımını onayladım: defter, WhatsApp\'tan tarif alma, hesapsız link paylaşma, PDF dışa aktarma.',
-          'Gerçek kullanıcı denemesinden önce işi bilerek kenara aldım.',
+          'Gözlem: “…birbirlerine tarif soruyor ve birbirlerine verdiklerini sonra hatırlamakta da zorluk çekiyorlar” (22 Eki 2026).',
+          'Kapsam: “satmak için değil ev hanımları için düşündüm” (22 Eki 2026). Tarif kullanıcının kalır.',
+          'Çekirdek “bitti” tanımını onayladım: defter, WhatsApp\'tan tarif alma, hesapsız link paylaşma, PDF dışa aktarma.',
         ],
         ai: [
           'PWA\'nın tamamı: kural tabanlı tarif ayrıştırıcı, çevrimdışı çalışma, paylaşma linki, test kapıları. 9 commit, tek günde.',
+          'Çekirdek “bitti” tanımının önerisi.',
         ],
         evidence: [
           '17/17 test kapısı PASS · 7 Kas 2026',
-          '30 tariflik ölçüm setinde doğruluk %100, ölçü hatası 0; gizli sette de %100 · 7 Kas 2026',
-          'Sunucuya kurulum ve gerçek kullanıcı testi: yapılmadı',
+          'Yapay zekânın yazdığı 30 örnek tarifte doğruluk %100, ölçü hatası 0; ayrı bir oturumun önceden hazırladığı 10 tariflik gizli sette de %100 · 7 Kas 2026',
+          'Gerçek WhatsApp mesajıyla deneme, sunucu kurulumu ve kullanıcı testi: yapılmadı',
         ],
       },
       {
@@ -227,12 +224,12 @@ export const tr: SiteContent = {
         status: 'Sürüyor; henüz model sonucu yok',
         period: 'Eki 2026 - sürüyor',
         problem:
-          'Görüntü okuyan yapay zekâ modelleri devre şemasındaki elemanları bulabiliyor ama aralarındaki bağlantıları kaçırıyor. Şema görüntüsünden elemanları ve bağlantıları çıkarıp netlist\'e çeviren bir sistem.',
+          'Görüntü okuyan yapay zekâ modellerinin devre şemasında elemanları bulup aralarındaki bağlantıları kaçırdığını gördüm; proje bunu ölçüyor. Hedef, şema görüntüsünü elemanları ve bağlantılarıyla netlist\'e çeviren bir sistem.',
         mine: [
-          'Konu kendi yaşadığım bir şeyden çıktı: yapay zekâ bir devre görselini yanlış okumuştu, sonucun saçma olmasından fark ettim.',
-          'Eksen: teslim takvimi değil, elimizdeki modeli en iyi yere getirmek (13 Eki 2026).',
+          'Konuyu ben buldum: bir devre görselinin yanlış okunduğunu sonucun saçmalığından fark etmiştim.',
+          'Öncelik: önce modelin kalitesi, yani elimizdeki modeli gidebileceği en iyi yere getirmek (13 Eki 2026).',
           'Kısıt: büyük modeller taban alınmayacak; maliyet ve bilgisayarımdaki 6 GB GPU yüzünden.',
-          'Dış veri setlerini ben buldum ve seçtim; el çizimi ancak iyi tanınırsa kapsama girecek.',
+          'Altı dış veri setinin dördünü ben buldum ve seçtim; el çizimi ancak iyi tanınırsa kapsama girecek.',
         ],
         ai: [
           'Ölçüm iskeleti, 40.000 örneklik sentetik veri üreticisi ve eğitim kodu (Florence-2, Pix2Struct, Qwen2-VL).',
@@ -252,15 +249,15 @@ export const tr: SiteContent = {
         status: 'Teslim edildi',
         period: 'Eki 2026',
         problem:
-          'Yerel bir bilardo kulübünün oyuncuları için turnuva maç programı ve oyuncu listeleri federasyonun sonuç portalında sayfa sayfa duruyordu. Gereken, tek bakışta okunan logolu PDF\'lerdi.',
+          'Bir bilardo turnuvasının maç programı ve oyuncu listeleri federasyonun sonuç portalında sayfa sayfa duruyordu. Gereken, il listesindeki ve yerel bir kulüpteki oyuncuların tek bakışta okuyacağı logolu PDF\'lerdi.',
         mine: [
-          'Alanı bildiğim için çıktıyı oyuncu oyuncu denetledim.',
+          'Alanı bildiğim için çıktıyı kendim denetledim.',
           'Yapay zekânın iki hatasını yakaladım: iki grubun maç tarihleri yanlış çekilmişti, il listesindeki herkes kulübün oyuncusu sayılmıştı.',
           '13 oyuncuyu federasyon numaralarıyla kendim eşledim.',
         ],
         ai: ['Portaldan veriyi çekme, tabloya dökme ve logolu PDF düzeni.'],
         evidence: [
-          '59 oyuncunun maç programı (46 + 13) · 28 Eki 2026',
+          '59 oyuncunun maç programı: il listesinden 46, kulüpten 13 · 28 Eki 2026',
           'Oyuncu listesi PDF\'leri · 22 Eki 2026',
           'Tek seferlik iş; tekrar kullanılabilir bir araç değil',
         ],
@@ -271,9 +268,9 @@ export const tr: SiteContent = {
   games: {
     title: 'Oyun tasarımı',
     intro:
-      'Üç oyun, üç ayrı olgunlukta: oynanır bir Unity prototipi, çekirdeği çalışan bir tarım oyunu ve henüz yalnız kâğıtta duran bir dünya. Burada gösterdiğim kod değil, tasarım kararları.',
+      'Oynanır bir Unity prototipi, çekirdeği çalışan bir tarım oyunu ve yalnız kâğıtta duran bir dünya. Her birinden iki tasarım kararı.',
     disclaimer:
-      'Kod yapay zekânın, kararlar benim. Alıntılar o günkü promptlarımdan birebir; kısalttığım yer "…" ile işaretli, yazım düzeltilmedi.',
+      'Kod yapay zekânın, kararlar benim. Alıntılar o günkü promptlarımdan birebir; kısalttığım yer “…” ile işaretli, yazım düzeltilmedi.',
     items: [
       {
         id: 'hex-zar',
@@ -292,11 +289,6 @@ export const tr: SiteContent = {
             quote: '…oyuna her seferinde yeniden oynanabilirlik katar gibi hissediyorum',
             date: '17 Eki 2026',
           },
-          {
-            decision: 'Derinlik önce stratejide aranır; yapay zekâ bana sormadan mekanik eklemez.',
-            quote: '…daha stratejik bir oynanış arıyorum ama bana sormadan bir şey ekleme',
-            date: '17 Eki 2026',
-          },
         ],
       },
       {
@@ -304,21 +296,16 @@ export const tr: SiteContent = {
         name: 'Laminel-Farm',
         status: 'Unity · ilk alt proje sürüyor · yayında değil',
         summary:
-          'Zombi ve uzaylı tehdidi altındaki çok katlı bir apartmanda, ışığın her şey olduğu dikey tarım oyunu. Aynı bitki konduğu yere göre 2 saatte de 6 saatte de büyür; oyunun kalbi yerleşim bulmacası. Sahneyi Unity editöründe ben kuruyorum, kodu yapay zekâ yazıyor.',
+          'Zombi ve uzaylı tehdidi altındaki çok katlı bir apartmanda geçen, ışığa dayalı dikey tarım oyunu. Aynı bitki konduğu yere göre 2 saatte de 6 saatte de büyür; oyun bir yerleşim bulmacasına dayanır. Sahneyi Unity editöründe ben düzenliyorum.',
         decisions: [
           {
             decision: 'Önce oynanabilirlik: stil ve 3D model işi, oyunun oynanır olduğu görülene kadar tamamen ertelendi.',
             quote: '…önce oyun oynanılabilir mi test etmek için stilize ve model yapma işini şimdilik komple bırakalım',
-            date: '11 Eki 2026',
+            date: '12 Eki 2026',
           },
           {
             decision: 'Güneş isteyen bitkiler pencere kenarına mecbur. Orada yer az olduğu için yerleşim kararı her seferinde bir bedel taşır.',
             quote: '…güneş isteyen bitkiler mecbur cama yakın duracak',
-            date: '12 Eki 2026',
-          },
-          {
-            decision: 'Kışın ekilecek şey azalınca oyuncunun eli boş kalmasın: yalnız kışa özel bir etkinlik.',
-            quote: 'bu arada kış için dikilecek şeyler azaldığından sadece kışın yapılabilecek etkinlik bulmalıyız bence',
             date: '12 Eki 2026',
           },
         ],
@@ -328,18 +315,14 @@ export const tr: SiteContent = {
         name: 'Kabuk',
         status: 'Yalnız tasarım · kod yok',
         summary:
-          'Gökyüzünün yerinde insanların kendi yaptığı bir kabuğun durduğu bir dünyada geçen, D&D 5e SRD kurallarına dayanan izometrik aksiyon MMORPG tasarımı. Ana döngü: tehlikeli bölgeye gir, ganimeti sağ çıkar. 11 oyun ve 6 ekonomi kararı yazılı.',
+          'Gökyüzünün yerinde insanların kendi yaptığı bir kabuğun durduğu bir dünyada geçen, D&D 5e SRD kurallarına dayanan izometrik aksiyon MMORPG tasarımı. Ana döngü: tehlikeli bölgeye gir, ganimeti sağ çıkar. 11 oyun ve 6 ekonomi kararı yazılı. Bu kararlar için birebir alıntı yok; kaynak, Eylül oturumlarının özet kaydı: seçenekleri yapay zekâ sundu, sınırı ben çizdim.',
         decisions: [
           {
-            decision: 'Tek kişilik bir masa hikâyesi değil, gerçek bir çok oyunculu video oyunu. Aynı dünyada masa oyunu en sona kaldı.',
+            decision: 'Gerçek bir çok oyunculu video oyunu olacak; tek kişilik masa hikâyesi fikrinden döndüm. Aynı dünyada masa oyunu en sona kaldı.',
             date: '24 Eyl 2026',
           },
           {
-            decision: 'Seviye kalıcı bir tırmanış değil. Güç, taşınan bir enerji çekirdeğinde durur; oyuncu baskına hangi çekirdekle gireceğini seçer, ölürse o çekirdeği kaybeder.',
-            date: '24 Eyl 2026',
-          },
-          {
-            decision: 'Eşya seviyesi kasmak yok. Sıradan eşyalar birbirinin üstü değil alternatifi; güç, nadir kadim eşyalardan ve çekirdekten gelir.',
+            decision: 'Güç kalıcı seviyede birikmez, taşınan bir enerji çekirdeğinde durur: oyuncu baskına hangi çekirdekle gireceğini seçer, ölürse onu kaybeder.',
             date: '24 Eyl 2026',
           },
         ],
@@ -350,15 +333,15 @@ export const tr: SiteContent = {
   skills: {
     title: 'Beceriler',
     intro:
-      'Üç seviye, yüzde yok. Her satırın yanında tek satır kanıt var. Yalnız eski CV\'mde geçen ve başka kanıtı olmayan kalemleri buraya almadım.',
+      'Her satırda bir seviye ve tek satır kanıt var. Eski CV\'mde geçip başka kanıtı olmayan kalemleri almadım.',
     levels: {
       hands: {
-        label: 'Elle bilirim',
-        description: 'Kendim yaparım: karar, bilgi ya da iş benden çıkar; yapay zekâsız da yaparım.',
+        label: 'Kendim yaparım',
+        description: 'Karar, bilgi ya da iş benden çıkar; yapay zekâ olmadan da yaparım.',
       },
       directed: {
         label: 'Yöneterek yaptım',
-        description: 'Yapay zekâya yaptırdım: işi tanımladım, test ettim, karar verdim. Kodu ben yazmadım.',
+        description: 'İşi tanımlayıp yapay zekâya yaptırdım; sonucu test edip kararı ben verdim.',
       },
       touched: {
         label: 'Dokundum',
@@ -372,27 +355,27 @@ export const tr: SiteContent = {
           {
             name: 'Yapay zekâ çıktısını denetleme, hata yakalama',
             level: 'hands',
-            evidence: 'Turnuva PDF\'lerinde yanlış çekilen grup tarihlerini ve yanlış kulübe atanan oyuncuları yakaladım (22 ve 28 Eki 2026).',
+            evidence: 'Turnuva PDF\'lerindeki iki veri hatasını alanı bildiğim için yakaladım (22 ve 28 Eki 2026).',
           },
           {
-            name: 'İş tanımı ve test kapısıyla teslim',
-            level: 'directed',
-            evidence: 'Kapı şartını ben koyarım, kapıları yapay zekâ yazar: Tepsi 17/17, Oyun Yolculuğu K1-K7 (7 Kas 2026).',
+            name: '“Bitti” şartını koyma ve onaylama',
+            level: 'hands',
+            evidence: 'Kapı geçmeden bitti sayılmaz şartını ben koyarım; kapı raporu geçince onayı ben veririm (Eki-Kas 2026).',
           },
           {
-            name: 'Alt ajanlarla paralel çalışma, model seçimi',
+            name: 'Test kapısı ve ölçüm kodu yazdırma',
             level: 'directed',
-            evidence: 'Hex-Zar v0.6: sekiz görev alt ajanlara bölündü, sonra genel inceleme (26 Eki 2026).',
+            evidence: 'Kapıları çoğunlukla yapay zekâ önerir ve yazar: Tepsi, Oyun Yolculuğu, Devre Okuyucu (Eki-Kas 2026).',
           },
           {
-            name: 'Bağlam ve hafıza düzeni (CLAUDE.md, skill, durum panoları)',
+            name: 'Çalışma düzeni: hafıza panoları, alt ajanlar, model seçimi',
             level: 'directed',
-            evidence: 'Panolar fikri benden: "daha az token tüketimi ile daha iyi sonuçlar alırız" (25 Eki 2026).',
+            evidence: 'Panolar fikri, alt ajan ilkesi (bilgi ana oturumda toplanır, ajanlar paralel çalışır) ve model bölüşümü (toplama Sonnet, yargı Opus) benden (Eki-Kas 2026).',
           },
           {
             name: 'MCP sunucusu kurma ve bağlama',
-            level: 'hands',
-            evidence: 'Unity MCP\'yi depo adresinden seçip editörde yapılandırdım (26 Eki 2026).',
+            level: 'directed',
+            evidence: 'Unity MCP deposunu ben seçtim; kurulumu Claude Code yaptı, editördeki yapılandırmayı ben tamamladım (26 Eki 2026).',
           },
         ],
       },
@@ -400,29 +383,19 @@ export const tr: SiteContent = {
         title: 'Ürün ve oyun tasarımı',
         items: [
           {
-            name: 'Kullanıcı gözleminden gereksinim çıkarma',
+            name: 'Kullanıcı gözleminden gereksinim, kullanılabilirlik eleştirisi',
             level: 'hands',
-            evidence: 'Tepsi\'nin tasarımı, tariflerin nerede kaybolduğuna dair gözlemime dayanıyor (22 Eki 2026).',
+            evidence: 'Tepsi bir gözlemime dayanıyor (22 Eki); Oyun Yolculuğu panosunu yeni başlayan için fazla karmaşık bulup yeniden kurdurdum (7 Kas 2026).',
           },
           {
-            name: 'Kullanılabilirlik eleştirisi',
+            name: 'Kapsam daraltma, öncelik koyma',
             level: 'hands',
-            evidence: 'Oyun Yolculuğu panosunu yeni başlayan için fazla karmaşık bulup yeniden kurdurdum (7 Kas 2026).',
+            evidence: 'Devre Okuyucu\'da önceliği modelin kalitesine, kısıtı 6 GB GPU\'ya göre koydum (13 Eki 2026).',
           },
           {
-            name: 'Kapsam daraltma, eksen koyma',
+            name: 'Oyun mekaniği, sistem tasarımı, oyun analizi',
             level: 'hands',
-            evidence: 'Devre Okuyucu: teslim takvimi yerine "modeli en iyi yere getirmek" eksenini koydum (13 Eki 2026).',
-          },
-          {
-            name: 'Oyun mekaniği ve sistem tasarımı',
-            level: 'hands',
-            evidence: 'Hex-Zar, Laminel-Farm ve Kabuk\'un kilit kararları benim; yukarıda tarihli alıntılarla.',
-          },
-          {
-            name: 'Oyun inceleme çerçevesi',
-            level: 'hands',
-            evidence: 'Çerçevenin ilk 8 kategorisini ben koydum; 159 incelemenin metnini yapay zekâ yazdı (Ağu-Kas 2026).',
+            evidence: 'Hex-Zar ve Laminel-Farm\'da tarihli alıntılarla yukarıda; oyun inceleme çerçevesinin ilk 8 kategorisini de ben koydum (Ağu 2026).',
           },
         ],
       },
@@ -431,48 +404,23 @@ export const tr: SiteContent = {
         items: [
           {
             name: 'Git ve GitHub (dal, birleştirme, etiket)',
-            level: 'hands',
-            evidence: '2022\'den beri GitHub\'dayım; dal açma, birleştirme ve sürüm etiketi kararlarını ben veririm.',
-          },
-          {
-            name: 'React (temel)',
-            level: 'hands',
-            evidence: 'Stajda şirket tanıtım sitesini React ile yapıp GitHub üzerinden yayına aldım (Tem 2025).',
-          },
-          {
-            name: 'Web: PWA, vanilla JavaScript, Node',
             level: 'directed',
-            evidence: 'Tepsi PWA ve bağımlılıksız Node ile yazılan Oyun Yolculuğu (Kas 2026).',
+            evidence: 'Dal, birleştirme ve sürüm etiketi kararlarını ben veririm; komutları çoğunlukla yapay zekâ çalıştırır.',
           },
           {
-            name: 'Python',
+            name: 'Web, masaüstü ve mobil (PWA, Node, FastAPI, Windows kurulumu, Kotlin)',
             level: 'directed',
-            evidence: 'Devre Okuyucu\'nun veri üreticisi, ölçüm ve eğitim kodu (Eki-Kas 2026).',
+            evidence: 'Tepsi PWA, Oyun Yolculuğu (Node), data_annotate (FastAPI), ytmp3pldl kurulumu, yaşlılar için Android başlatıcı easy-phone (Ağu-Kas 2026).',
           },
           {
-            name: 'Arka uç (FastAPI, sunucu fonksiyonu)',
-            level: 'directed',
-            evidence: 'data_annotate (FastAPI) ve Tepsi\'nin paylaşım fonksiyonu; elle arka uç yazmadım.',
-          },
-          {
-            name: 'Unity editörü',
+            name: 'Unity editöründe sahne düzenleme (temel)',
             level: 'hands',
             evidence: 'Laminel-Farm\'da odayı ve pencereleri editörde kendim düzenledim (12 Eki 2026).',
           },
           {
             name: 'C# (Unity)',
             level: 'directed',
-            evidence: 'Laminel-Farm 57, Hex-Zar 53 commit; kodu yapay zekâ yazdı (Eki-Kas 2026).',
-          },
-          {
-            name: 'Windows paketleme ve otomatik güncelleme',
-            level: 'directed',
-            evidence: 'ytmp3pldl v1.0.0: Inno Setup kurulumu, SHA256 doğrulamalı güncelleme (30 Eki 2026).',
-          },
-          {
-            name: 'Android (Kotlin)',
-            level: 'directed',
-            evidence: 'easy-phone, yaşlılar için Android başlatıcı: 15/15 kapı; gerçek kullanıcıda denenmedi (16 Eyl 2026).',
+            evidence: 'Laminel-Farm ve Hex-Zar: 57 ve 53 commit (Eki-Kas 2026).',
           },
           {
             name: 'Donanım, işletim sistemi kurulumu, teknik destek',
@@ -480,19 +428,9 @@ export const tr: SiteContent = {
             evidence: 'Üniversite bilgi işleminde imaj, format, RAM/SSD/güç kaynağı değişimi (Nis-Haz 2025).',
           },
           {
-            name: 'Flutter / Dart',
+            name: 'React, Flutter / Dart, Java (temel)',
             level: 'touched',
-            evidence: '2025\'te DersAI: Flutter + Firebase, iki herkese açık repo. Bugün paslı.',
-          },
-          {
-            name: 'Sunucuya kurulum ve alan adı',
-            level: 'touched',
-            evidence: 'Stajda bir siteyi yayına aldım; Tepsi\'nin kurulumu hâlâ bende bekliyor.',
-          },
-          {
-            name: 'Java',
-            level: 'touched',
-            evidence: '2022\'de çevrim içi bir Java kampının alıştırmaları; herkese açık repo.',
+            evidence: 'Stajda iki günde tek sayfalık şirket sitesini React ile yapıp yayına aldım (Tem 2025); DersAI (Flutter, 2025) ve Java kampı (2022) herkese açık repolarda.',
           },
         ],
       },
@@ -502,32 +440,22 @@ export const tr: SiteContent = {
           {
             name: 'YOLO ile nesne tespiti (veri, etiket, eğitim, değerlendirme)',
             level: 'hands',
-            evidence: 'Stajda model kapalı yüksükleri kaçırınca veri setini iki sınıfa yeniden etiketledim (Tem-Ağu 2025).',
+            evidence: 'Stajda modelin kapalı yüksükleri kaçırdığını fark edip veri setini iki sınıfa yeniden etiketledim (Tem-Ağu 2025).',
           },
           {
             name: 'Veri seti seçimi ve kalite yargısı',
             level: 'hands',
-            evidence: 'Devre Okuyucu\'nun dış veri setlerinden dördünü ben buldum ve seçtim (21 Eki 2026).',
+            evidence: 'Devre Okuyucu\'nun altı dış veri setinin dördünü ben buldum ve seçtim (21 Eki 2026).',
           },
           {
-            name: 'Görüntü-dil modeli ince ayarı (Florence-2, Pix2Struct, Qwen2-VL)',
+            name: 'Python ile görüntü-dil modeli ince ayarı (Florence-2, Pix2Struct, Qwen2-VL)',
             level: 'directed',
-            evidence: 'Kavramları bu projede öğreniyorum; ilk eğitim aşaması sürüyor, sonuç yok (Kas 2026).',
+            evidence: 'Devre Okuyucu\'nun veri üreticisi, ölçümü ve eğitim kodu; kavramları bu projede öğreniyorum, sonuç henüz yok (Eki-Kas 2026).',
           },
           {
-            name: 'Süperpiksel ile görüntü etiketleme (SLIC)',
-            level: 'directed',
-            evidence: 'data_annotate: ilk fikir benden, her turda aracı kullanıp hatayı geri getirdim (Ağu 2026).',
-          },
-          {
-            name: 'Temel makine öğrenmesi (scikit-learn)',
+            name: 'scikit-learn, TensorFlow / Keras',
             level: 'touched',
-            evidence: '2025 ders defterleri: regresyon, karar ağacı, random forest; herkese açık repo.',
-          },
-          {
-            name: 'TensorFlow / Keras',
-            level: 'touched',
-            evidence: '2024\'te VGG19 ile neural style transfer defteri; herkese açık repo.',
+            evidence: '2024-25 defterleri: regresyon, karar ağacı, VGG19 ile stil aktarımı; herkese açık repolar.',
           },
         ],
       },
@@ -555,7 +483,7 @@ export const tr: SiteContent = {
           'Şirket tanıtımı için tek sayfalık React sitesini yaptım ve GitHub üzerinden yayına aldım.',
           'Mobil uygulamanın giriş, kayıt, profil, bildirim ve ana sayfa ekranlarını tasarlayıp arka uca bağlaması için ekip arkadaşıma devrettim.',
           'YOLOv8 ile arılarda varroa ve kovanda ana arı yüksüğü tespiti modelleri eğittim; model kapalı yüksükleri kaçırınca veri setini iki sınıfa yeniden etiketledim.',
-          'Precision ve recall hedefin altında kaldı; hatalarıyla birlikte Notion\'da raporladım.',
+          'Precision ve recall staj sonunda hâlâ zayıftı; sonuçları hatalarıyla birlikte Notion\'da raporladım.',
         ],
       },
       {

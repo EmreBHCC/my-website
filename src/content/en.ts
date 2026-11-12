@@ -34,11 +34,12 @@ export const en: SiteContent = {
     decision: 'Decision',
     originalQuote: 'Original (Turkish)',
     opensInNewTab: '(opens in a new tab)',
+    tracksLabel: 'Areas of work',
   },
 
   tracks: {
     ai: {
-      label: 'Shipping with AI',
+      label: 'Building with AI',
       note: 'Work I defined, had AI build, and verified with tests.',
     },
     product: {
@@ -47,16 +48,16 @@ export const en: SiteContent = {
     },
     game: {
       label: 'Game design',
-      note: 'The mechanics and system decisions are mine; the code is the AI\'s.',
+      note: 'Games where I make the mechanics and systems decisions.',
     },
   },
 
   hero: {
     eyebrow: 'Kayseri, Türkiye · Final-year computer engineering student · Junior roles and internships, remote or on-site',
     name: 'Emre Bahçeci',
-    headline: ['I define the work,', 'build it with AI,', 'and prove it with tests.'],
+    headline: ['I define the work,', 'build it with AI,', 'and verify it with tests.'],
     lede:
-      'I mostly don\'t write the code myself. I decide what gets built and for whom, tie "done" to tests a machine can run, then use the result myself and catch what\'s wrong. Every project below lists my part and the AI\'s part side by side.',
+      'I mostly don\'t write the code myself. I decide what gets built and for whom, tie "done" to tests a machine can run, and in the work I use myself I catch what the tests miss. Every project below lists my part and the AI\'s part side by side.',
     cta: {
       github: 'GitHub',
       cv: 'CV',
@@ -66,15 +67,15 @@ export const en: SiteContent = {
 
   how: {
     title: 'How I work',
-    intro: 'Four steps. I do the first three on every project; the fourth is my weak spot.',
+    intro: 'The first two are part of all my code work. The work where I did the third held up best. The fourth is my weak spot.',
     steps: [
       {
         title: 'Define the work',
-        body: 'Who it\'s for, what the problem is, what stays out. Tepsi, a recipe app, is built on something I saw: recipes get scattered across WhatsApp, paper and phone notes, and people forget the ones they shared.',
+        body: 'Who it\'s for, what the problem is, what stays out. On Tepsi all three were settled before any code was written: homemakers, recipes that get scattered and forgotten, nothing to sell.',
       },
       {
         title: 'Tie "done" to a gate',
-        body: 'On my code projects, "done" means checks a machine can run have passed, like "17/17 gates pass". The AI usually writes the checks; I set the requirement and sign off. On Tepsi the targets were frozen before the build and no threshold was lowered afterwards.',
+        body: 'On my code projects, "done" means checks a machine can run have passed. I set the rule that nothing counts as done until the gates pass; the AI usually proposes and writes the gates, and I sign off. On Tepsi the targets were frozen before the build and no threshold was lowered afterwards.',
       },
       {
         title: 'Use it, catch the errors',
@@ -82,13 +83,14 @@ export const en: SiteContent = {
       },
       {
         title: 'Ship it',
-        body: 'My weakest step. Of roughly 20 projects I started in the last two and a half months, one has a published release (ytmp3pldl v1.0.0). Tepsi\'s deployment and domain are still waiting on me.',
+        body: 'Of roughly 20 projects I started in the last two and a half months, one has a published release: ytmp3pldl v1.0.0. Tepsi\'s server setup and domain are still waiting on me.',
+        open: true,
       },
     ],
     proofs: [
       {
         value: '500+',
-        label: 'commits I directed across 15+ repos; the AI wrote the code',
+        label: 'commits I directed across 15+ repos',
         date: 'Aug-Nov 2026',
       },
       {
@@ -106,19 +108,14 @@ export const en: SiteContent = {
         label: 'ytmp3pldl: from first request to public v1.0.0 release',
         date: '30-31 Oct 2026',
       },
-      {
-        value: '1 / ~20',
-        label: 'projects with a published release',
-        date: '11 Nov 2026',
-      },
     ],
-    note: 'The AI wrote the code for the work on this site. That\'s why I don\'t say "I developed it"; I say "I defined it, directed it and verified it with tests". The code I wrote by hand dates from 2025 and earlier, and it\'s marked separately under Skills.',
+    note: 'The AI wrote the code for the work on this site. That\'s why I don\'t say "I developed it"; I say "I defined it, directed it and verified it with tests". The code I wrote without an AI agent dates from 2025 and earlier; back then I used Cursor as my editor. It\'s marked separately under Skills.',
   },
 
   work: {
     title: 'Selected work',
     intro:
-      'Six projects. Each one shows the problem, my part, the AI\'s part and the evidence; every number in the evidence is dated. Links only where the work is public.',
+      'Every number in the evidence carries its date. Only public work has a link; the rest lives on my machine or with the people it was delivered to.',
     items: [
       {
         id: 'oyun-yolculugu',
@@ -130,13 +127,13 @@ export const en: SiteContent = {
           'A step-by-step guide that teaches someone with no experience how to make a game with AI, plus a dashboard that updates live in the browser while they work with Claude Code. To show the guide works, a small web game, Hex-Zar web, was built from scratch by following its steps.',
         mine: [
           'I set the idea and the audience: someone who knows nothing should be able to look at it and see how they would make a game (5 Nov 2026).',
-          'I decided what the guide teaches: not which code to write, but what is done, why, and where.',
+          'I chose what the guide teaches: less the code itself, more what is done, why, and where.',
           'I used the dashboard and sent it back: too complex for a beginner (7 Nov 2026). It was rebuilt.',
           'I picked a small web version of Hex-Zar as the sample game.',
         ],
         ai: [
           'All of the guide text, the dashboard, the Claude Code hooks and the tests.',
-          'The learner prompts in the sample run and the game\'s visual style. AI sessions made those calls, not me.',
+          'The learner prompts in the sample run and the game\'s visual style also came from AI sessions.',
         ],
         evidence: [
           '48 commits · 5-7 Nov 2026',
@@ -153,7 +150,7 @@ export const en: SiteContent = {
         status: 'Released, v1.0.0',
         period: 'Oct 2026',
         problem:
-          'Turn a Python download script that ran on one computer into an app that installs on other Windows machines without Python and keeps itself up to date. The case here is the packaging and update work, not the product.',
+          'Turn a Python download script that ran on one computer into an app that installs on other Windows machines without Python and keeps itself up to date. The case is less the product than the packaging and update work.',
         mine: [
           'The decision to turn the script into an installable app.',
           'The idea that the app checks GitHub for its own new version.',
@@ -194,30 +191,30 @@ export const en: SiteContent = {
           'Turns above 400k tokens: 19% → 0% · 25 → 29 Oct 2026',
           'Turns above 200k tokens: 54% → 28% · 25 Oct → 6 Nov 2026',
           'Not fixed: share of the 10 most expensive sessions 56% → 77% · 6 Nov 2026',
-          'Package tested on 2 fresh Claude setups · 25 Oct 2026',
+          'Package run by two Sonnet subagents with no prior context; the 15 issues they found were fixed · 25 Oct 2026',
         ],
       },
       {
         id: 'tepsi',
         name: 'Tepsi: recipe notebook',
         track: 'product',
-        status: 'Runs locally, not published',
+        status: 'Runs locally; I deliberately put it aside before testing it with a real user',
         period: 'Oct-Nov 2026',
         problem:
-          'Homemakers keep recipes in WhatsApp, on paper, in phone notes and in notebooks, and struggle to remember the recipes they\'ve given each other. Not something to sell: a recipe notebook for them that also works offline.',
+          'From what I\'ve seen, recipes get scattered across WhatsApp, paper, phone notes and notebooks. A notebook for homemakers that keeps recipes in one place and also works offline.',
         mine: [
-          'The observation: they ask each other for recipes and later struggle to remember what they gave (22 Oct 2026). The design is built on it.',
+          'The observation: they ask each other for recipes and later struggle to remember what they gave (22 Oct 2026).',
           'The scope: not for selling, for homemakers (22 Oct 2026). Recipes stay with their owner.',
           'I approved the core definition of "done": notebook, importing recipes from WhatsApp, account-free link sharing, PDF export.',
-          'I deliberately put it aside before testing it with a real user.',
         ],
         ai: [
           'The whole PWA: rule-based recipe parser, offline mode, share links, test gates. 9 commits in a single day.',
+          'The proposal for the core definition of "done".',
         ],
         evidence: [
           '17/17 test gates PASS · 7 Nov 2026',
-          '100% accuracy, 0 unit errors on a 30-recipe test set; 100% on the hidden set too · 7 Nov 2026',
-          'Deployment and real user test: not done',
+          '100% accuracy, 0 unit errors on 30 sample recipes written by the AI; 100% on a 10-recipe hidden set prepared beforehand by a separate session · 7 Nov 2026',
+          'Trial with real WhatsApp messages, server setup and user test: not done',
         ],
       },
       {
@@ -227,12 +224,12 @@ export const en: SiteContent = {
         status: 'In progress; no model results yet',
         period: 'Oct 2026 - ongoing',
         problem:
-          'Vision-language models can find the components in a circuit schematic but miss the connections between them. A system that extracts components and connections from a schematic image and turns them into a netlist.',
+          'I saw vision-language models find the components in a circuit schematic but miss the connections between them; the project measures this. The goal is a system that turns a schematic image, components and connections, into a netlist.',
         mine: [
-          'The topic came from something I ran into: an AI misread a circuit image, and I noticed because the result made no sense.',
-          'The axis: not the delivery schedule, but getting our model as far as it can go (13 Oct 2026).',
+          'I found the topic: I noticed a circuit image had been misread because the result made no sense.',
+          'The priority: model quality first, getting our model as far as it can go (13 Oct 2026).',
           'The constraint: no large models as the base, because of cost and the 6 GB GPU in my computer.',
-          'I found and picked the external datasets; hand-drawn schematics only come in if they can be recognized well.',
+          'I found and picked four of the six external datasets; hand-drawn schematics only come in if they can be recognized well.',
         ],
         ai: [
           'The measurement framework, a synthetic data generator with 40,000 samples, and the training code (Florence-2, Pix2Struct, Qwen2-VL).',
@@ -252,15 +249,15 @@ export const en: SiteContent = {
         status: 'Delivered',
         period: 'Oct 2026',
         problem:
-          'For the players of a local billiards club, the tournament schedule and player lists sat page by page on the federation\'s results portal. What was needed: branded PDFs you can read at a glance.',
+          'A billiards tournament\'s match schedule and player lists sat page by page on the federation\'s results portal. What was needed: branded PDFs that players from a provincial list and a local club could read at a glance.',
         mine: [
-          'I know the domain, so I checked the output player by player.',
+          'I know the domain, so I checked the output myself.',
           'I caught two AI errors: two groups\' match dates were pulled wrong, and everyone on the provincial list had been counted as a club player.',
           'I matched 13 players by their federation IDs myself.',
         ],
         ai: ['Pulling the data from the portal, tabulating it, and the branded PDF layout.'],
         evidence: [
-          'Match schedule for 59 players (46 + 13) · 28 Oct 2026',
+          'Match schedule for 59 players: 46 from the provincial list, 13 from the club · 28 Oct 2026',
           'Player list PDFs · 22 Oct 2026',
           'One-off job; not a reusable tool',
         ],
@@ -271,7 +268,7 @@ export const en: SiteContent = {
   games: {
     title: 'Game design',
     intro:
-      'Three games at three stages: a playable Unity prototype, a farming game with a working core, and a world that so far exists only on paper. What I\'m showing here is design decisions, not code.',
+      'A playable Unity prototype, a farming game with a working core, and a world that exists only on paper. Two design decisions from each.',
     disclaimer:
       'The code is the AI\'s; the decisions are mine. Quotes are translated from my prompts on that day; the Turkish original is verbatim, with cuts marked "…" and spelling left as is.',
     items: [
@@ -294,12 +291,6 @@ export const en: SiteContent = {
             quoteOriginal: '…oyuna her seferinde yeniden oynanabilirlik katar gibi hissediyorum',
             date: '17 Oct 2026',
           },
-          {
-            decision: 'Depth comes from strategy first; the AI doesn\'t add mechanics without asking me.',
-            quote: '…I\'m after more strategic play, but don\'t add anything without asking me',
-            quoteOriginal: '…daha stratejik bir oynanış arıyorum ama bana sormadan bir şey ekleme',
-            date: '17 Oct 2026',
-          },
         ],
       },
       {
@@ -307,24 +298,18 @@ export const en: SiteContent = {
         name: 'Laminel-Farm',
         status: 'Unity · first subproject in progress · not published',
         summary:
-          'A vertical farming game set in a multi-storey apartment block under zombie and alien threat, where light is everything. The same plant grows in 2 hours or 6 depending on where you put it; the heart of the game is a placement puzzle. I build the scenes in the Unity editor; the AI writes the code.',
+          'A light-driven vertical farming game set in a multi-storey apartment block under zombie and alien threat. The same plant grows in 2 hours or 6 depending on where you put it; the game rests on a placement puzzle. I lay out the scenes in the Unity editor.',
         decisions: [
           {
             decision: 'Playability first: art style and 3D models were shelved entirely until the game proved playable.',
             quote: '…to test first whether the game is playable, let\'s drop the stylized art and modeling work completely for now',
             quoteOriginal: '…önce oyun oynanılabilir mi test etmek için stilize ve model yapma işini şimdilik komple bırakalım',
-            date: '11 Oct 2026',
+            date: '12 Oct 2026',
           },
           {
             decision: 'Sun-loving plants have to sit by the window. Space there is scarce, so every placement has a cost.',
             quote: '…plants that need sun will have to stay near the window',
             quoteOriginal: '…güneş isteyen bitkiler mecbur cama yakın duracak',
-            date: '12 Oct 2026',
-          },
-          {
-            decision: 'When there\'s less to plant in winter, the player shouldn\'t be left idle: a winter-only activity.',
-            quote: 'by the way, since there\'s less to plant in winter, I think we should find an activity you can only do in winter',
-            quoteOriginal: 'bu arada kış için dikilecek şeyler azaldığından sadece kışın yapılabilecek etkinlik bulmalıyız bence',
             date: '12 Oct 2026',
           },
         ],
@@ -334,18 +319,14 @@ export const en: SiteContent = {
         name: 'Kabuk',
         status: 'Design only · no code',
         summary:
-          'An isometric action MMORPG design based on the D&D 5e SRD, set in a world where a shell built by people stands in place of the sky. Core loop: go into a dangerous zone and get the loot out alive. 11 game decisions and 6 economy decisions are written down.',
+          'An isometric action MMORPG design based on the D&D 5e SRD, set in a world where a shell built by people stands in place of the sky. Core loop: go into a dangerous zone and get the loot out alive. 11 game decisions and 6 economy decisions are written down. There are no verbatim quotes for these; the source is the summary log of the September sessions: the AI offered options, I drew the lines.',
         decisions: [
           {
-            decision: 'Not a single-player tabletop story but a real multiplayer video game. A tabletop version in the same world comes last.',
+            decision: 'It will be a real multiplayer video game; I turned away from the idea of a single-player tabletop story. A tabletop version in the same world comes last.',
             date: '24 Sep 2026',
           },
           {
-            decision: 'Level isn\'t a permanent climb. Power lives in an energy core you carry; players choose which core to take into a raid and lose it if they die.',
-            date: '24 Sep 2026',
-          },
-          {
-            decision: 'No item-tier grind. Ordinary items are alternatives, not upgrades; power comes from rare ancient items and from the core.',
+            decision: 'Power doesn\'t pile up in permanent levels; it lives in an energy core you carry. Players choose which core to take into a raid and lose it if they die.',
             date: '24 Sep 2026',
           },
         ],
@@ -356,18 +337,18 @@ export const en: SiteContent = {
   skills: {
     title: 'Skills',
     intro:
-      'Three levels, no percentages. Each row has a one-line piece of evidence. Items that only appeared on my old CV with nothing else to back them up are left out.',
+      'Each row has a level and one line of evidence. Items that only appeared on my old CV with nothing else to back them up are left out.',
     levels: {
       hands: {
         label: 'Hands-on',
-        description: 'I do this myself: the call, the know-how or the work comes from me, and I can do it without AI.',
+        description: 'The call, the know-how or the work comes from me; I can do it without AI.',
       },
       directed: {
         label: 'Directed',
-        description: 'I had AI build it: I defined the work, tested it and made the calls. I didn\'t write the code.',
+        description: 'I defined the work and had AI do it; I tested the result and made the calls.',
       },
       touched: {
-        label: 'Touched',
+        label: 'Some exposure',
         description: 'Tried it or used it at coursework level; my depth is limited.',
       },
     },
@@ -378,27 +359,27 @@ export const en: SiteContent = {
           {
             name: 'Reviewing AI output, catching errors',
             level: 'hands',
-            evidence: 'Caught wrongly pulled group dates and players assigned to the wrong club in the tournament PDFs (22 and 28 Oct 2026).',
+            evidence: 'Caught two data errors in the tournament PDFs because I know the domain (22 and 28 Oct 2026).',
           },
           {
-            name: 'Defining work and shipping behind test gates',
-            level: 'directed',
-            evidence: 'I set the gate requirement, the AI writes the gates: Tepsi 17/17, Game Journey K1-K7 (7 Nov 2026).',
+            name: 'Setting and signing off on "done"',
+            level: 'hands',
+            evidence: 'I set the rule that nothing counts as done until the gates pass; I sign off once the gate report passes (Oct-Nov 2026).',
           },
           {
-            name: 'Parallel work with subagents, model choice',
+            name: 'Having test gates and measurement code written',
             level: 'directed',
-            evidence: 'Hex-Zar v0.6: eight tasks split across subagents, then an overall review (26 Oct 2026).',
+            evidence: 'The AI usually proposes and writes the gates: Tepsi, Game Journey, Circuit Reader (Oct-Nov 2026).',
           },
           {
-            name: 'Context and memory setup (CLAUDE.md, skills, status boards)',
+            name: 'Working setup: memory boards, subagents, model choice',
             level: 'directed',
-            evidence: 'The status boards were my idea, to get better results while spending fewer tokens (25 Oct 2026).',
+            evidence: 'The status boards, the subagent principle (knowledge gathers in the main session, agents work in parallel) and the model split (Sonnet gathers, Opus judges) came from me (Oct-Nov 2026).',
           },
           {
             name: 'Setting up and connecting MCP servers',
-            level: 'hands',
-            evidence: 'Picked the Unity MCP server from its repo and configured it in the editor (26 Oct 2026).',
+            level: 'directed',
+            evidence: 'I picked the Unity MCP repo; Claude Code installed it, and I finished the configuration in the editor (26 Oct 2026).',
           },
         ],
       },
@@ -406,29 +387,19 @@ export const en: SiteContent = {
         title: 'Product and game design',
         items: [
           {
-            name: 'Turning user observation into requirements',
+            name: 'Requirements from user observation, usability critique',
             level: 'hands',
-            evidence: 'Tepsi\'s design rests on what I saw about where recipes get lost (22 Oct 2026).',
+            evidence: 'Tepsi rests on something I observed (22 Oct); I found the Game Journey dashboard too complex for a beginner and had it rebuilt (7 Nov 2026).',
           },
           {
-            name: 'Usability critique',
+            name: 'Narrowing scope, setting priorities',
             level: 'hands',
-            evidence: 'Found the Game Journey dashboard too complex for a beginner and had it rebuilt (7 Nov 2026).',
+            evidence: 'On Circuit Reader I put model quality first and set the constraint by the 6 GB GPU (13 Oct 2026).',
           },
           {
-            name: 'Narrowing scope, setting the axis',
+            name: 'Game mechanics, systems design, game analysis',
             level: 'hands',
-            evidence: 'Circuit Reader: set "get the model as far as it can go" as the axis instead of the delivery schedule (13 Oct 2026).',
-          },
-          {
-            name: 'Game mechanics and systems design',
-            level: 'hands',
-            evidence: 'The key decisions in Hex-Zar, Laminel-Farm and Kabuk are mine; dated quotes above.',
-          },
-          {
-            name: 'Game review framework',
-            level: 'hands',
-            evidence: 'I set the first 8 categories of the framework; the AI wrote the text of all 159 reviews (Aug-Nov 2026).',
+            evidence: 'Hex-Zar and Laminel-Farm above, with dated quotes; I also set the first 8 categories of my game review framework (Aug 2026).',
           },
         ],
       },
@@ -437,48 +408,23 @@ export const en: SiteContent = {
         items: [
           {
             name: 'Git and GitHub (branches, merges, tags)',
-            level: 'hands',
-            evidence: 'On GitHub since 2022; I make the calls on branching, merging and release tags.',
-          },
-          {
-            name: 'React (basics)',
-            level: 'hands',
-            evidence: 'During my internship I built the company\'s one-page site in React and published it through GitHub (Jul 2025).',
-          },
-          {
-            name: 'Web: PWA, vanilla JavaScript, Node',
             level: 'directed',
-            evidence: 'The Tepsi PWA and Game Journey, built on Node with no dependencies (Nov 2026).',
+            evidence: 'I make the calls on branching, merging and release tags; the AI usually runs the commands.',
           },
           {
-            name: 'Python',
+            name: 'Web, desktop and mobile (PWA, Node, FastAPI, Windows installer, Kotlin)',
             level: 'directed',
-            evidence: 'Circuit Reader\'s data generator, measurement and training code (Oct-Nov 2026).',
+            evidence: 'Tepsi PWA, Game Journey (Node), data_annotate (FastAPI), the ytmp3pldl installer, easy-phone, an Android launcher for older people (Aug-Nov 2026).',
           },
           {
-            name: 'Backend (FastAPI, serverless function)',
-            level: 'directed',
-            evidence: 'data_annotate (FastAPI) and Tepsi\'s share function; I haven\'t written a backend by hand.',
-          },
-          {
-            name: 'Unity editor',
+            name: 'Scene layout in the Unity editor (basics)',
             level: 'hands',
             evidence: 'Laid out the room and windows for Laminel-Farm in the editor myself (12 Oct 2026).',
           },
           {
             name: 'C# (Unity)',
             level: 'directed',
-            evidence: 'Laminel-Farm 57, Hex-Zar 53 commits; the AI wrote the code (Oct-Nov 2026).',
-          },
-          {
-            name: 'Windows packaging and auto-update',
-            level: 'directed',
-            evidence: 'ytmp3pldl v1.0.0: Inno Setup installer, SHA256-verified updates (30 Oct 2026).',
-          },
-          {
-            name: 'Android (Kotlin)',
-            level: 'directed',
-            evidence: 'easy-phone, an Android launcher for older people: 15/15 gates; not tried with a real user (16 Sep 2026).',
+            evidence: 'Laminel-Farm and Hex-Zar: 57 and 53 commits (Oct-Nov 2026).',
           },
           {
             name: 'Hardware, OS installation, tech support',
@@ -486,19 +432,9 @@ export const en: SiteContent = {
             evidence: 'University IT department: imaging, formatting, RAM/SSD/power supply swaps (Apr-Jun 2025).',
           },
           {
-            name: 'Flutter / Dart',
+            name: 'React, Flutter / Dart, Java (basics)',
             level: 'touched',
-            evidence: 'DersAI in 2025: Flutter + Firebase, two public repos. Rusty today.',
-          },
-          {
-            name: 'Deployment and domains',
-            level: 'touched',
-            evidence: 'Published one site during my internship; Tepsi\'s deployment is still waiting on me.',
-          },
-          {
-            name: 'Java',
-            level: 'touched',
-            evidence: 'Exercises from an online Java bootcamp in 2022; public repo.',
+            evidence: 'During my internship I built the company\'s one-page site in React in two days and published it (Jul 2025); DersAI (Flutter, 2025) and a Java bootcamp (2022) are in public repos.',
           },
         ],
       },
@@ -508,32 +444,22 @@ export const en: SiteContent = {
           {
             name: 'Object detection with YOLO (data, labeling, training, evaluation)',
             level: 'hands',
-            evidence: 'During my internship, when the model missed capped queen cells, I relabeled the dataset into two classes (Jul-Aug 2025).',
+            evidence: 'During my internship I noticed the model missed sealed queen cells and relabeled the dataset into two classes (Jul-Aug 2025).',
           },
           {
             name: 'Dataset selection and quality judgment',
             level: 'hands',
-            evidence: 'Found and picked four of Circuit Reader\'s external datasets myself (21 Oct 2026).',
+            evidence: 'Found and picked four of Circuit Reader\'s six external datasets myself (21 Oct 2026).',
           },
           {
-            name: 'Vision-language model fine-tuning (Florence-2, Pix2Struct, Qwen2-VL)',
+            name: 'Vision-language model fine-tuning in Python (Florence-2, Pix2Struct, Qwen2-VL)',
             level: 'directed',
-            evidence: 'Learning the concepts on this project; the first training stage is ongoing, no results yet (Nov 2026).',
+            evidence: 'Circuit Reader\'s data generator, measurement and training code; I\'m learning the concepts on this project, no results yet (Oct-Nov 2026).',
           },
           {
-            name: 'Superpixel image labeling (SLIC)',
-            level: 'directed',
-            evidence: 'data_annotate: the initial idea was mine, and I used the tool every round and brought back the bugs (Aug 2026).',
-          },
-          {
-            name: 'Machine learning basics (scikit-learn)',
+            name: 'scikit-learn, TensorFlow / Keras',
             level: 'touched',
-            evidence: '2025 course notebooks: regression, decision trees, random forest; public repo.',
-          },
-          {
-            name: 'TensorFlow / Keras',
-            level: 'touched',
-            evidence: 'A neural style transfer notebook with VGG19 in 2024; public repo.',
+            evidence: '2024-25 notebooks: regression, decision trees, style transfer with VGG19; public repos.',
           },
         ],
       },
@@ -560,8 +486,8 @@ export const en: SiteContent = {
         points: [
           'Built a one-page company site in React and published it through GitHub.',
           'Designed the mobile app\'s login, sign-up, profile, notifications and home screens, and handed them to a teammate to wire up to the backend.',
-          'Trained YOLOv8 models to detect varroa mites on bees and queen cells in the hive; when the model missed capped queen cells, I relabeled the dataset into two classes.',
-          'Precision and recall stayed below target; I wrote it up in Notion, errors included.',
+          'Trained YOLOv8 models to detect varroa mites on bees and queen cells in the hive; when the model missed sealed queen cells, I relabeled the dataset into two classes.',
+          'Precision and recall were still weak at the end of the internship; I wrote up the results in Notion, errors included.',
         ],
       },
       {

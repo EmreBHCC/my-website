@@ -54,7 +54,7 @@ export function HowBody() {
       </ol>
 
       <Reveal className="mt-14">
-        <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="grid gap-6 sm:grid-cols-2 sm:max-w-2xl">
           {h.proofs.map((p) => (
             <div key={p.label + p.value} className="card-comic flex flex-col p-5">
               <dd className="order-1 mono-tab text-[clamp(2.2rem,1.6rem+2.2vw,3rem)] font-medium leading-none text-accent">

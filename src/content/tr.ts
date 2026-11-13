@@ -193,16 +193,6 @@ export const tr: SiteContent = {
         label: 'Son iki buçuk ayda açtığım proje',
         date: 'Ağu-Kas 2026',
       },
-      {
-        value: '40.000',
-        label: 'Devre Okuyucu için ürettiğim sentetik eğitim örneği',
-        date: '10 Kas 2026',
-      },
-      {
-        value: '~8 saat',
-        label: 'ytmp3pldl: ilk istekten herkese açık v1.0.0 sürümüne',
-        date: '30-31 Eki 2026',
-      },
     ],
     note: 'Bu bölümdeki işlerin kodunu yapay zekâ yazdı. Bu yüzden “geliştirdim” demiyorum; “tanımladım, yönettim, testle doğruladım” diyorum. Yukarıdaki Projeler bölümü ve 2025 öncesi kod benim elimden çıktı.',
   },

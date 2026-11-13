@@ -192,16 +192,6 @@ export const en: SiteContent = {
         label: 'projects I started in the last two and a half months',
         date: 'Aug-Nov 2026',
       },
-      {
-        value: '40,000',
-        label: 'synthetic training samples I generated for Circuit Reader',
-        date: '10 Nov 2026',
-      },
-      {
-        value: '~8 hours',
-        label: 'ytmp3pldl: from first request to public v1.0.0 release',
-        date: '30-31 Oct 2026',
-      },
     ],
     note: 'The AI wrote the code for the work in this section. That\'s why I don\'t say "I developed it"; I say "I defined it, directed it and verified it with tests". The Projects section above and my code from before 2025 are my own hands.',
   },

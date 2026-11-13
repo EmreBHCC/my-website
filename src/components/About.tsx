@@ -14,6 +14,17 @@ export function About() {
               <p key={p}>{p}</p>
             ))}
           </div>
+          <div className="mt-10 max-w-[64ch]">
+            <h3 className="text-2xl">{a.languages.title}</h3>
+            <ul className="mt-4 border-b border-line">
+              {a.languages.items.map((l) => (
+                <li key={l.name} className="grid gap-x-6 gap-y-1 border-t border-line py-3 sm:grid-cols-[8rem_minmax(0,1fr)]">
+                  <span className="font-medium">{l.name}</span>
+                  <span className="text-muted">{l.note}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
         <Reveal>
           <dl className="card-comic p-5">
@@ -25,15 +36,6 @@ export function About() {
               </div>
             ))}
           </dl>
-          <h3 className="mono-tab mt-8 text-xs uppercase tracking-wider text-muted">{a.languages.title}</h3>
-          <ul className="mt-2 border-b border-line">
-            {a.languages.items.map((l) => (
-              <li key={l.name} className="border-t border-line py-3">
-                <span className="font-medium">{l.name}</span>
-                <span className="block text-sm text-muted">{l.note}</span>
-              </li>
-            ))}
-          </ul>
         </Reveal>
       </div>
     </Section>

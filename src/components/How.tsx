@@ -54,14 +54,14 @@ export function HowBody() {
       </ol>
 
       <Reveal className="mt-14">
-        <dl className="grid gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-3">
+        <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {h.proofs.map((p) => (
-            <div key={p.label + p.value} className="flex flex-col">
-              <dt className="order-2 mt-3 text-[0.95rem] text-ink">{p.label}</dt>
-              <dd className="order-1 mono-tab text-[clamp(2.4rem,1.6rem+3vw,3.5rem)] font-medium leading-none text-ink">
+            <div key={p.label + p.value} className="card-comic flex flex-col p-5">
+              <dd className="order-1 mono-tab text-[clamp(2.2rem,1.6rem+2.2vw,3rem)] font-medium leading-none text-accent">
                 {p.value}
               </dd>
-              <dd className="order-3 mono-tab mt-1 text-sm text-muted">{p.date}</dd>
+              <dt className="order-2 mt-3 text-[0.95rem] text-ink">{p.label}</dt>
+              <dd className="order-3 mt-4"><span className="sticker sticker-yellow text-xs">{p.date}</span></dd>
             </div>
           ))}
         </dl>

@@ -59,7 +59,8 @@ export const en: SiteContent = {
   hero: {
     eyebrow: 'Kayseri, Türkiye · Final-year computer engineering student',
     name: 'Emre Bahçeci',
-    headline: ['Hi, I\'m Emre.', 'I build with AI, computer vision', 'and mobile apps.'],
+    headline: ["Hi, I'm Emre."],
+    rotating: { before: 'I build', roles: ['AI', 'computer vision', 'mobile apps'], after: '.' },
     lede:
       'As a computer engineering student I have a strong interest in artificial intelligence, computer vision and mobile app development. I enjoy turning real-world problems into working software and working with productive teams.',
     cta: {

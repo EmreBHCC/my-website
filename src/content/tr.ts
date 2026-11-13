@@ -60,7 +60,8 @@ export const tr: SiteContent = {
   hero: {
     eyebrow: 'Kayseri · Bilgisayar mühendisliği öğrencisi, son sınıf',
     name: 'Emre Bahçeci',
-    headline: ['Merhaba, ben Emre.', 'Yapay zekâ, bilgisayarla görme', 've mobil uygulama geliştiriyorum.'],
+    headline: ['Merhaba, ben Emre.'],
+    rotating: { before: '', roles: ['Yapay zekâ', 'Bilgisayarla görme', 'Mobil uygulama'], after: 'geliştiriyorum.' },
     lede:
       'Bilgisayar mühendisliği öğrencisi olarak yapay zekâ, bilgisayarla görme ve mobil uygulama geliştirme alanlarında güçlü bir meraka sahibim. Gerçek dünya problemlerini işlevsel yazılım çözümlerine dönüştürmeyi ve üretken ekiplerle birlikte çalışmayı seviyorum.',
     cta: {

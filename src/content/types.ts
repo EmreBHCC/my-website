@@ -122,6 +122,8 @@ export interface SiteContent {
     name: string;
     /** Ana cümle, satır satır (2-4 satır) */
     headline: string[];
+    /** Dönen söz: before + [roles döner] + after. roles en az 2 öğe. */
+    rotating: { before: string; roles: string[]; after: string };
     lede: string;
     cta: { github: string; cv: string; contact: string };
     /** 2025 sonrası bölümüne köprü: metin + bağlantı etiketi */

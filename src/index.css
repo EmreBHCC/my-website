@@ -19,30 +19,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Palet: eski sitenin mavi-indigo'su, sakinleştirilmiş. Zemin beyaz / koyu lacivert (simsiyah değil). */
+/* Palet (2026-11-13, Emre): 60/30/10 — %60 zemin mor-lacivert/leylak, %30 lavanta/mor yüzey+metin,
+   %10 turuncu+sarı vurgu. Vurgu iki biçim: metin/çizgi (koyulaştırılmış) ve dolgu (pastel, üstüne --on-fill).
+   Varsayılan koyu. Kontrast kapısı: scripts/kontrast.mjs */
 :root,
-:root[data-theme='light'] {
-  --paper: #fbfcfe;
-  --surface: #eef2f8;
-  --ink: #0f172a;
-  --muted: #4b5566;
-  --line: #d3dae6;
-  --accent: #1d4ed8;
-  --second: #4f46e5;
-  --third: #7e22ce;
-  --on-ink: #fbfcfe;
+:root[data-theme='dark'] {
+  --paper: #16122b;
+  --surface: #221b40;
+  --ink: #efe9fb;
+  --head: #efe9fb;
+  --muted: #b3a7d6;
+  --line: #3a3160;
+  --accent: #ffb27a;
+  --second: #ffe08a;
+  --third: #c4b5fd;
+  --fill-orange: #ffb27a;
+  --fill-yellow: #ffe08a;
+  --on-fill: #16122b;
+  --on-ink: #16122b;
 }
 
-:root[data-theme='dark'] {
-  --paper: #0d1526;
-  --surface: #162035;
-  --ink: #e4e9f2;
-  --muted: #9aa6ba;
-  --line: #273349;
-  --accent: #7aa7ff;
-  --second: #a5b4fc;
-  --third: #c4b5fd;
-  --on-ink: #0d1526;
+:root[data-theme='light'] {
+  --paper: #f7f3fc;
+  --surface: #ebe3f8;
+  --ink: #251a4a;
+  --head: #3f2a99;
+  --muted: #5b4e82;
+  --line: #d4c8ec;
+  --accent: #a93a0a;
+  --second: #7a5f00;
+  --third: #6a4fc2;
+  --fill-orange: #ffcfae;
+  --fill-yellow: #ffe9a8;
+  --on-fill: #251a4a;
+  --on-ink: #f7f3fc;
 }
 
 @layer base {
@@ -66,6 +76,7 @@
     font-weight: 500;
     letter-spacing: -0.01em;
     text-wrap: balance;
+    color: var(--head);
   }
   ::selection {
     background: var(--accent);
@@ -130,6 +141,83 @@ html.theme-anim *::after {
   .ulink:focus-visible {
     text-underline-offset: 0.28em;
   }
+}
+
+@layer components {
+  /* Comic / game-design vurgu öğeleri. Yalnız: eyebrow, bölüm numarası, track etiketi, dönem, butonlar,
+     bölüm başlığı fırçası, kartlar, oyun bölümü zemini. Metin blokları sade kalır. */
+  .sticker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+    background: var(--fill-yellow);
+    color: var(--on-fill);
+    padding: 0.2rem 0.6rem;
+    font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transform: rotate(-2deg);
+  }
+  .sticker-orange { background: var(--fill-orange); }
+  .sticker-purple { background: var(--third); color: var(--on-fill); }
+  .btn-comic {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+    background: var(--surface);
+    color: var(--ink);
+    padding: 0.7rem 1.25rem;
+    font-weight: 600;
+    transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .btn-comic:hover,
+  .btn-comic:focus-visible {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .btn-comic-primary { background: var(--fill-orange); color: var(--on-fill); }
+  .btn-comic-sm { padding: 0.35rem 0.55rem; box-shadow: 2px 2px 0 var(--ink); border-width: 1.5px; }
+  .btn-comic-sm:hover,
+  .btn-comic-sm:focus-visible { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--ink); }
+  .brush {
+    position: relative;
+    display: inline;
+    isolation: isolate;
+  }
+  .brush::after {
+    content: '';
+    position: absolute;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0.08em;
+    height: 0.35em;
+    background: var(--fill-orange);
+    transform: rotate(-1deg);
+    z-index: -1;
+  }
+  .card-comic {
+    border: 2px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    background: var(--surface);
+    border-radius: 4px;
+  }
+  .pixel-bg {
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 55%, transparent 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-comic, .btn-comic-sm { transition: none; }
 }
 
 @media print {

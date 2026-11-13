@@ -13,6 +13,10 @@ export default {
         accent: 'var(--accent)',
         second: 'var(--second)',
         third: 'var(--third)',
+        head: 'var(--head)',
+        'fill-orange': 'var(--fill-orange)',
+        'fill-yellow': 'var(--fill-yellow)',
+        'on-fill': 'var(--on-fill)',
       },
       fontFamily: {
         serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif'],

@@ -19,9 +19,9 @@
         } catch (e) {}
         if (theme !== 'light' && theme !== 'dark') {
           theme =
-            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-              ? 'dark'
-              : 'light';
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark';
         }
         d.setAttribute('data-theme', theme);
         d.style.colorScheme = theme;

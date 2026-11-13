@@ -57,7 +57,7 @@ export const en: SiteContent = {
   },
 
   hero: {
-    eyebrow: 'Kayseri, Türkiye · Final-year computer engineering student',
+    eyebrow: 'Final-year computer engineering student',
     name: 'Emre Bahçeci',
     headline: ["Hi, I'm Emre."],
     rotating: { before: 'I build', roles: ['AI', 'computer vision', 'mobile apps'], after: '.' },
@@ -181,14 +181,14 @@ export const en: SiteContent = {
         date: 'Aug-Nov 2026',
       },
       {
-        value: '17/17',
-        label: 'test gates passed on Tepsi\'s core',
-        date: '7 Nov 2026',
+        value: '~20',
+        label: 'projects I started in the last two and a half months',
+        date: 'Aug-Nov 2026',
       },
       {
-        value: '88/88',
-        label: 'tests passed on Game Journey',
-        date: '7 Nov 2026',
+        value: '40,000',
+        label: 'synthetic training samples I generated for Circuit Reader',
+        date: '10 Nov 2026',
       },
       {
         value: '~8 hours',

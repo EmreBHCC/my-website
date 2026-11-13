@@ -26,7 +26,7 @@ export function Skills() {
   const row = 'grid gap-x-6 gap-y-1 border-t border-line py-3 sm:grid-cols-[11rem_11rem_minmax(0,1fr)] sm:items-baseline';
   const rowQuiet = 'grid gap-x-6 gap-y-0.5 border-t border-line py-1.5 sm:grid-cols-[11rem_11rem_minmax(0,1fr)] sm:items-baseline';
   return (
-    <Section id="skills" index={5} label={t.nav.skills} title={s.title}>
+    <Section id="skills" index={2} label={t.nav.skills} title={s.title}>
       <Reveal>
         <p className="max-w-[62ch] text-muted">{s.intro}</p>
       </Reveal>

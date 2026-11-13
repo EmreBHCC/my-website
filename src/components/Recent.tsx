@@ -9,7 +9,7 @@ export function Recent() {
   const { t } = useLang();
   const r = t.recent;
   return (
-    <Section id="recent" index={3} label={t.nav.recent} title={r.title}>
+    <Section id="recent" index={4} label={t.nav.recent} title={r.title}>
       <Reveal>
         <p className="max-w-[62ch] font-serif text-xl leading-snug text-ink md:text-2xl">{r.intro}</p>
       </Reveal>

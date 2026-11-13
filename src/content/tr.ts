@@ -58,7 +58,7 @@ export const tr: SiteContent = {
   },
 
   hero: {
-    eyebrow: 'Kayseri · Bilgisayar mühendisliği öğrencisi, son sınıf',
+    eyebrow: 'Bilgisayar mühendisliği öğrencisi, son sınıf',
     name: 'Emre Bahçeci',
     headline: ['Merhaba, ben Emre.'],
     rotating: { before: '', roles: ['Yapay zekâ', 'Bilgisayarla görme', 'Mobil uygulama'], after: 'geliştiriyorum.' },
@@ -182,14 +182,14 @@ export const tr: SiteContent = {
         date: 'Ağu-Kas 2026',
       },
       {
-        value: '17/17',
-        label: 'Tepsi çekirdeğinde geçen test kapısı',
-        date: '7 Kas 2026',
+        value: '~20',
+        label: 'Son iki buçuk ayda açtığım proje',
+        date: 'Ağu-Kas 2026',
       },
       {
-        value: '88/88',
-        label: 'Oyun Yolculuğu\'nda geçen test',
-        date: '7 Kas 2026',
+        value: '40.000',
+        label: 'Devre Okuyucu için ürettiğim sentetik eğitim örneği',
+        date: '10 Kas 2026',
       },
       {
         value: '~8 saat',

@@ -26,10 +26,10 @@ function Page() {
       <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
         <About />
+        <Skills />
         <Projects />
         <Recent />
         <Games />
-        <Skills />
         <Experience />
         <Contact />
       </main>

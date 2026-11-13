@@ -94,7 +94,7 @@ export function Projects() {
   const { t } = useLang();
   const p = t.projects;
   return (
-    <Section id="projects" index={2} label={t.nav.projects} title={p.title}>
+    <Section id="projects" index={3} label={t.nav.projects} title={p.title}>
       <Reveal>
         <p className="max-w-[62ch] text-muted">{p.intro}</p>
       </Reveal>

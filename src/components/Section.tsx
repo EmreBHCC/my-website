@@ -7,8 +7,8 @@ import { NoBreak } from './NoBreak';
 interface Props {
   id: string;
   index: number;
-  /** Sol kenardaki kısa ad (gezinme adı) */
-  label: string;
+  /** Gezinme adı (görsel olarak gösterilmez) */
+  label?: string;
   title: string;
   tone?: 'yellow' | 'accent' | 'purple';
   pixel?: boolean;
@@ -17,7 +17,7 @@ interface Props {
 
 const toneClass = { yellow: 'sticker-yellow', accent: 'sticker-accent', purple: 'sticker-purple' } as const;
 
-export function Section({ id, index, label, title, tone = 'yellow', pixel = false, children }: Props) {
+export function Section({ id, index, title, tone = 'yellow', pixel = false, children }: Props) {
   const reduced = useReducedMotion();
   const [ref, seen] = useInViewOnce<HTMLDivElement>(4);
   const num = String(index).padStart(2, '0');
@@ -34,20 +34,17 @@ export function Section({ id, index, label, title, tone = 'yellow', pixel = fals
             transition={{ duration: reduced ? 0 : 0.6, ease: EASE }}
           />
         </div>
-        <div className="grid gap-x-10 gap-y-3 pt-5 lg:grid-cols-[12rem_minmax(0,1fr)] lg:pt-8">
-          <p aria-hidden="true" className="flex items-center gap-3 lg:sticky lg:top-20 lg:flex-col lg:items-start lg:self-start">
-            <span className={`sticker ${toneClass[tone]} text-base`}>{num}</span>
-            <span className="mono-tab hidden text-sm text-muted lg:inline">{label}</span>
-          </p>
-          <div className="min-w-0">
+        <div className="pt-5 lg:pt-8">
+          <div className="flex items-center gap-4 md:gap-6">
+            <span aria-hidden="true" className={`sticker ${toneClass[tone]} shrink-0 text-base`}>{num}</span>
             <h2
               id={`${id}-title`}
-              className="text-[clamp(1.9rem,1.4rem+2vw,3rem)] leading-[1.1]"
+              className="min-w-0 text-[clamp(1.9rem,1.4rem+2vw,3rem)] leading-[1.1]"
             >
               <NoBreak>{title}</NoBreak>
             </h2>
-            <div className="mt-6 md:mt-8">{children}</div>
           </div>
+          <div className="mt-6 md:mt-8">{children}</div>
         </div>
       </div>
     </section>

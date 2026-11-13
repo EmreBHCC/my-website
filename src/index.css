@@ -159,6 +159,7 @@ html.theme-anim *::after {
     letter-spacing: 0.02em;
     transform: rotate(-2deg);
   }
+  .sticker-yellow { background: var(--fill-yellow); color: var(--on-fill); }
   .sticker-accent { border-color: var(--accent); box-shadow: 4px 4px 0 var(--accent); color: var(--accent); }
   .sticker-purple { border-color: var(--third); box-shadow: 4px 4px 0 var(--third); color: var(--third); }
   .btn-comic {

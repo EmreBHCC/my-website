@@ -15,7 +15,7 @@ interface Props {
   children: ReactNode;
 }
 
-const toneClass = { yellow: '', accent: 'sticker-accent', purple: 'sticker-purple' } as const;
+const toneClass = { yellow: 'sticker-yellow', accent: 'sticker-accent', purple: 'sticker-purple' } as const;
 
 export function Section({ id, index, label, title, tone = 'yellow', pixel = false, children }: Props) {
   const reduced = useReducedMotion();

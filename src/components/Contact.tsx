@@ -14,7 +14,7 @@ export function Contact() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="ulink mono-tab inline-flex max-w-full items-baseline gap-1.5 [overflow-wrap:anywhere]"
+      className="btn-comic inline-flex max-w-full items-center gap-1.5 text-[0.95rem] [overflow-wrap:anywhere]"
     >
       {text}
       <ArrowUpRightIcon className="shrink-0 self-center" />
@@ -31,7 +31,7 @@ export function Contact() {
             {shared.email}
           </a>
         </p>
-        <ul className="mt-8 space-y-2 text-[0.95rem]">
+        <ul className="mt-8 flex flex-wrap gap-3">
           <li>{ext(shared.githubUrl, bare(shared.githubUrl))}</li>
           {shared.linkedinUrl && <li>{ext(shared.linkedinUrl, bare(shared.linkedinUrl))}</li>}
           {shared.instagramUrl && <li>{ext(shared.instagramUrl, bare(shared.instagramUrl))}</li>}

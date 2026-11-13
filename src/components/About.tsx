@@ -16,9 +16,9 @@ export function About() {
           </div>
         </Reveal>
         <Reveal>
-          <dl className="border-t border-ink">
+          <dl className="card-comic p-5">
             {a.facts.map((f) => (
-              <div key={f.label} className="border-b border-line py-4">
+              <div key={f.label} className="border-b border-line py-4 last:border-b-0">
                 <dt className="mono-tab text-xs uppercase tracking-wider text-muted">{f.label}</dt>
                 <dd className="mt-1 font-medium">{f.value}</dd>
                 {f.detail && <dd className="mt-0.5 text-sm text-muted">{f.detail}</dd>}

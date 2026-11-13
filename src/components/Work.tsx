@@ -6,23 +6,15 @@ import { ArrowUpRightIcon } from './Icons';
 
 const TRACKS: Track[] = ['ai', 'product', 'game'];
 
-const trackText: Record<Track, string> = {
-  ai: 'text-accent',
-  product: 'text-second',
-  game: 'text-third',
-};
-const trackFill: Record<Track, string> = {
-  ai: 'bg-accent',
-  product: 'bg-second',
-  game: 'bg-third',
+const trackTone: Record<Track, string> = {
+  ai: 'sticker-orange',
+  product: '',
+  game: 'sticker-purple',
 };
 
 function TrackTag({ track, label }: { track: Track; label: string }) {
   return (
-    <span className={`inline-flex items-center gap-2 text-sm font-medium ${trackText[track]}`}>
-      <span aria-hidden="true" className={`inline-block h-2 w-2 ${trackFill[track]}`} />
-      {label}
-    </span>
+    <span className={`sticker text-xs ${trackTone[track]}`}>{label}</span>
   );
 }
 
@@ -71,12 +63,12 @@ export function WorkRow({ item }: { item: WorkItem }) {
         </div>
 
         {/* İmza öğe: Benim payım | Yapay zekânın payı */}
-        <div className="mt-8 grid border-y border-line md:grid-cols-2">
-          <div className="py-5 md:border-r md:border-line md:pr-8">
+        <div className="card-comic mt-8 grid md:grid-cols-2">
+          <div className="p-5 md:border-r-2 md:border-ink">
             <h4 className="font-sans text-sm font-semibold text-ink">{t.ui.mine}</h4>
             <ShareList items={item.mine} />
           </div>
-          <div className="border-t border-line py-5 md:border-t-0 md:pl-8">
+          <div className="border-t-2 border-ink p-5 md:border-t-0">
             <h4 className="font-sans text-sm font-semibold text-muted">{t.ui.ai}</h4>
             <ShareList items={item.ai} />
           </div>

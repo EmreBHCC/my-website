@@ -36,7 +36,7 @@ function useActiveSection(): SectionId | null {
 }
 
 const iconBtn =
-  'inline-flex h-9 min-w-9 items-center justify-center border border-line px-2 text-ink transition-colors hover:border-ink';
+  'btn-comic btn-comic-sm h-9 min-w-9 justify-center text-ink';
 
 export function Header() {
   const { lang, t, toggle: toggleLang } = useLang();
@@ -58,7 +58,7 @@ export function Header() {
     `ulink ulink-quiet text-[0.9rem] ${active === id ? 'text-accent !decoration-current' : 'text-ink'}`;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper">
+    <header className="sticky top-0 z-40 border-b-2 border-ink bg-paper/90 backdrop-blur">
       <div className="mx-auto flex h-[52px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
         <a href="#top" className="font-serif text-lg font-medium tracking-tight text-ink">
           {t.hero.name}

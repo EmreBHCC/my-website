@@ -36,6 +36,7 @@
   --fill-yellow: #ffe08a;
   --on-fill: #16122b;
   --on-ink: #16122b;
+  --preview-border: #f5c518;
 }
 
 :root[data-theme='light'] {
@@ -51,6 +52,7 @@
   --fill-yellow: #ffe9a8;
   --on-fill: #251a4a;
   --on-ink: #f7f3fc;
+  --preview-border: #6a4fc2;
 }
 
 @layer base {

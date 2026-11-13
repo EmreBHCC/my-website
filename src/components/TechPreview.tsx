@@ -51,17 +51,17 @@ export function TechPreview({ label, children, className = '' }: { label: string
           <motion.span
             aria-hidden="true"
             role="presentation"
-            className="pointer-events-none absolute bottom-full left-1/2 z-40 mb-3 flex w-40 flex-col items-center gap-2 border-2 border-ink bg-paper px-3 py-4 text-center shadow-[4px_4px_0_var(--ink)]"
+            className="pointer-events-none absolute bottom-full left-1/2 z-40 mb-3 flex w-40 flex-col items-center gap-2 border-2 border-[#251a4a] bg-white px-3 py-4 text-center shadow-[4px_4px_0_var(--ink)]"
             initial={{ opacity: 0, y: reduced ? 0 : 8, x: '-50%', rotate: 0, scale: reduced ? 1 : 0.9 }}
             animate={{ opacity: 1, y: pos.y, x: `calc(-50% + ${pos.x}px)`, rotate: pos.r, scale: 1 }}
             exit={{ opacity: 0, y: reduced ? 0 : 4, scale: reduced ? 1 : 0.95, transition: { duration: reduced ? 0 : 0.15 } }}
             transition={{ duration: reduced ? 0 : 0.2 }}
           >
             <svg viewBox="0 0 24 24" width="56" height="56" focusable="false">
-              <path d={info.path} fill={`#${info.hex}`} stroke="var(--ink)" strokeWidth="0.6" paintOrder="stroke" />
+              <path d={info.path} fill={`#${info.hex}`} stroke="#251a4a" strokeWidth="0.5" paintOrder="stroke" />
             </svg>
-            <span className="font-serif text-base leading-tight text-ink">{info.name}</span>
-            <span className="mono-tab text-[0.7rem] text-muted">{new URL(info.href).hostname}</span>
+            <span className="font-serif text-base leading-tight text-[#251a4a]">{info.name}</span>
+            <span className="mono-tab text-[0.7rem] text-[#5b5478]">{new URL(info.href).hostname}</span>
           </motion.span>
         )}
       </AnimatePresence>

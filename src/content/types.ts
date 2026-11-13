@@ -134,6 +134,7 @@ export interface SiteContent {
     paragraphs: string[];
     /** Eğitim, konum, çalışma durumu gibi kısa olgular */
     facts: { label: string; value: string; detail?: string }[];
+    languages: { title: string; items: { name: string; note: string }[] };
   };
   projects: {
     title: string;
@@ -174,7 +175,6 @@ export interface SiteContent {
     aiIntro: string;
     levels: Record<Level, { label: string; description: string }>;
     groups: { title: string; items: SkillItem[] }[];
-    languages: { title: string; items: { name: string; note: string }[] };
   };
   experience: {
     title: string;

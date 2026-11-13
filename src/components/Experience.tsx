@@ -59,7 +59,7 @@ export function Experience() {
   const { t } = useLang();
   const x = t.experience;
   return (
-    <Section id="experience" index={6} label={t.nav.experience} title={x.title}>
+    <Section id="experience" index={3} label={t.nav.experience} title={x.title}>
       <Reveal>
         <p className="max-w-[62ch] text-muted">{x.intro}</p>
       </Reveal>

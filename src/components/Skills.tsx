@@ -3,6 +3,7 @@ import { useLang } from '../i18n/lang-context';
 import { Section } from './Section';
 import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
+import { TechPreview } from './TechPreview';
 
 const LEVELS: Level[] = ['hands', 'directed', 'touched'];
 
@@ -39,7 +40,7 @@ export function Skills() {
             <ul className="mt-3 flex flex-wrap gap-2">
               {c.items.map((it) => (
                 <li key={it} className="border border-line bg-surface px-2.5 py-1 text-sm">
-                  {it}
+                  <TechPreview label={it} />
                 </li>
               ))}
             </ul>
@@ -90,18 +91,6 @@ export function Skills() {
           ))}
         </div>
       </div>
-
-      <Reveal className="mt-14">
-        <h3 className="text-2xl">{s.languages.title}</h3>
-        <ul className="mt-4 border-b border-line">
-          {s.languages.items.map((l) => (
-            <li key={l.name} className="grid gap-x-6 gap-y-1 border-t border-line py-3 sm:grid-cols-[11rem_minmax(0,1fr)]">
-              <span className="font-medium">{l.name}</span>
-              <span className="text-muted">{l.note}</span>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
     </Section>
   );
 }

@@ -9,7 +9,7 @@ export const tr: SiteContent = {
   meta: {
     title: 'Emre Bahçeci · Bilgisayar mühendisliği öğrencisi',
     description:
-      'Yapay zekâ, bilgisayarla görme ve mobil uygulama geliştirmeye meraklı bilgisayar mühendisliği öğrencisi. Projeler, deneyim ve 2025 sonrası yapay zekâyla kurduğum işler.',
+      'Yapay zekâ, bilgisayarlı görü ve mobil uygulama geliştirmeye meraklı bilgisayar mühendisliği öğrencisi. Projeler, deneyim ve 2025 sonrası yapay zekâyla kurduğum işler.',
   },
 
   nav: {
@@ -61,9 +61,9 @@ export const tr: SiteContent = {
     eyebrow: 'Bilgisayar mühendisliği öğrencisi, son sınıf',
     name: 'Emre Bahçeci',
     headline: ['Merhaba, ben Emre.'],
-    rotating: { before: '', roles: ['Yapay zekâ', 'Bilgisayarla görme', 'Mobil uygulama'], after: 'geliştiriyorum.' },
+    rotating: { before: 'Yapay zekâ ile birden çok alanda', roles: ['uygulamalar', 'bilgisayarlı görü sistemleri', 'mobil uygulamalar'], after: 'geliştiriyorum.' },
     lede:
-      'Bilgisayar mühendisliği öğrencisi olarak yapay zekâ, bilgisayarla görme ve mobil uygulama geliştirme alanlarında güçlü bir meraka sahibim. Gerçek dünya problemlerini işlevsel yazılım çözümlerine dönüştürmeyi ve üretken ekiplerle birlikte çalışmayı seviyorum.',
+      'Bilgisayar mühendisliği öğrencisi olarak yapay zekâ, bilgisayarlı görü ve mobil uygulama geliştirme alanlarında güçlü bir meraka sahibim. Gerçek dünya problemlerini işlevsel yazılım çözümlerine dönüştürmeyi ve üretken ekiplerle birlikte çalışmayı seviyorum.',
     cta: {
       github: 'GitHub',
       cv: 'CV indir',
@@ -78,7 +78,7 @@ export const tr: SiteContent = {
   about: {
     title: 'Hakkımda',
     paragraphs: [
-      'Yapay zekâ, bilgisayarla görme ve mobil uygulama geliştirme konularına ilgi duyan bir bilgisayar mühendisliği öğrencisiyim. Gerçek dünya problemlerini işlevsel ve estetik yazılımlara dönüştürmekten, ekiplerle birlikte üretmekten ve bilgi paylaşımını merkeze alan topluluklar oluşturmaktan keyif alıyorum.',
+      'Yapay zekâ, bilgisayarlı görü ve mobil uygulama geliştirme konularına ilgi duyan bir bilgisayar mühendisliği öğrencisiyim. Gerçek dünya problemlerini işlevsel ve estetik yazılımlara dönüştürmekten, ekiplerle birlikte üretmekten ve bilgi paylaşımını merkeze alan topluluklar oluşturmaktan keyif alıyorum.',
       'Sürekli gelişim odağıyla yalnızca etkileyici değil, aynı zamanda sürdürülebilir çözümler üretmeyi amaçlıyorum. Yeni teknolojileri keşfetmek, öğrendiklerimi projelere aktarmak ve bu süreçte çevremdekilere ilham vermek için çalışıyorum.',
     ],
     facts: [
@@ -94,6 +94,13 @@ export const tr: SiteContent = {
         detail: 'Yazılım geliştirme, yapay zekâ / makine öğrenmesi ve mobil uygulama; uzaktan ya da yerinde.',
       },
     ],
+    languages: {
+      title: 'Dil yetkinlikleri',
+      items: [
+        { name: 'Türkçe', note: 'Ana dil.' },
+        { name: 'İngilizce', note: 'B1 seviye (okuma, yazma, dinleme).' },
+      ],
+    },
   },
 
   projects: {
@@ -134,8 +141,8 @@ export const tr: SiteContent = {
         name: 'VisionaryMockUP',
         period: 'Kas 2023 - Şub 2024',
         description:
-          'YOLO kullanarak canlı video akışında t-shirt tespit eden ve önceden tasarlanmış grafikleri otomatik olarak üzerine yerleştiren gerçek zamanlı bilgisayarla görme sistemi.',
-        technologies: ['YOLO', 'OpenCV', 'Python', 'Roboflow', 'Computer Vision'],
+          'YOLO kullanarak canlı video akışında t-shirt tespit eden ve önceden tasarlanmış grafikleri otomatik olarak üzerine yerleştiren gerçek zamanlı bilgisayarlı görü sistemi.',
+        technologies: ['YOLO', 'OpenCV', 'Python', 'Roboflow', 'Bilgisayarlı Görü'],
         highlights: [
           'Roboflow ile özel t-shirt veri seti toplama ve etiketleme',
           'YOLOv8 modeli ile gerçek zamanlı nesne tespiti',
@@ -433,7 +440,7 @@ export const tr: SiteContent = {
       },
       {
         title: 'Yapay zekâ & ML',
-        items: ['Computer Vision', 'YOLO', 'Neural Style Transfer', 'CNN mimarileri', 'Object Detection', 'Image Processing'],
+        items: ['Bilgisayarlı Görü', 'YOLO', 'Neural Style Transfer', 'CNN mimarileri', 'Object Detection', 'Image Processing'],
       },
       {
         title: 'Veritabanı & backend',
@@ -448,7 +455,7 @@ export const tr: SiteContent = {
         items: ['OOP', 'Takım çalışması', 'Problem çözme', 'Proje yönetimi', 'Mentorluk'],
       },
     ],
-    aiTitle: 'Yapay zekâyla çalışma (2025 sonrası)',
+    aiTitle: 'Yapay zekâ ile çalışma yöntemlerim',
     aiIntro:
       'Yapay zekâ ajanlarıyla çalışırken kazandığım beceriler. Her satırda bir seviye ve tek satır kanıt var.',
     levels: {
@@ -547,13 +554,6 @@ export const tr: SiteContent = {
         ],
       },
     ],
-    languages: {
-      title: 'Dil yetkinlikleri',
-      items: [
-        { name: 'Türkçe', note: 'Ana dil.' },
-        { name: 'İngilizce', note: 'B1 seviye (okuma, yazma, dinleme).' },
-      ],
-    },
   },
 
   experience: {
@@ -599,7 +599,12 @@ export const tr: SiteContent = {
         org: 'Bilecik Şeyh Edebali Üniversitesi',
         period: '2021 - devam ediyor',
         location: 'Bilecik',
-        points: ['Son sınıf. Bitirme projesi: Devre Okuyucu (2025 sonrası bölümünde).'],
+        description: 'Son sınıf. Okulda yaptığım projeler, yeniden eskiye:',
+        points: [
+          'DersAI (Şub - Haz 2025): OCR ve yapay zekâ ile ders notlarını dijitalleştiren Flutter mobil uygulaması.',
+          'Image Style Transfer (Nis - Tem 2024): VGG tabanlı CNN ile görsellere ve canlı kameraya sanatsal stil aktaran PyTorch uygulaması.',
+          'VisionaryMockUP (Kas 2023 - Şub 2024): YOLO ile canlı videoda t-shirt tespit edip üzerine grafik yerleştiren gerçek zamanlı sistem.',
+        ],
       },
     ],
     communityTitle: 'Topluluk & liderlik',

@@ -60,7 +60,7 @@ export const en: SiteContent = {
     eyebrow: 'Final-year computer engineering student',
     name: 'Emre Bahçeci',
     headline: ["Hi, I'm Emre."],
-    rotating: { before: 'I build', roles: ['AI', 'computer vision', 'mobile apps'], after: '.' },
+    rotating: { before: 'With AI, I build', roles: ['apps', 'computer vision systems', 'mobile apps'], after: 'in several fields.' },
     lede:
       'As a computer engineering student I have a strong interest in artificial intelligence, computer vision and mobile app development. I enjoy turning real-world problems into working software and working with productive teams.',
     cta: {
@@ -93,6 +93,13 @@ export const en: SiteContent = {
         detail: 'Software development, AI / machine learning and mobile apps; remote or on-site.',
       },
     ],
+    languages: {
+      title: 'Languages',
+      items: [
+        { name: 'Turkish', note: 'Native.' },
+        { name: 'English', note: 'B1 level (reading, writing, listening).' },
+      ],
+    },
   },
 
   projects: {
@@ -451,7 +458,7 @@ export const en: SiteContent = {
         items: ['OOP', 'Teamwork', 'Problem solving', 'Project management', 'Mentoring'],
       },
     ],
-    aiTitle: 'Working with AI (since 2025)',
+    aiTitle: 'How I work with AI',
     aiIntro: 'Skills I gained working with AI agents. Each row has a level and one line of evidence.',
     levels: {
       hands: {
@@ -549,13 +556,6 @@ export const en: SiteContent = {
         ],
       },
     ],
-    languages: {
-      title: 'Languages',
-      items: [
-        { name: 'Turkish', note: 'Native.' },
-        { name: 'English', note: 'B1 level (reading, writing, listening).' },
-      ],
-    },
   },
 
   experience: {
@@ -601,7 +601,12 @@ export const en: SiteContent = {
         org: 'Bilecik Şeyh Edebali University',
         period: '2021 - ongoing',
         location: 'Bilecik',
-        points: ['Final year. Graduation project: Circuit Reader (see Since 2025).'],
+        description: 'Final year. Projects I built at university, newest first:',
+        points: [
+          'DersAI (Feb - Jun 2025): a Flutter mobile app that digitizes class notes with OCR and AI.',
+          'Image Style Transfer (Apr - Jul 2024): a PyTorch app that transfers artistic style onto images and live camera with a VGG-based CNN.',
+          'VisionaryMockUP (Nov 2023 - Feb 2024): a real-time system that detects t-shirts in live video with YOLO and overlays graphics on them.',
+        ],
       },
     ],
     communityTitle: 'Community & leadership',

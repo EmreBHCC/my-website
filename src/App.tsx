@@ -27,10 +27,10 @@ function Page() {
         <Hero />
         <About />
         <Skills />
+        <Experience />
         <Projects />
         <Recent />
         <Games />
-        <Experience />
         <Contact />
       </main>
       <Footer />

@@ -25,6 +25,15 @@ export function About() {
               </div>
             ))}
           </dl>
+          <h3 className="mono-tab mt-8 text-xs uppercase tracking-wider text-muted">{a.languages.title}</h3>
+          <ul className="mt-2 border-b border-line">
+            {a.languages.items.map((l) => (
+              <li key={l.name} className="border-t border-line py-3">
+                <span className="font-medium">{l.name}</span>
+                <span className="block text-sm text-muted">{l.note}</span>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </Section>

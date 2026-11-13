@@ -8,6 +8,7 @@ import { shared } from '../content';
 import { Section } from './Section';
 import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
+import { TechPreview } from './TechPreview';
 import { ArrowUpRightIcon } from './Icons';
 
 function ProjectRow({ item }: { item: ProjectItem }) {
@@ -54,7 +55,7 @@ function ProjectRow({ item }: { item: ProjectItem }) {
           <ul className="mt-2 flex flex-wrap gap-2">
             {item.technologies.map((tech) => (
               <li key={tech} className="border-2 border-ink bg-paper px-2.5 py-1 text-sm">
-                {tech}
+                <TechPreview label={tech} />
               </li>
             ))}
           </ul>
@@ -94,7 +95,7 @@ export function Projects() {
   const { t } = useLang();
   const p = t.projects;
   return (
-    <Section id="projects" index={3} label={t.nav.projects} title={p.title}>
+    <Section id="projects" index={4} label={t.nav.projects} title={p.title}>
       <Reveal>
         <p className="max-w-[62ch] text-muted">{p.intro}</p>
       </Reveal>

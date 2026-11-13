@@ -1,5 +1,5 @@
 // Derlenmiş siteyi gerçek Chrome'da (CDP) doğrular. Önce: npm run build && npm run preview
-// Kullanım: node scripts/verify.mjs [url] [chrome-yolu] [--only=shots,lang,theme,motion,sections,hero,en,menu,active,storage,first]
+// Kullanım: node scripts/verify.mjs [url] [chrome-yolu] [--only=shots,lang,theme,motion,sections,hero,en,menu,active,storage,first,aurora,rotating]
 // --only verilmezse hepsi çalışır; verilirse yalnız listelenen bölümler.
 // Çıktı: docs/screenshots/<genişlik>-<tema>.png + konsola ölçümler. Node 22 (global WebSocket/fetch).
 import { spawn } from 'node:child_process';
@@ -23,7 +23,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const profile = mkdtempSync(join(tmpdir(), 'cdp-'));
 const chrome = spawn(
   CHROME,
-  ['--headless=new', `--remote-debugging-port=${PORT}`, `--user-data-dir=${profile}`, '--no-first-run', '--disable-gpu', 'about:blank'],
+  ['--headless=new', `--remote-debugging-port=${PORT}`, `--user-data-dir=${profile}`, '--no-first-run', '--disable-gpu', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', 'about:blank'],
   { stdio: 'ignore' }
 );
 
@@ -54,6 +54,8 @@ ws.onmessage = (m) => {
     pending.delete(d.id);
   } else if (d.method === 'Runtime.exceptionThrown') problems.push('exception: ' + d.params.exceptionDetails.text + ' ' + (d.params.exceptionDetails.exception?.description ?? ''));
   else if (d.method === 'Runtime.consoleAPICalled' && ['error', 'warning'].includes(d.params.type)) problems.push('console.' + d.params.type + ': ' + d.params.args.map((a) => a.value ?? a.description).join(' '));
+  // SwiftShader (yazılım GL) ekran görüntüsü okurken 'GPU stall' performans notu düşer; uygulama sorunu değil.
+  else if (d.method === 'Log.entryAdded' && /GL Driver Message/.test(d.params.entry.text)) { /* yok say */ }
   else if (d.method === 'Log.entryAdded' && ['error', 'warning'].includes(d.params.entry.level)) problems.push('log: ' + d.params.entry.text + ' ' + (d.params.entry.url ?? ''));
   else if (d.method === 'Network.requestWillBeSent') hosts.add(new globalThis.URL(d.params.request.url).host || 'data');
 };
@@ -186,7 +188,7 @@ if (want('sections')) {
     await ev("try{localStorage.clear()}catch(e){}");
     await send('Page.reload'); await sleep(1200);
     await scrollThrough();
-    for (const id of ['top', 'how', 'work', 'games', 'skills']) {
+    for (const id of ['top', 'projects', 'recent', 'games', 'skills']) {
       await ev(`(() => { const e = document.getElementById('${id}'); window.scrollTo(0, e ? e.getBoundingClientRect().top + scrollY - 52 : 0); })()`);
       await sleep(900);
       const shot = await send('Page.captureScreenshot', { format: 'png' });
@@ -240,10 +242,10 @@ if (want('active')) {
     console.log(`ETKIN BOLUM ${w}x${h} sayfa basi`, JSON.stringify(await ev(activeJs)));
   }
   await open(1440, { scheme: 'light', height: 900 }); await clearStore();
-  await ev(`document.getElementById('work').scrollIntoView()`); await sleep(1200);
+  await ev(`document.getElementById('recent').scrollIntoView()`); await sleep(1200);
   const mid = await ev(activeJs);
   await ev('window.scrollTo(0,0)'); await sleep(900);
-  console.log('ETKIN BOLUM 1440x900 work -> basa donus', JSON.stringify({ workdayken: mid, basaDonunce: await ev(activeJs) }));
+  console.log('ETKIN BOLUM 1440x900 recent -> basa donus', JSON.stringify({ workdayken: mid, basaDonunce: await ev(activeJs) }));
 
 }
 if (want('storage')) {
@@ -279,6 +281,29 @@ if (want('first')) {
   }
   await send('Page.removeScriptToEvaluateOnNewDocument', { identifier: smp });
 
+}
+if (want('aurora')) {
+  // 13) Aurora: koyu/açık temada hero içinde WebGL2 canvas; reduced-motion'da canvas yok
+  const probe = `(() => { const c = document.querySelector('main canvas'); return { canvas: !!c, webgl2: !!(c && c.getContext('webgl2')), w: c ? Math.round(c.getBoundingClientRect().width) : 0 }; })()`;
+  const out = {};
+  for (const [scheme, reduced] of [['dark', false], ['light', false], ['dark', true]]) {
+    await open(1440, { scheme, reduced }); await clearStore();
+    out[`${scheme}${reduced ? '-reduced' : ''}`] = await ev(probe);
+  }
+  console.log('AURORA', JSON.stringify(out));
+}
+if (want('rotating')) {
+  // 14) Dönen söz: 3 sn arayla değişir; reduced-motion'da sabit
+  const read = `[...document.querySelectorAll('h1 .sr-only')].map(e=>e.textContent)`;
+  const out = {};
+  for (const reduced of [false, true]) {
+    await open(1440, { scheme: 'dark', reduced }); await clearStore();
+    const a = await ev(read);
+    await sleep(3000);
+    const b = await ev(read);
+    out[reduced ? 'reduced' : 'normal'] = { once: a, later: b, changed: JSON.stringify(a) !== JSON.stringify(b) };
+  }
+  console.log('DONEN SOZ', JSON.stringify(out));
 }
 console.log('DIS ISTEKLER (host)', [...hosts].join(', '));
 console.log('KONSOL SORUNLARI', problems.length ? problems : 'yok');

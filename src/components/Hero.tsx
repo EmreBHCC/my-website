@@ -62,7 +62,7 @@ export function Hero() {
             stepDuration={reduced ? 0.01 : 0.35}
             className="block"
           />
-          <span className="mt-2 flex flex-wrap items-baseline gap-x-[0.3em] text-[0.62em] leading-[1.15] text-ink">
+          <span className="mt-2 flex flex-wrap items-baseline gap-x-[0.3em] text-[0.62em] leading-[1.15] text-head">
             {h.rotating.before && <span>{h.rotating.before}</span>}
             {reduced ? (
               <span className="sticker sticker-orange rotate-0 text-[0.55em]">{h.rotating.roles[0]}</span>

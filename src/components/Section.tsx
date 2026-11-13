@@ -10,12 +10,12 @@ interface Props {
   /** Sol kenardaki kısa ad (gezinme adı) */
   label: string;
   title: string;
-  tone?: 'yellow' | 'pink' | 'purple';
+  tone?: 'yellow' | 'accent' | 'purple';
   pixel?: boolean;
   children: ReactNode;
 }
 
-const toneClass = { yellow: '', pink: 'sticker-pink', purple: 'sticker-purple' } as const;
+const toneClass = { yellow: '', accent: 'sticker-accent', purple: 'sticker-purple' } as const;
 
 export function Section({ id, index, label, title, tone = 'yellow', pixel = false, children }: Props) {
   const reduced = useReducedMotion();
@@ -44,7 +44,7 @@ export function Section({ id, index, label, title, tone = 'yellow', pixel = fals
               id={`${id}-title`}
               className="text-[clamp(1.9rem,1.4rem+2vw,3rem)] leading-[1.1]"
             >
-              <span className="brush"><NoBreak>{title}</NoBreak></span>
+              <NoBreak>{title}</NoBreak>
             </h2>
             <div className="mt-6 md:mt-8">{children}</div>
           </div>

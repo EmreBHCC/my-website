@@ -14,7 +14,6 @@ export default {
         second: 'var(--second)',
         third: 'var(--third)',
         head: 'var(--head)',
-        'fill-pink': 'var(--fill-pink)',
         'fill-yellow': 'var(--fill-yellow)',
         'on-fill': 'var(--on-fill)',
       },

@@ -8,8 +8,8 @@ import Aurora from '../bits/Aurora';
 import BlurText from '../bits/BlurText';
 import RotatingText from '../bits/RotatingText';
 
-const DARK_STOPS = ['#7c5cff', '#ff9ecb', '#ffe08a'];
-const LIGHT_STOPS = ['#6a4fc2', '#ff8fc0', '#ffd166'];
+const DARK_STOPS = ['#5b3fd6', '#7c5cff', '#a78bfa'];
+const LIGHT_STOPS = ['#6a4fc2', '#8b73e6', '#b8a6f5'];
 
 export function Hero() {
   const { t } = useLang();
@@ -65,17 +65,17 @@ export function Hero() {
           <span className="mt-2 flex flex-wrap items-baseline gap-x-[0.3em] text-[0.62em] leading-[1.15] text-head">
             {h.rotating.before && <span>{h.rotating.before}</span>}
             {reduced ? (
-              <span className="sticker sticker-pink rotate-0 text-[0.55em]">{h.rotating.roles[0]}</span>
+              <span className="sticker sticker-accent rotate-0 text-[0.55em]">{h.rotating.roles[0]}</span>
             ) : (
               <RotatingText
                 texts={h.rotating.roles}
                 effect="flip"
                 highlight
-                highlightColor="var(--fill-yellow)"
+                highlightColor="transparent"
                 rotationInterval={2600}
                 staggerDuration={0.02}
                 splitBy="characters"
-                mainClassName="text-on-fill border-2 border-ink shadow-[4px_4px_0_var(--ink)]"
+                mainClassName="text-ink border-2 border-accent shadow-[4px_4px_0_var(--accent)]"
               />
             )}
             {h.rotating.after && <span>{h.rotating.after}</span>}

@@ -20,7 +20,7 @@
 @tailwind utilities;
 
 /* Palet (2026-11-13, Emre): 60/30/10 — %60 zemin mor-lacivert/leylak, %30 lavanta/mor yüzey+metin,
-   %10 turuncu+sarı vurgu. Vurgu iki biçim: metin/çizgi (koyulaştırılmış) ve dolgu (pastel, üstüne --on-fill).
+   %10 sarı vurgu (turuncu ve pembe Emre'nin isteğiyle kaldırıldı). Vurgu iki biçim: metin/çizgi (koyulaştırılmış) ve dolgu (pastel, üstüne --on-fill).
    Varsayılan koyu. Kontrast kapısı: scripts/kontrast.mjs */
 :root,
 :root[data-theme='dark'] {
@@ -30,10 +30,9 @@
   --head: #efe9fb;
   --muted: #b3a7d6;
   --line: #3a3160;
-  --accent: #ff9ecb;
+  --accent: #ffe08a;
   --second: #ffe08a;
   --third: #c4b5fd;
-  --fill-pink: #ff9ecb;
   --fill-yellow: #ffe08a;
   --on-fill: #16122b;
   --on-ink: #16122b;
@@ -46,10 +45,9 @@
   --head: #3f2a99;
   --muted: #5b4e82;
   --line: #d4c8ec;
-  --accent: #b0225f;
+  --accent: #7a5f00;
   --second: #7a5f00;
   --third: #6a4fc2;
-  --fill-pink: #ffc2dd;
   --fill-yellow: #ffe9a8;
   --on-fill: #251a4a;
   --on-ink: #f7f3fc;
@@ -145,15 +143,15 @@ html.theme-anim *::after {
 
 @layer components {
   /* Comic / game-design vurgu öğeleri. Yalnız: eyebrow, bölüm numarası, track etiketi, dönem, butonlar,
-     bölüm başlığı fırçası, kartlar, oyun bölümü zemini. Metin blokları sade kalır. */
+     kartlar, oyun bölümü zemini. Metin blokları sade kalır. */
   .sticker {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     border: 2px solid var(--ink);
     box-shadow: 4px 4px 0 var(--ink);
-    background: var(--fill-yellow);
-    color: var(--on-fill);
+    background: transparent;
+    color: var(--ink);
     padding: 0.2rem 0.6rem;
     font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
     font-size: 0.8rem;
@@ -161,8 +159,8 @@ html.theme-anim *::after {
     letter-spacing: 0.02em;
     transform: rotate(-2deg);
   }
-  .sticker-pink { background: var(--fill-pink); }
-  .sticker-purple { background: var(--third); color: var(--on-fill); }
+  .sticker-accent { border-color: var(--accent); box-shadow: 4px 4px 0 var(--accent); color: var(--accent); }
+  .sticker-purple { border-color: var(--third); box-shadow: 4px 4px 0 var(--third); color: var(--third); }
   .btn-comic {
     display: inline-flex;
     align-items: center;
@@ -180,28 +178,12 @@ html.theme-anim *::after {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0 var(--ink);
   }
-  .btn-comic-primary { background: var(--fill-pink); color: var(--on-fill); }
+  .btn-comic-primary { background: transparent; color: var(--ink); border-color: var(--accent); box-shadow: 4px 4px 0 var(--accent); }
+  .btn-comic-primary:hover,
+  .btn-comic-primary:focus-visible { box-shadow: 2px 2px 0 var(--accent); }
   .btn-comic-sm { padding: 0.35rem 0.55rem; box-shadow: 2px 2px 0 var(--ink); border-width: 1.5px; }
   .btn-comic-sm:hover,
   .btn-comic-sm:focus-visible { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--ink); }
-  .brush {
-    position: relative;
-    display: inline;
-    isolation: isolate;
-  }
-  .brush::after {
-    content: '';
-    position: absolute;
-    left: -0.08em;
-    right: -0.08em;
-    bottom: 0.04em;
-    height: 0.26em;
-    background: var(--fill-pink);
-    border: 2px solid var(--ink);
-    box-shadow: 3px 3px 0 var(--ink);
-    transform: rotate(-1deg);
-    z-index: -1;
-  }
   .card-comic {
     border: 2px solid var(--ink);
     box-shadow: 6px 6px 0 var(--ink);

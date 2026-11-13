@@ -7,7 +7,7 @@ import { ArrowUpRightIcon } from './Icons';
 const TRACKS: Track[] = ['ai', 'product', 'game'];
 
 const trackTone: Record<Track, string> = {
-  ai: 'sticker-pink',
+  ai: 'sticker-accent',
   product: '',
   game: 'sticker-purple',
 };

@@ -60,7 +60,7 @@ export const en: SiteContent = {
     eyebrow: 'Final-year computer engineering student',
     name: 'Emre Bahçeci',
     headline: ["Hi, I'm Emre."],
-    rotating: { before: 'I build', roles: ['apps', 'computer vision systems', 'mobile apps'], after: 'across several fields with AI.' },
+    rotating: { before: 'I build', roles: ['computer vision systems', 'mobile apps', 'games', 'web apps', 'AI models'], after: 'across several fields with AI.' },
     lede:
       'As a computer engineering student I have a strong interest in artificial intelligence, computer vision and mobile app development. I enjoy turning real-world problems into working software and working with productive teams.',
     cta: {

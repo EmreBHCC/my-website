@@ -7,7 +7,7 @@ export function About() {
   const a = t.about;
   return (
     <Section id="about" index={1} label={t.nav.about} title={a.title}>
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
+      <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_15rem] md:gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
         <Reveal>
           <div className="max-w-[64ch] space-y-5 text-[1.05rem] leading-relaxed">
             {a.paragraphs.map((p) => (

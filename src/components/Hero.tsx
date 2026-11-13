@@ -85,7 +85,7 @@ export function Hero() {
         <motion.div {...rise(1)}>
           <p className="mt-8 max-w-[62ch] text-[1.1rem] text-muted md:text-[1.2rem]">{h.lede}</p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-nowrap gap-2.5 sm:gap-4 [&>a]:max-sm:gap-1 [&>a]:max-sm:px-3 [&>a]:max-sm:py-2 [&>a]:max-sm:text-[0.9rem]">
             <a href="#projects" className="btn-comic btn-comic-primary">
               {t.nav.projects}
             </a>

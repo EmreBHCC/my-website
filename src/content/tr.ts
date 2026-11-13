@@ -61,7 +61,7 @@ export const tr: SiteContent = {
     eyebrow: 'Bilgisayar mühendisliği öğrencisi, son sınıf',
     name: 'Emre Bahçeci',
     headline: ['Merhaba, ben Emre.'],
-    rotating: { before: 'Yapay zekâ ile birden çok alanda', roles: ['uygulamalar', 'bilgisayarlı görü sistemleri', 'mobil uygulamalar'], after: 'geliştiriyorum.' },
+    rotating: { before: 'Yapay zekâ ile birden çok alanda', roles: ['bilgisayarlı görü sistemleri', 'mobil uygulamalar', 'oyunlar', 'web uygulamaları', 'yapay zekâ modelleri'], after: 'geliştiriyorum.' },
     lede:
       'Bilgisayar mühendisliği öğrencisi olarak yapay zekâ, bilgisayarlı görü ve mobil uygulama geliştirme alanlarında güçlü bir meraka sahibim. Gerçek dünya problemlerini işlevsel yazılım çözümlerine dönüştürmeyi ve üretken ekiplerle birlikte çalışmayı seviyorum.',
     cta: {

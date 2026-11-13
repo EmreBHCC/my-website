@@ -7,10 +7,10 @@ export function Games() {
   const { lang, t } = useLang();
   const g = t.games;
   return (
-    <Section id="games" index={4} label={t.nav.games} title={g.title}>
+    <Section id="games" index={4} label={t.nav.games} title={g.title} tone="purple" pixel>
       <Reveal>
         <p className="max-w-[62ch] text-muted">{g.intro}</p>
-        <p className="mono-tab mt-6 inline-block border-l-2 border-accent pl-4 text-[0.95rem]">{g.disclaimer}</p>
+        <p className="mono-tab mt-6 inline-block border-l-4 border-third pl-4 text-[0.95rem]">{g.disclaimer}</p>
       </Reveal>
 
       <div className="mt-10 space-y-14">
@@ -26,7 +26,7 @@ export function Games() {
               <ol className="mt-8 space-y-8 border-l border-line pl-5 sm:pl-8">
                 {item.decisions.map((d) => (
                   <li key={d.decision} className="relative">
-                    <span aria-hidden="true" className="absolute -left-[1.45rem] top-[0.55rem] h-2 w-2 bg-ink sm:-left-[2.45rem]" />
+                    <span aria-hidden="true" className="absolute -left-[1.45rem] top-[0.55rem] h-2.5 w-2.5 border border-ink bg-third sm:-left-[2.45rem]" />
                     <div className="mono-tab flex flex-wrap gap-x-4 text-sm text-muted">
                       <span>{t.ui.decision}</span>
                       {d.date && <span>{d.date}</span>}

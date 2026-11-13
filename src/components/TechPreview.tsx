@@ -51,7 +51,7 @@ export function TechPreview({ label, children, className = '' }: { label: string
           <motion.span
             aria-hidden="true"
             role="presentation"
-            className="pointer-events-none absolute bottom-full left-1/2 z-40 mb-3 flex w-40 flex-col items-center gap-2 border-2 border-[#251a4a] bg-white px-3 py-4 text-center shadow-[4px_4px_0_var(--ink)]"
+            className="pointer-events-none absolute bottom-full left-1/2 z-40 mb-3 flex w-40 flex-col items-center gap-2 border-4 border-[#f5c518] bg-white px-3 py-4 text-center shadow-[4px_4px_0_var(--ink)]"
             initial={{ opacity: 0, y: reduced ? 0 : 8, x: '-50%', rotate: 0, scale: reduced ? 1 : 0.9 }}
             animate={{ opacity: 1, y: pos.y, x: `calc(-50% + ${pos.x}px)`, rotate: pos.r, scale: 1 }}
             exit={{ opacity: 0, y: reduced ? 0 : 4, scale: reduced ? 1 : 0.95, transition: { duration: reduced ? 0 : 0.15 } }}

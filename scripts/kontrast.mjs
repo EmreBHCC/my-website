@@ -16,7 +16,7 @@ const oran = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); 
 const ciftler = [
   ['ink', 'paper', 4.5], ['ink', 'surface', 4.5], ['head', 'paper', 3], ['muted', 'paper', 4.5], ['muted', 'surface', 4.5],
   ['accent', 'paper', 4.5], ['accent', 'surface', 4.5], ['second', 'paper', 4.5], ['second', 'surface', 4.5],
-  ['third', 'paper', 4.5], ['on-fill', 'fill-orange', 4.5], ['on-fill', 'fill-yellow', 4.5], ['on-ink', 'ink', 4.5],
+  ['third', 'paper', 4.5], ['on-fill', 'fill-pink', 4.5], ['on-fill', 'fill-yellow', 4.5], ['on-ink', 'ink', 4.5],
 ];
 let fail = 0;
 for (const [ad, sel] of [['KOYU', ":root[data-theme='dark']"], ['ACIK', ":root[data-theme='light']"]]) {

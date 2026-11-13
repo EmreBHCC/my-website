@@ -30,10 +30,10 @@
   --head: #efe9fb;
   --muted: #b3a7d6;
   --line: #3a3160;
-  --accent: #ffb27a;
+  --accent: #ff9ecb;
   --second: #ffe08a;
   --third: #c4b5fd;
-  --fill-orange: #ffb27a;
+  --fill-pink: #ff9ecb;
   --fill-yellow: #ffe08a;
   --on-fill: #16122b;
   --on-ink: #16122b;
@@ -46,10 +46,10 @@
   --head: #3f2a99;
   --muted: #5b4e82;
   --line: #d4c8ec;
-  --accent: #a93a0a;
+  --accent: #b0225f;
   --second: #7a5f00;
   --third: #6a4fc2;
-  --fill-orange: #ffcfae;
+  --fill-pink: #ffc2dd;
   --fill-yellow: #ffe9a8;
   --on-fill: #251a4a;
   --on-ink: #f7f3fc;
@@ -161,7 +161,7 @@ html.theme-anim *::after {
     letter-spacing: 0.02em;
     transform: rotate(-2deg);
   }
-  .sticker-orange { background: var(--fill-orange); }
+  .sticker-pink { background: var(--fill-pink); }
   .sticker-purple { background: var(--third); color: var(--on-fill); }
   .btn-comic {
     display: inline-flex;
@@ -180,7 +180,7 @@ html.theme-anim *::after {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0 var(--ink);
   }
-  .btn-comic-primary { background: var(--fill-orange); color: var(--on-fill); }
+  .btn-comic-primary { background: var(--fill-pink); color: var(--on-fill); }
   .btn-comic-sm { padding: 0.35rem 0.55rem; box-shadow: 2px 2px 0 var(--ink); border-width: 1.5px; }
   .btn-comic-sm:hover,
   .btn-comic-sm:focus-visible { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--ink); }
@@ -192,11 +192,13 @@ html.theme-anim *::after {
   .brush::after {
     content: '';
     position: absolute;
-    left: -0.1em;
-    right: -0.1em;
-    bottom: 0.08em;
-    height: 0.35em;
-    background: var(--fill-orange);
+    left: -0.08em;
+    right: -0.08em;
+    bottom: 0.04em;
+    height: 0.26em;
+    background: var(--fill-pink);
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
     transform: rotate(-1deg);
     z-index: -1;
   }

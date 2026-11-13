@@ -10,12 +10,12 @@ interface Props {
   /** Sol kenardaki kısa ad (gezinme adı) */
   label: string;
   title: string;
-  tone?: 'yellow' | 'orange' | 'purple';
+  tone?: 'yellow' | 'pink' | 'purple';
   pixel?: boolean;
   children: ReactNode;
 }
 
-const toneClass = { yellow: '', orange: 'sticker-orange', purple: 'sticker-purple' } as const;
+const toneClass = { yellow: '', pink: 'sticker-pink', purple: 'sticker-purple' } as const;
 
 export function Section({ id, index, label, title, tone = 'yellow', pixel = false, children }: Props) {
   const reduced = useReducedMotion();

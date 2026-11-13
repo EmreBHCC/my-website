@@ -8,8 +8,8 @@ import Aurora from '../bits/Aurora';
 import BlurText from '../bits/BlurText';
 import RotatingText from '../bits/RotatingText';
 
-const DARK_STOPS = ['#7c5cff', '#ffb27a', '#ffe08a'];
-const LIGHT_STOPS = ['#6a4fc2', '#ff9a5c', '#ffd166'];
+const DARK_STOPS = ['#7c5cff', '#ff9ecb', '#ffe08a'];
+const LIGHT_STOPS = ['#6a4fc2', '#ff8fc0', '#ffd166'];
 
 export function Hero() {
   const { t } = useLang();
@@ -65,7 +65,7 @@ export function Hero() {
           <span className="mt-2 flex flex-wrap items-baseline gap-x-[0.3em] text-[0.62em] leading-[1.15] text-head">
             {h.rotating.before && <span>{h.rotating.before}</span>}
             {reduced ? (
-              <span className="sticker sticker-orange rotate-0 text-[0.55em]">{h.rotating.roles[0]}</span>
+              <span className="sticker sticker-pink rotate-0 text-[0.55em]">{h.rotating.roles[0]}</span>
             ) : (
               <RotatingText
                 texts={h.rotating.roles}

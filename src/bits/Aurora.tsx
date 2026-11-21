@@ -506,7 +506,11 @@ const Aurora = ({
       gl.deleteProgram(program.program);
       gl.deleteBuffer(buffer);
       gl.deleteVertexArray(vao);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      // Bağlamı hemen öldürme: React StrictMode (dev) efekti kapatıp aynı canvas'ta yeniden açar;
+      // ölü bağlam canvas'ı beyaz/kırık bırakır. Yalnız canvas gerçekten DOM'dan çıktıysa bırak.
+      setTimeout(() => {
+        if (!canvas.isConnected) gl.getExtension('WEBGL_lose_context')?.loseContext();
+      }, 0);
     };
   }, []);
 

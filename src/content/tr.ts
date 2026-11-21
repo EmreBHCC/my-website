@@ -327,26 +327,6 @@ export const tr: SiteContent = {
           'Model sonucu: henüz yok, ilk eğitim aşaması yarıda',
         ],
       },
-      {
-        id: 'turnuva-pdf',
-        name: 'Bilardo turnuvası maç programları',
-        track: 'ai',
-        status: 'Teslim edildi',
-        period: 'Eki 2026',
-        problem:
-          'Bir bilardo turnuvasının maç programı ve oyuncu listeleri federasyonun sonuç portalında sayfa sayfa duruyordu. Gereken, il listesindeki ve yerel bir kulüpteki oyuncuların tek bakışta okuyacağı logolu PDF\'lerdi.',
-        mine: [
-          'Alanı bildiğim için çıktıyı kendim denetledim.',
-          'Yapay zekânın iki hatasını yakaladım: iki grubun maç tarihleri yanlış çekilmişti, il listesindeki herkes kulübün oyuncusu sayılmıştı.',
-          '13 oyuncuyu federasyon numaralarıyla kendim eşledim.',
-        ],
-        ai: ['Portaldan veriyi çekme, tabloya dökme ve logolu PDF düzeni.'],
-        evidence: [
-          '59 oyuncunun maç programı: il listesinden 46, kulüpten 13 · 28 Eki 2026',
-          'Oyuncu listesi PDF\'leri · 22 Eki 2026',
-          'Tek seferlik iş; tekrar kullanılabilir bir araç değil',
-        ],
-      },
     ],
   },
 

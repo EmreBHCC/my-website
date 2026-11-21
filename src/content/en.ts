@@ -326,26 +326,6 @@ export const en: SiteContent = {
           'Model results: none yet, the first training stage is half done',
         ],
       },
-      {
-        id: 'turnuva-pdf',
-        name: 'Billiards tournament schedules',
-        track: 'ai',
-        status: 'Delivered',
-        period: 'Oct 2026',
-        problem:
-          'A billiards tournament\'s match schedule and player lists sat page by page on the federation\'s results portal. What was needed: branded PDFs that players from a provincial list and a local club could read at a glance.',
-        mine: [
-          'I know the domain, so I checked the output myself.',
-          'I caught two AI errors: two groups\' match dates were pulled wrong, and everyone on the provincial list had been counted as a club player.',
-          'I matched 13 players by their federation IDs myself.',
-        ],
-        ai: ['Pulling the data from the portal, tabulating it, and the branded PDF layout.'],
-        evidence: [
-          'Match schedule for 59 players: 46 from the provincial list, 13 from the club · 28 Oct 2026',
-          'Player list PDFs · 22 Oct 2026',
-          'One-off job; not a reusable tool',
-        ],
-      },
     ],
   },
 

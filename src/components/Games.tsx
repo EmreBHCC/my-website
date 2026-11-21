@@ -3,6 +3,7 @@ import { Section } from './Section';
 import { NoBreak } from './NoBreak';
 import { Reveal } from './Reveal';
 
+/** Oyun tasarımı bölümü: piksel pencere + karar günlüğü (görev listesi) + konuşma kutusu. */
 export function Games() {
   const { lang, t } = useLang();
   const g = t.games;
@@ -13,41 +14,56 @@ export function Games() {
         <p className="mono-tab mt-6 inline-block border-l-4 border-third pl-4 text-[0.95rem]">{g.disclaimer}</p>
       </Reveal>
 
-      <div className="mt-10 space-y-14">
+      <div className="mt-12 space-y-14">
         {g.items.map((item) => (
           <Reveal key={item.id}>
-            <article className="border-t border-ink pt-8">
-              <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
-                <h3 className="text-[clamp(1.75rem,1.3rem+2vw,2.5rem)] leading-[1.1]"><NoBreak>{item.name}</NoBreak></h3>
-                <span className="mono-tab text-sm text-muted">{item.status}</span>
-              </div>
-              <p className="mt-4 max-w-[64ch]">{item.summary}</p>
+            <article className="pixel-box">
+              {/* Pencere çubuğu: ad solda, üç kare sağda */}
+              <header className="pixel-bar flex items-center justify-between gap-4 px-4 py-2.5 md:px-6">
+                <h3 className="font-pixel text-[clamp(1.35rem,1.1rem+1.2vw,1.9rem)] font-semibold leading-[1.1] tracking-wide text-on-ink">
+                  <NoBreak>{item.name}</NoBreak>
+                </h3>
+                <span aria-hidden="true" className="flex shrink-0 gap-1.5">
+                  <i className="pixel-dot" />
+                  <i className="pixel-dot" />
+                  <i className="pixel-dot" />
+                </span>
+              </header>
 
-              <ol className="mt-8 space-y-8 border-l border-line pl-5 sm:pl-8">
-                {item.decisions.map((d) => (
-                  <li key={d.decision} className="relative">
-                    <span aria-hidden="true" className="absolute -left-[1.45rem] top-[0.55rem] h-2.5 w-2.5 border border-ink bg-third sm:-left-[2.45rem]" />
-                    <div className="mono-tab flex flex-wrap gap-x-4 text-sm text-muted">
-                      <span>{t.ui.decision}</span>
-                      {d.date && <span>{d.date}</span>}
-                    </div>
-                    <p className="mt-1 max-w-[64ch]">{d.decision}</p>
-                    {d.quote && (
-                      <blockquote className="mt-3 max-w-[60ch] border-l-2 border-line pl-4 font-serif text-lg italic leading-snug md:text-xl">
-                        {d.quote}
-                      </blockquote>
-                    )}
-                    {d.quoteOriginal && (
-                      <p className="mt-2 max-w-[60ch] pl-4 text-sm text-muted">
-                        <span className="mono-tab mr-2">{t.ui.originalQuote}</span>
-                        <q lang={lang === 'en' ? 'tr' : undefined} className="font-serif italic">
-                          {d.quoteOriginal}
-                        </q>
-                      </p>
-                    )}
-                  </li>
-                ))}
-              </ol>
+              <div className="p-5 md:p-8">
+                <p className="pixel-chip font-pixel text-base tracking-wide text-ink">{item.status}</p>
+                <p className="mt-5 max-w-[64ch]">{item.summary}</p>
+
+                <ol className="mt-8 space-y-7">
+                  {item.decisions.map((d, i) => (
+                    <li key={d.decision} className="grid grid-cols-[1.25rem_minmax(0,1fr)] gap-x-4">
+                      <span aria-hidden="true" className="pixel-check mt-1" />
+                      <div>
+                        <div className="font-pixel flex flex-wrap gap-x-4 text-base tracking-wide text-muted">
+                          <span>
+                            {t.ui.decision} {i + 1}/{item.decisions.length}
+                          </span>
+                          {d.date && <span>{d.date}</span>}
+                        </div>
+                        <p className="mt-1.5 max-w-[64ch]">{d.decision}</p>
+                        {d.quote && (
+                          <blockquote className="pixel-box-sm mt-4 max-w-[60ch] px-4 py-3 font-serif text-lg italic leading-snug md:text-xl">
+                            {d.quote}
+                          </blockquote>
+                        )}
+                        {d.quoteOriginal && (
+                          <p className="mt-3 max-w-[60ch] text-sm text-muted">
+                            <span className="font-pixel mr-2 tracking-wide">{t.ui.originalQuote}</span>
+                            <q lang={lang === 'en' ? 'tr' : undefined} className="font-serif italic">
+                              {d.quoteOriginal}
+                            </q>
+                          </p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </article>
           </Reveal>
         ))}

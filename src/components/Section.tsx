@@ -46,7 +46,7 @@ export function Section({ id, index, label, title, tone = 'yellow', pixel = fals
               <span aria-hidden="true" className={`sticker ${toneClass[tone]} shrink-0 text-base lg:hidden`}>{num}</span>
               <h2
                 id={`${id}-title`}
-                className="min-w-0 text-[clamp(1.9rem,1.4rem+2vw,3rem)] leading-[1.1]"
+                className={`min-w-0 leading-[1.1] ${pixel ? 'font-pixel text-[clamp(1.8rem,1.3rem+2vw,2.8rem)] font-semibold tracking-wide' : 'text-[clamp(1.9rem,1.4rem+2vw,3rem)]'}`}
               >
                 <NoBreak>{title}</NoBreak>
               </h2>

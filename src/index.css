@@ -4,6 +4,10 @@
 @import '@fontsource/newsreader/latin-ext-500.css';
 @import '@fontsource/newsreader/latin-400-italic.css';
 @import '@fontsource/newsreader/latin-ext-400-italic.css';
+@import '@fontsource/pixelify-sans/latin-400.css';
+@import '@fontsource/pixelify-sans/latin-ext-400.css';
+@import '@fontsource/pixelify-sans/latin-600.css';
+@import '@fontsource/pixelify-sans/latin-ext-600.css';
 @import '@fontsource/ibm-plex-sans/latin-400.css';
 @import '@fontsource/ibm-plex-sans/latin-ext-400.css';
 @import '@fontsource/ibm-plex-sans/latin-500.css';
@@ -192,6 +196,44 @@ html.theme-anim *::after {
     box-shadow: 6px 6px 0 var(--ink);
     background: var(--surface);
     border-radius: 4px;
+  }
+
+  /* Piksel: yalnız "Oyun tasarımı" bölümü. Kenar = dört yönlü sert gölge (köşeler oyulur), pürüzsüz eğri yok. */
+  .pixel-box {
+    margin: 4px;
+    background: var(--surface);
+    box-shadow:
+      0 -4px 0 0 var(--ink),
+      0 4px 0 0 var(--ink),
+      -4px 0 0 0 var(--ink),
+      4px 0 0 0 var(--ink),
+      12px 12px 0 0 var(--line);
+  }
+  .pixel-box-sm {
+    margin: 3px;
+    background: var(--paper);
+    box-shadow:
+      0 -3px 0 0 var(--ink),
+      0 3px 0 0 var(--ink),
+      -3px 0 0 0 var(--ink),
+      3px 0 0 0 var(--ink);
+  }
+  .pixel-bar { background: var(--third); color: var(--on-ink); }
+  .pixel-dot { display: block; width: 10px; height: 10px; background: var(--on-ink); }
+  .pixel-chip {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    background: var(--paper);
+    box-shadow: 0 -2px 0 0 var(--third), 0 2px 0 0 var(--third), -2px 0 0 0 var(--third), 2px 0 0 0 var(--third);
+    margin: 2px;
+  }
+  .pixel-check {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: var(--third);
+    box-shadow: 0 -2px 0 0 var(--ink), 0 2px 0 0 var(--ink), -2px 0 0 0 var(--ink), 2px 0 0 0 var(--ink);
+    margin: 2px;
   }
   .pixel-bg {
     background-image:

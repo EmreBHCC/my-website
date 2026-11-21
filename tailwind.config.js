@@ -18,6 +18,7 @@ export default {
         'on-fill': 'var(--on-fill)',
       },
       fontFamily: {
+        pixel: ['"Pixelify Sans"', 'ui-monospace', 'Consolas', 'monospace'],
         serif: ['Newsreader', 'Georgia', 'Times New Roman', 'serif'],
         sans: ['"IBM Plex Sans"', 'system-ui', 'Segoe UI', 'sans-serif'],
         mono: ['"IBM Plex Mono"', 'ui-monospace', 'Consolas', 'monospace'],
